@@ -41,10 +41,10 @@ education:
 - name: Technical University of Munich
   logo: /assets/images/badges/tum.png
   position: >- 
-    TUM School of CIT <br/>
-    Computer Vision Group <br/>
+    Ph.D. Student<br/>
     Supervisor: <a href="https://cvg.cit.tum.de/members/cremers" target="_blank">Prof. Daniel Cremers</a> <br/>
-    Ph.D. Student
+    Computer Vision Group<br/>
+    TUM School of CIT
   date: 10/2024 - present
 - name: Munich University of Applied Sciences
   logo: /assets/images/badges/hm.png

@@ -74,11 +74,11 @@
 
 
   <!-- TODO: Replace with your paper title and authors -->
-  <title>PAPER_TITLE - AUTHOR_NAMES | Academic Research</title>
+  <title>IPFormer [NeurIPS 2025]</title>
   
   <!-- Favicon and App Icons -->
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+<!--   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico"> -->
   
   <!-- Critical CSS - Load synchronously -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
@@ -241,40 +241,58 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">IPFormer: Visual 3D Panoptic Scene Completion with Context-Adaptive Instance Proposals</h1>
             <div class="is-size-5 publication-authors">
               <!-- TODO: Replace with your paper authors and their personal links -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
-                  </div>
+                <a href="https://markus-42.github.io/" target="_blank">Markus Gross</a><sup>1,2</sup>,
+              </span>
+              <span class="author-block">
+                Aya Fahmy<sup>1</sup>,
+              </span>
+              <span class="author-block">
+                 Danit Niwattanananan<sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://dominikmuhle.github.io/" target="_blank">Dominik Muhle</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://rruisong.github.io/" target="_blank">Rui Song</a><sup>1,2</sup>
+              </span>              
+              <span class="author-block">
+                <a href="https://cvg.cit.tum.de/members/cremers" target="_blank">Daniel Cremers</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=7Qdm9jUAAAAJ&hl=en" target="_blank">Henri Meeß</a><sup>1</sup>
+              </span>                                        
+            </div>
 
                   <div class="is-size-5 publication-authors">
                     <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block">Institution Name<br>Conference name and year</span>
+                    <span class="author-block">
+                      <sup>1 </sup>Fraunhofer Institute IVI<br>
+                      <sup>2 </sup>Technical University of Munich<br>
+                      <br><i>Neural Information Processing Systems (NeurIPS) 2025</i>
+                    </span>
                     <!-- TODO: Remove this line if no equal contribution -->
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
                   </div>
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
                          <!-- TODO: Update with your arXiv paper ID -->
                       <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        <a href="https://arxiv.org/abs/2506.20671.pdf" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
                         </span>
-                        <span>Paper</span>
+                        <span>Paper + Appendix</span>
                       </a>
                     </span>
 
                     <!-- TODO: Add your supplementary material PDF or remove this section -->
-                    <span class="link-block">
+<!--                     <span class="link-block">
                       <a href="static/pdfs/supplementary_material.pdf" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
@@ -282,11 +300,11 @@
                       </span>
                       <span>Supplementary</span>
                     </a>
-                  </span>
+                  </span> -->
 
                   <!-- TODO: Replace with your GitHub repository URL -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    <a href="https://github.com/markus-42/ipformer" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -294,17 +312,7 @@
                     <span>Code</span>
                   </a>
                 </span>
-
-                <!-- TODO: Update with your arXiv paper ID -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
+                
             </div>
           </div>
         </div>
@@ -341,7 +349,15 @@
         <div class="content has-text-justified">
           <!-- TODO: Replace with your paper abstract -->
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Semantic Scene Completion (SSC) has emerged as a pivotal approach for jointly learning scene geometry and semantics, enabling downstream applications such as navigation in mobile robotics.
+            The recent generalization to Panoptic Scene Completion (PSC) advances the SSC domain by integrating instance-level information, thereby enhancing object-level sensitivity in scene understanding.
+            While PSC was introduced using LiDAR modality, methods based on camera images remain largely unexplored.
+            Moreover, recent Transformer-based approaches utilize a fixed set of learned queries to reconstruct objects within the scene volume.
+            Although these queries are typically updated with image context during training, they remain static at test time, limiting their ability to dynamically adapt specifically to the observed scene.
+            To overcome these limitations, we propose IPFormer, the first method that leverages context-adaptive instance proposals at train and test time to address vision-based 3D Panoptic Scene Completion. 
+            Specifically, IPFormer adaptively initializes these queries as panoptic instance proposals derived from image context and further refines them through attention-based encoding and decoding to reason about semantic instance-voxel relationships.
+            Extensive experimental results show that our approach achieves state-of-the-art in-domain performance, exhibits superior zero-shot generalization on out-of-domain data, and achieves a runtime reduction exceeding 14x.
+            These results highlight our introduction of context-adaptive instance proposals as a pioneering effort in addressing vision-based 3D Panoptic Scene Completion.
           </p>
         </div>
       </div>
@@ -460,7 +476,7 @@
       <h2 class="title">Poster</h2>
 
       <!-- TODO: Replace with your poster PDF -->
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+      <iframe  src="static/pdfs/poster_ipformer_4-3.pdf" width="100%" height="700">
           </iframe>
         
       </div>
@@ -480,13 +496,14 @@
           <span class="copy-text">Copy</span>
         </button>
       </div>
-      <pre id="bibtex-code"><code>@article{YourPaperKey2024,
-  title={Your Paper Title Here},
-  author={First Author and Second Author and Third Author},
-  journal={Conference/Journal Name},
-  year={2024},
-  url={https://your-domain.com/your-project-page}
-}</code></pre>
+      <pre id="bibtex-code"><code>
+        @inproceedings{gross2025ipformer,
+        title={{IPF}ormer: Visual 3D Panoptic Scene Completion with Context-Adaptive Instance Proposals},
+        author={Markus Gross and Aya Fahmy and Danit Niwattananan and Dominik Muhle and Rui Song and Daniel Cremers and Henri Meeß},
+        booktitle={The Thirty-ninth Annual Conference on Neural Information Processing Systems (NeurIPS)},
+        year={2025}
+        }
+      </code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
@@ -500,8 +517,6 @@
 
           <p>
             This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
 
         </div>

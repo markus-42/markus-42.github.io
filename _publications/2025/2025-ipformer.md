@@ -10,6 +10,7 @@ authors:
 - Aya Fahmy
 - Danit Niwattananan
 - Dominik Muhle
+- Rui Song
 - Daniel Cremers
 - Henri Meeß
 links:

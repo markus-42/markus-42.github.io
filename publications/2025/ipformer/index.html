@@ -186,53 +186,7 @@
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <!-- More Works Dropdown -->
-  <div class="more-works-container">
-    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
-      <i class="fas fa-flask"></i>
-      More Works
-      <i class="fas fa-chevron-down dropdown-arrow"></i>
-    </button>
-    <div class="more-works-dropdown" id="moreWorksDropdown">
-      <div class="dropdown-header">
-        <h4>More Works from Our Lab</h4>
-        <button class="close-btn" onclick="toggleMoreWorks()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="works-list">
-        <!-- TODO: Replace with your lab's related works -->
-        <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
-          <div class="work-info">
-            <!-- TODO: Replace with actual paper title -->
-            <h5>Paper Title 1</h5>
-            <!-- TODO: Replace with brief description -->
-            <p>Brief description of the work and its main contribution.</p>
-            <!-- TODO: Replace with venue and year -->
-            <span class="work-venue">Conference/Journal 2024</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <!-- TODO: Add more related works or remove extra items -->
-        <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 2</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 3</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
-    </div>
-  </div>
+
 
   <main id="main-content">
   <section class="hero">
@@ -248,10 +202,10 @@
                 <a href="https://markus-42.github.io/" target="_blank">Markus Gross</a><sup>1,2</sup>,
               </span>
               <span class="author-block">
-                Aya Fahmy<sup>1</sup>,
+                <a href="https://www.linkedin.com/in/aya-fahmy-7373441bb/" target="_blank">Aya Fahmy</a><sup>1</sup>,
               </span>
               <span class="author-block">
-                 Danit Niwattanananan<sup>2</sup>,
+                 <a href="https://www.linkedin.com/in/danit-niwattananan-50b4321a6/" target="_blank">Danit Niwattananan</a><sup>2</sup>,
               </span>
               <span class="author-block">
                 <a href="https://dominikmuhle.github.io/" target="_blank">Dominik Muhle</a><sup>2</sup>,
@@ -312,7 +266,6 @@
                     <span>Code</span>
                   </a>
                 </span>
-                
             </div>
           </div>
         </div>
@@ -323,30 +276,30 @@
 
 
 <!-- Teaser video-->
-<section class="hero teaser">
+<section class="section hero">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-        <!-- TODO: Add your video file path here -->
-        <source src="static/videos/banner_video.mp4" type="video/mp4">
-      </video>
+      <div style="text-align: center;">
+        <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata" style="width: 80%; height: auto;">
+          <source src="static/videos/ipformer_intro.mp4" type="video/mp4">
+        </video>
       <!-- TODO: Replace with your video description -->
       <h2 class="subtitle has-text-centered has-text-justified">
-        <b>Task description of Panoptic Scene Completion:</b> From a single image, infer the complete 3D structure of a scene as a voxel grid, including both visible and occluded regions. Every voxel carries (1) binary occupancy, (2) a semantic label, and (3) an instance ID to group countable objects.
-    </div>
+        <b>Visual Panoptic Scene Completion:</b> Using camera images, infer the complete 3D structure of a scene as a voxel grid, including both visible and occluded regions. Every voxel carries (1) binary occupancy, (2) a semantic label, and (3) an instance ID to group countable objects.
+      </h2>
+      </div>
   </div>
 </section>
 <!-- End teaser video -->
 
-<!-- Paper abstract -->
-<section class="section hero is-light">
+
+<!-- Paper abstract - NORMAL FULL TEXT -->
+<!-- <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <!-- TODO: Replace with your paper abstract -->
           <p>
             Semantic Scene Completion (SSC) has emerged as a pivotal approach for jointly learning scene geometry and semantics, enabling downstream applications such as navigation in mobile robotics.
             The recent generalization to Panoptic Scene Completion (PSC) advances the SSC domain by integrating instance-level information, thereby enhancing object-level sensitivity in scene understanding.
@@ -362,8 +315,133 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End paper abstract -->
+
+
+<!-- Paper abstract - TOGGL TO EXPAND FULL TEXT -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="abstract-container">
+          <input type="checkbox" id="abstract-toggle" class="abstract-toggle">
+          <div class="content has-text-justified abstract-content">
+            <p>
+              Semantic Scene Completion (SSC) has emerged as a pivotal approach for jointly learning scene geometry and semantics, enabling downstream applications such as navigation in mobile robotics.
+              The recent generalization to Panoptic Scene Completion (PSC) advances the SSC domain by integrating instance-level information, thereby enhancing object-level sensitivity in scene understanding.
+              While PSC was introduced using LiDAR modality, methods based on camera images remain largely unexplored.
+              Moreover, recent Transformer-based approaches utilize a fixed set of learned queries to reconstruct objects within the scene volume.
+              Although these queries are typically updated with image context during training, they remain static at test time, limiting their ability to dynamically adapt specifically to the observed scene.
+              To overcome these limitations, we propose IPFormer, the first method that leverages context-adaptive instance proposals at train and test time to address vision-based 3D Panoptic Scene Completion. 
+              Specifically, IPFormer adaptively initializes these queries as panoptic instance proposals derived from image context and further refines them through attention-based encoding and decoding to reason about semantic instance-voxel relationships.
+              Extensive experimental results show that our approach achieves state-of-the-art in-domain performance, exhibits superior zero-shot generalization on out-of-domain data, and achieves a runtime reduction exceeding 14x.
+              These results highlight our introduction of context-adaptive instance proposals as a pioneering effort in addressing vision-based 3D Panoptic Scene Completion.              <!-- Your full abstract continues here... -->
+            </p>
+          </div>
+          <label for="abstract-toggle" class="abstract-toggle-btn">
+            <span class="expand-text">Show more</span>
+            <span class="collapse-text">Show less</span>
+            <i class="fas fa-chevron-down arrow"></i>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Image: Challenge & solution -->
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title is-3">Challenge & Solution</h2>
+        </div>
+        <div class="columns is-centered has-text-centered">
+          <img src="static/images/IPF_vs_Symphonies_projPage.png" alt="IPformer (ours) vs. Symphonies" style="width: 65%; height: auto;" loading="lazy"/>
+        </div>
+        <h2 class="subtitle has-text-centered has-text-justified">
+          Previous methods (1) only infer <b>occupancy</b> and <b>semantics</b> in an end-to-end fashion (Semantic Scene Completion), but require subsequent, time-consuming Euclidean clustering to retrieve individual <b>instances</b>.
+          (2) they reconstruct objects using a fixed set of learned queries that are updated with image context during training, but remain static at test time and thus fail to dynamically adapt specifically to the observed scene.
+          To address these challanges, our method (1) infers <b>occupancy</b>, <b>semantics</b>, and <b>instances</b> in an end-to-end fashion, and (2) initializes object queries as instance proposals that dynamically adapt specifically to the observed scene at train and test time.
+
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End image-->
+
+
+<!-- Image: Architecture -->
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title is-3">IPFormer Architecture</h2>
+        </div>
+        <div class="columns is-centered has-text-centered">
+          <img src="static/images/IPF_architecture.png" alt="IPFormer architecture" style="width: 100%; height: auto;" loading="lazy"/>
+        </div>
+        <h2 class="subtitle has-text-centered has-text-justified">
+          Our method refines image features and a depth map to produce 3D context features, which are sampled based on visibility to generate context-adaptive instance and voxel proposals. In a two-stage training strategy, voxel proposals first handle Semantic Scene Completion, guiding the latent space toward detailed geometry and semantics. The second stage attends instance proposals over the pretrained voxel features to register individual instances. This design aligns occupancy, semantics, and instances, enabling robust Panoptic Scene Completion.
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End image-->
+
+
+
+<!-- Images: Quantitative Results -->
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title is-3">Quantitative Results</h2>
+        </div>
+        <h2 class="subtitle has-text-centered has-text-justified">
+          <b>In-Domain Performance:</b>
+      </h2>
+        <div class="columns is-centered has-text-centered">
+          <img src="static/images/results_quant_in-domain.png" alt="IPFormer architecture" style="width: 100%; height: auto;" loading="lazy"/>
+        </div>
+        <h2 class="subtitle has-text-centered has-text-justified" style="padding-top: 2rem;">
+          <b>Out-of-Domain Generalization:</b>
+      </h2>
+        <div class="columns is-centered has-text-centered">
+          <img src="static/images/results_quant_out-domain.png" alt="IPFormer architecture" style="width: 100%; height: auto;" loading="lazy"/>
+        </div>
+    </div>
+  </div>
+</section>
+<!-- End image-->
+
+
+<!-- Image: Qualitative Results -->
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title is-3">Qualitative Results</h2>
+        </div>
+        <div class="columns is-centered has-text-centered">
+          <img src="static/images/results_qual.png" alt="IPFormer architecture" style="width: 100%; height: auto;" loading="lazy"/>
+        </div>
+        <h2 class="subtitle has-text-centered has-text-justified">
+          Text
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End image-->
 
 
 <!-- Image carousel -->
@@ -525,6 +603,7 @@
 </footer>
 
 <!-- Statcounter tracking code -->
+
   
 <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
 

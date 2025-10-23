@@ -751,3 +751,74 @@ a:focus {
 
 
 
+/* ------ CUSTOM ------ */
+/* Abstract collapsible styling */
+.abstract-container {
+  position: relative;
+}
+
+.abstract-toggle {
+  display: none;
+}
+
+.abstract-content {
+  max-height: 4.5em; /* Show approximately 2-3 lines */
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  position: relative;
+}
+
+.abstract-content::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2em;
+  background: linear-gradient(transparent, var(--background-primary));
+  pointer-events: none;
+}
+
+.abstract-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary-color);
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 1rem;
+  transition: var(--transition);
+}
+
+.abstract-toggle-btn:hover {
+  color: var(--primary-hover);
+}
+
+.abstract-toggle-btn .arrow {
+  transition: transform 0.3s ease;
+}
+
+.abstract-toggle-btn .collapse-text {
+  display: none;
+}
+
+/* When expanded */
+.abstract-toggle:checked ~ .abstract-content {
+  max-height: none;
+}
+
+.abstract-toggle:checked ~ .abstract-content::after {
+  display: none;
+}
+
+.abstract-toggle:checked ~ .abstract-toggle-btn .expand-text {
+  display: none;
+}
+
+.abstract-toggle:checked ~ .abstract-toggle-btn .collapse-text {
+  display: inline;
+}
+
+.abstract-toggle:checked ~ .abstract-toggle-btn .arrow {
+  transform: rotate(180deg);
+}

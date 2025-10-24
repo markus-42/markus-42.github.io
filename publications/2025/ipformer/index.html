@@ -101,6 +101,9 @@
   <!-- Fonts - Optimized loading -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
+  <!-- KaTeX for LaTeX math rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+  
   <!-- Defer non-critical JavaScript -->
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
@@ -224,8 +227,20 @@
                   <div class="is-size-5 publication-authors">
                     <!-- TODO: Replace with your institution and conference/journal info -->
                     <span class="author-block">
-                      <sup>1 </sup>Fraunhofer Institute IVI &nbsp;&nbsp;&nbsp;&nbsp;
-                      <sup>2 </sup>Technical University of Munich<br>
+                      <!-- Institution columns with names and logos -->
+                      <div style="display: flex; justify-content: center; align-items: flex-start; gap: clamp(40px, 8vw, 80px); margin: 10px 0; flex-wrap: wrap;">
+                        <!-- Column 1: Fraunhofer -->
+                        <div style="text-align: center; flex: 0 0 auto; min-width: 0;">
+                          <div><sup>1 </sup>Fraunhofer Institute IVI</div>
+                          <img src="static/images/fraunhofer_logo.png" alt="Fraunhofer Institute" style="height: 50px; width: auto; margin-top: 8px; max-width: 100%; object-fit: contain; flex-shrink: 0;">
+                        </div>
+                        <!-- Column 2: TUM -->
+                        <div style="text-align: center; flex: 0 0 auto; min-width: 0;">
+                          <div><sup>2 </sup>Technical University of Munich</div>
+                          <img src="static/images/tum_logo.png" alt="Technical University of Munich" style="height: 50px; width: auto; margin-top: 8px; max-width: 100%; object-fit: contain; flex-shrink: 0;">
+                        </div>
+                      </div>
+                      
                       <br><i><span style="color: magenta;">Neural Information Processing Systems (NeurIPS) 2025</span></i>
                     </span>
                     <!-- TODO: Remove this line if no equal contribution -->
@@ -275,17 +290,17 @@
 </section>
 
 
-<!-- Teaser video-->
-<section class="section hero">
+<!-- Intro video-->
+<section class="hero">
   <div class="container is-max-desktop">
-    <div class="hero-body">
+    <div class="hero-body" style="padding-top: clamp(-6rem, -3vw, -6rem);">
       <div style="text-align: center;">
         <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata" style="width: 80%; height: auto;">
           <source src="static/videos/ipformer_intro.mp4" type="video/mp4">
         </video>
       <!-- TODO: Replace with your video description -->
       <h2 class="subtitle has-text-centered has-text-justified">
-        <b>Visual Panoptic Scene Completion:</b> Using camera images, infer the complete 3D structure of a scene as a voxel grid, including both visible and occluded regions. Every voxel carries (1) binary occupancy, (2) a semantic label, and (3) an instance ID to group countable objects.
+        <b>Visual Panoptic Scene Completion:</b> Using camera images, infer the complete 3D structure of a scene as a voxel grid, including both visible and occluded regions. Every voxel carries (1) binary <b>occupancy</b>, (2) a <b>semantic</b> label, and (3) an <b>instance</b> ID to group countable objects.
       </h2>
       </div>
   </div>
@@ -336,7 +351,7 @@
               Although these queries are typically updated with image context during training, they remain static at test time, limiting their ability to dynamically adapt specifically to the observed scene.
               To overcome these limitations, we propose IPFormer, the first method that leverages context-adaptive instance proposals at train and test time to address vision-based 3D Panoptic Scene Completion. 
               Specifically, IPFormer adaptively initializes these queries as panoptic instance proposals derived from image context and further refines them through attention-based encoding and decoding to reason about semantic instance-voxel relationships.
-              Extensive experimental results show that our approach achieves state-of-the-art in-domain performance, exhibits superior zero-shot generalization on out-of-domain data, and achieves a runtime reduction exceeding 14x.
+              Extensive experimental results show that our approach achieves state-of-the-art in-domain performance, exhibits superior zero-shot generalization on out-of-domain data, and achieves a runtime reduction exceeding 14$\times$.
               These results highlight our introduction of context-adaptive instance proposals as a pioneering effort in addressing vision-based 3D Panoptic Scene Completion.              <!-- Your full abstract continues here... -->
             </p>
           </div>
@@ -355,15 +370,14 @@
 
 
 <!-- Image: Challenge & solution -->
-<section class="section hero">
-  <div class="container is-max-desktop">
+<section class="hero">
     <div class="hero-body">
-      <div class="container">
+      <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
           <h2 class="title is-3">Challenge & Solution</h2>
         </div>
         <div class="columns is-centered has-text-centered">
-          <img src="static/images/IPF_vs_Symphonies_projPage.png" alt="IPformer (ours) vs. Symphonies" style="width: 65%; height: auto;" loading="lazy"/>
+          <img src="static/images/IPF_vs_Symphonies_projPage.png" alt="IPformer (ours) vs. Symphonies" style="width: 50%; height: auto;" loading="lazy"/>
         </div>
         <h2 class="subtitle has-text-centered has-text-justified">
           Previous methods (1) only infer <b>occupancy</b> and <b>semantics</b> in an end-to-end fashion (Semantic Scene Completion), but require subsequent, time-consuming Euclidean clustering to retrieve individual <b>instances</b>.
@@ -372,16 +386,36 @@
 
       </h2>
     </div>
-  </div>
+</section>
+<!-- End image-->
+
+
+
+<!-- Image: Saliency Analysis -->
+<section class="hero is-light">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title is-3">Context-Adaptivity of Instance Proposals</h2>
+        </div>
+        <div class="columns is-centered has-text-centered">
+          <img src="static/images/saliency_reb.png" alt="Context-Adaptivity of Instance Proposals" style="width: 100%; height: auto;" loading="lazy"/>
+        </div>
+        <h2 class="subtitle has-text-centered has-text-justified">
+          <b>Instance-specific saliency.</b> 
+          Through gradient-based attribution, we derive saliency maps that highlight image regions in green, where an individual instance mainly retrieves context from.
+          Our introduced instance proposals effectively adapt to scene characteristics by guiding feature aggregation, substantially improving identification, classification, and completion.
+          In contrast, non-adaptive instance queries sample context in an undirected manner, causing misclassification and geometric ambiguity.
+      </h2>
+    </div>
 </section>
 <!-- End image-->
 
 
 <!-- Image: Architecture -->
-<section class="section hero">
-  <div class="container is-max-desktop">
+<section class="hero">
     <div class="hero-body">
-      <div class="container">
+      <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
           <h2 class="title is-3">IPFormer Architecture</h2>
         </div>
@@ -389,116 +423,82 @@
           <img src="static/images/IPF_architecture.png" alt="IPFormer architecture" style="width: 100%; height: auto;" loading="lazy"/>
         </div>
         <h2 class="subtitle has-text-centered has-text-justified">
-          Our method refines image features and a depth map to produce 3D context features, which are sampled based on visibility to generate context-adaptive instance and voxel proposals. In a two-stage training strategy, voxel proposals first handle Semantic Scene Completion, guiding the latent space toward detailed geometry and semantics. The second stage attends instance proposals over the pretrained voxel features to register individual instances. This design aligns occupancy, semantics, and instances, enabling robust Panoptic Scene Completion.
+          IPFormer refines image features and a depth map to produce 3D context features, which are sampled based on visibility to generate context-adaptive instance and voxel proposals.
+          In a two-stage training strategy, voxel proposals first handle Semantic Scene Completion, effectively guiding the latent space toward detailed geometry and semantics.
+          The second stage attends instance proposals over the pretrained voxel features to register individual instances. This design aligns occupancy, semantics, and instances, enabling robust Panoptic Scene Completion.
       </h2>
     </div>
-  </div>
 </section>
 <!-- End image-->
 
 
 
 <!-- Images: Quantitative Results -->
-<section class="section hero">
-  <div class="container is-max-desktop">
+<section class="hero is-light">
     <div class="hero-body">
-      <div class="container">
+      <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
           <h2 class="title is-3">Quantitative Results</h2>
         </div>
         <h2 class="subtitle has-text-centered has-text-justified">
-          <b>In-Domain Performance:</b>
+          <b>In-domain performance</b> on SemanticKITTI val. set. 
+          Best and second-best results are bold and underlined, respectively.
+          Due to the absence of established baselines for vision-based PSC, we infer state-of-the-art SSC methods and apply DBSCAN to retrieve instances.
+          In summary, IPFormer exceeds all baselines in overall panoptic metrics PQ and PQ$^{\dag}$, and achieves best or second-best results on individual metrics.
+          Additionally, our method directly predicts a full panoptic scene, resulting in a significantly superior runtime of 0.33 seconds, thus providing a runtime reduction of over 14$\times$.
       </h2>
         <div class="columns is-centered has-text-centered">
-          <img src="static/images/results_quant_in-domain.png" alt="IPFormer architecture" style="width: 100%; height: auto;" loading="lazy"/>
+          <img src="static/images/results_quant_in-domain.png" alt="In-Domain Quantitative Results" style="width: 100%; height: auto;" loading="lazy"/>
         </div>
         <h2 class="subtitle has-text-centered has-text-justified" style="padding-top: 2rem;">
-          <b>Out-of-Domain Generalization:</b>
+          <b>Out-of-domain zero-shot generalization performance</b> of IPFormer and the closest baseline CGFormer+DBSCAN, by training on SemanticKITTI and cross-validating on the distinct SSCBench-KITTI360 test set.
+          IPFormer demonstrates superior absolute and relative generalization performance across PSC and SSC metrics.
       </h2>
         <div class="columns is-centered has-text-centered">
-          <img src="static/images/results_quant_out-domain.png" alt="IPFormer architecture" style="width: 100%; height: auto;" loading="lazy"/>
+          <img src="static/images/results_quant_out-domain.png" alt="Out-of-Domain Quantitative Results" style="width: 100%; height: auto;" loading="lazy"/>
         </div>
     </div>
-  </div>
 </section>
 <!-- End image-->
 
 
+
 <!-- Image: Qualitative Results -->
-<section class="section hero">
-  <div class="container is-max-desktop">
+<section class="hero">
     <div class="hero-body">
-      <div class="container">
+      <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
           <h2 class="title is-3">Qualitative Results</h2>
         </div>
         <div class="columns is-centered has-text-centered">
-          <img src="static/images/results_qual.png" alt="IPFormer architecture" style="width: 100%; height: auto;" loading="lazy"/>
+          <img src="static/images/results_qual.png" alt="Qualitative Results" style="width: 100%; height: auto;" loading="lazy"/>
         </div>
         <h2 class="subtitle has-text-centered has-text-justified">
-          Text
+          Qualitative results on the SemanticKITTI val. set (zoom in for best view). Each top row illustrates purely semantic information, following the SSC color map.
+          Each bottom row displays individual instances, with randomly assigned colors to facilitate differentiation. Note that we specifically show instances of the Thing-category for clarity.
+          IPFormer surpasses existing approaches by excelling at identifying individual instances, inferring their semantics, and reconstructing geometry with exceptional fidelity.
+          Even for extremely low-frequency categories such as the person category (0.07%) under adverse lighting conditions, and in the presence of trace-artifacts from dynamic objects in the ground-truth data, our method proves visually superior.
+          These advancements stem from IPFormer’s instance proposals, which dynamically adapt to scene characteristics, thus preserving high precision in instance identification, semantic segmentation, and geometric completion. 
       </h2>
     </div>
-  </div>
 </section>
 <!-- End image-->
-
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
 
 
 
 
 <!-- Youtube video -->
-<section class="hero is-small is-light">
+<section class="hero is-light">
   <div class="hero-body">
     <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-3">IPFormer Full Explanation with Audio</h2>
+      </div>
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           
           <div class="publication-video">
-            <!-- TODO: Replace with your YouTube video ID -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/KlXAvp-mIU4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
         </div>
       </div>
@@ -508,57 +508,31 @@
 <!-- End youtube video -->
 
 
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
-          </video>
+<!-- Poster -->
+<section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title is-3">Poster</h2>
         </div>
-        <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4" type="video/mp4">
-          </video>
+        <div class="columns is-centered has-text-centered">
+          <img src="static/images/poster_ipformer_4-3.png" alt="Poster" style="width: 100%; height: auto;" loading="lazy"/>
         </div>
-        <div class="item item-video3">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
     </div>
-  </div>
 </section>
-<!-- End video carousel -->
+<!-- End image-->
 
 
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
+<!-- Poster PDF-->
+<!-- <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
       <h2 class="title">Poster</h2>
-
-      <!-- TODO: Replace with your poster PDF -->
-      <iframe  src="static/pdfs/poster_ipformer_4-3.pdf" width="100%" height="700">
+      <iframe  src="static/pdfs/Poster_IPFormer_NeurIPS_2025.pdf" width="100%" height="800">
           </iframe>
-        
       </div>
     </div>
-  </section>
+  </section> -->
 <!--End paper poster -->
 
 
@@ -602,12 +576,98 @@
   </div>
 </footer>
 
+
+
+
+<!-- Image carousel -->
+<!-- <section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+          First image description.
+        </h2>
+      </div>
+      <div class="item">
+        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+          Second image description.
+        </h2>
+      </div>
+      <div class="item">
+        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+         Third image description.
+       </h2>
+     </div>
+     <div class="item">
+      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
+      <h2 class="subtitle has-text-centered">
+        Fourth image description.
+      </h2>
+    </div>
+  </div>
+</div>
+</div>
+</section> -->
+<!-- End image carousel -->
+
+
+
+<!-- Video carousel -->
+<!-- <section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Another Carousel</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-video1">
+          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/carousel1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video2">
+          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/carousel2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video3">
+          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/carousel3.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- End video carousel -->
+
+
+
+
+
 <!-- Statcounter tracking code -->
 
   
 <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
 
     <!-- End of Statcounter Code -->
+
+  <!-- KaTeX JavaScript for math rendering -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false}
+        ],
+        throwOnError : false
+      });
+    });
+  </script>
 
   </body>
   </html>

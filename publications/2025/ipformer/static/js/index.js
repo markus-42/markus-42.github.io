@@ -119,6 +119,19 @@ function setupVideoCarouselAutoplay() {
     });
 }
 
+// Abstract toggle functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleBtn = document.querySelector('.abstract-toggle-btn');
+    const toggle = document.getElementById('abstract-toggle');
+    
+    if (toggleBtn && toggle) {
+        toggleBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            toggle.checked = !toggle.checked;
+        });
+    }
+});
+
 $(document).ready(function() {
     // Check for click events on the navbar burger icon
 

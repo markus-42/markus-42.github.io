@@ -382,7 +382,7 @@
         <h2 class="subtitle has-text-centered has-text-justified">
           Previous methods (1) only infer <b>occupancy</b> and <b>semantics</b> in an end-to-end fashion (Semantic Scene Completion), but require subsequent, time-consuming Euclidean clustering to retrieve individual <b>instances</b>.
           (2) they reconstruct objects using a fixed set of learned queries that are updated with image context during training, but remain static at test time and thus fail to dynamically adapt specifically to the observed scene.
-          To address these challanges, our method (1) infers <b>occupancy</b>, <b>semantics</b>, and <b>instances</b> in an end-to-end fashion, and (2) initializes object queries as instance proposals that dynamically adapt specifically to the observed scene at train and test time.
+          To address these challanges, our method (1) infers <b>occupancy</b>, <b>semantics</b>, and <b>instances</b> in an end-to-end fashion, and (2) initializes object queries from image context, referred to as instance proposals, which dynamically adapt specifically to the observed scene at train and test time.
 
       </h2>
     </div>

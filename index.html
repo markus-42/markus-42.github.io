@@ -18,6 +18,13 @@ navbar_title: Home
 
         {% include widgets/profile_card_bio_only.html %}
 
+        {% if site.data.display.homepage.show_news %}
+        {% assign count_news = site.news | size %}
+        {% if count_news > 0 %}
+        {% include widgets/news_card.html limit=site.data.display.homepage.num_news %}
+        {% endif %}
+        {% endif %}
+
 
         {% if site.data.display.homepage.show_experience %}
             {% include widgets/experience_card.html %}
@@ -25,13 +32,6 @@ navbar_title: Home
 
         {% if site.data.display.homepage.show_scholarships %}
             {% include widgets/scholarships_card.html %}
-        {% endif %}
-
-        {% if site.data.display.homepage.show_news %}
-        {% assign count_news = site.news | size %}
-        {% if count_news > 0 %}
-        {% include widgets/news_card.html limit=site.data.display.homepage.num_news %}
-        {% endif %}
         {% endif %}
 
         {% if site.data.display.homepage.show_selected_publications %}

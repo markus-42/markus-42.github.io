@@ -55,6 +55,12 @@ education:
   date: 03/2020 - 07/2022
 
 experience:
+- name: Munich Center for Machine Learning
+  logo: /assets/images/badges/mcml.jpg
+  position: >- 
+    Junior Member <br/>
+    <a href="https://mcml.ai/research/groups/cremers/" target="_blank">Group Daniel Cremers</a>
+  date: 12/2025 - present
 - name: Fraunhofer Institute IVI
   logo: /assets/images/badges/fhg.png
   position: >- 

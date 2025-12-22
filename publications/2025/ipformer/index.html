@@ -44,12 +44,12 @@
   <!-- TODO: Replace with first author's Twitter handle -->
   <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
   <!-- TODO: Same as paper title above -->
-  <meta name="twitter:title" content="PAPER_TITLE">
+  <meta name="twitter:title" content="IPFormer: Visual 3D Panoptic Scene Completion with Context-Adaptive Instance Proposals">
   <!-- TODO: Same as description above -->
-  <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
+  <meta name="twitter:description" content="IPFormer introduces context-adaptive instance proposals for vision-based 3D Panoptic Scene Completion, outperforming the state-of-the-art and reducing runtime by over 14x.">
   <!-- TODO: Same as social preview image above -->
-  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta name="twitter:image:alt" content="PAPER_TITLE - Research Preview">
+  <meta name="twitter:image" content="https://markus-42.github.io/publications/2025/ipformer/static/images/thumbnail_16-9.jpg">
+  <meta name="twitter:image:alt" content="IPFormer - Research Preview">
 
   <!-- Academic/Research Specific -->
   <meta name="citation_title" content="IPFormer: Visual 3D Panoptic Scene Completion with Context-Adaptive Instance Proposals">
@@ -82,8 +82,8 @@
   <title>IPFormer [NeurIPS 2025]</title>
   
   <!-- Favicon and App Icons -->
-<!--   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link rel="apple-touch-icon" href="static/images/favicon.ico"> -->
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico">
   
   <!-- Critical CSS - Load synchronously -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
@@ -122,50 +122,90 @@
   {
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
-    "headline": "PAPER_TITLE",
-    "description": "BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS",
+    "headline": "IPFormer: Visual 3D Panoptic Scene Completion with Context-Adaptive Instance Proposals",
+    "description": "IPFormer introduces context-adaptive instance proposals for vision-based 3D Panoptic Scene Completion, outperforming the state-of-the-art and reducing runtime by over 14x.",
     "author": [
       {
         "@type": "Person",
-        "name": "FIRST_AUTHOR_NAME",
+        "name": "Markus Gross",
         "affiliation": {
           "@type": "Organization",
-          "name": "INSTITUTION_NAME"
+          "name": "Fraunhofer Institut IVI, Technical University of Munich"
         }
       },
       {
         "@type": "Person",
-        "name": "SECOND_AUTHOR_NAME",
+        "name": "Aya Fahmy",
         "affiliation": {
           "@type": "Organization",
-          "name": "INSTITUTION_NAME"
+          "name": "Fraunhofer Institut IVI"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Danit Niwattananan,
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Technical University of Munich"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Dominik Muhle",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Technical University of Munich"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Rui Song",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Fraunhofer Institut IVI, Technical University of Munich"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Daniel Cremers",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Technical University of Munich"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Henri Meeß",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Fraunhofer Institut IVI"
         }
       }
     ],
-    "datePublished": "2024-01-01",
+    "datePublished": "2025-12-08",
     "publisher": {
       "@type": "Organization",
-      "name": "CONFERENCE_OR_JOURNAL_NAME"
+      "name": "Neural Information Processing Systems (NeurIPS)"
     },
-    "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
-    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
-    "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"],
-    "abstract": "FULL_ABSTRACT_TEXT_HERE",
-    "citation": "BIBTEX_CITATION_HERE",
+    "url": "https://markus-42.github.io/publications/2025/ipformer/",
+    "image": "https://markus-42.github.io/publications/2025/ipformer/static/images/thumbnail_16-9.jpg",
+    "keywords": ["panoptic scene completion", "scene understanding", "3d reconstruction", "machine learning", "computer vision"],
+    "abstract": "Semantic Scene Completion (SSC) has emerged as a pivotal approach for jointly learning scene geometry and semantics, enabling downstream applications such as navigation in mobile robotics. The recent generalization to Panoptic Scene Completion (PSC) advances the SSC domain by integrating instance-level information, thereby enhancing object-level sensitivity in scene understanding. While PSC was introduced using LiDAR modality, methods based on camera images remain largely unexplored. Moreover, recent Transformer-based approaches utilize a fixed set of learned queries to reconstruct objects within the scene volume. Although these queries are typically updated with image context during training, they remain static at test time, limiting their ability to dynamically adapt specifically to the observed scene. To overcome these limitations, we propose IPFormer, the first method that leverages context-adaptive instance proposals at train and test time to address vision-based 3D Panoptic Scene Completion. Specifically, IPFormer adaptively initializes these queries as panoptic instance proposals derived from image context and further refines them through attention-based encoding and decoding to reason about semantic instance-voxel relationships. Extensive experimental results show that our approach achieves state-of-the-art in-domain performance, exhibits superior zero-shot generalization on out-of-domain data, and achieves a runtime reduction exceeding 14x. These results highlight our introduction of context-adaptive instance proposals as a pioneering effort in addressing vision-based 3D Panoptic Scene Completion.",
+    "citation": "@inproceedings{gross2025ipformer, title={{IPF}ormer: Visual 3D Panoptic Scene Completion with Context-Adaptive Instance Proposals}, author={Markus Gross and Aya Fahmy and Danit Niwattananan and Dominik Muhle and Rui Song and Daniel Cremers and Henri Meeß}, booktitle={The Thirty-ninth Annual Conference on Neural Information Processing Systems}, year={2025}}",
     "isAccessibleForFree": true,
     "license": "https://creativecommons.org/licenses/by/4.0/",
     "mainEntity": {
       "@type": "WebPage",
-      "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
+      "@id": "https://markus-42.github.io/publications/2025/ipformer/"
     },
     "about": [
       {
         "@type": "Thing",
-        "name": "RESEARCH_AREA_1"
+        "name": "Panoptic Scene Completion"
       },
       {
         "@type": "Thing", 
-        "name": "RESEARCH_AREA_2"
+        "name": "Scene Understanding"
       }
     ]
   }
@@ -176,12 +216,12 @@
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "INSTITUTION_OR_LAB_NAME",
-    "url": "https://YOUR_INSTITUTION_WEBSITE.com",
-    "logo": "https://YOUR_DOMAIN.com/static/images/favicon.ico",
+    "name": "TUM Computer Vision Group",
+    "url": "https://cvg.cit.tum.de/",
+    "logo": "https://markus-42.github.io/publications/2025/ipformer/static/images/favicon.ico",
     "sameAs": [
-      "https://twitter.com/YOUR_TWITTER_HANDLE",
-      "https://github.com/YOUR_GITHUB_USERNAME"
+      "https://markus-42.github.io/",
+      "https://github.com/markus-42"
     ]
   }
   </script>
@@ -375,7 +415,7 @@
 
 
 <!-- Image: Challenge & solution -->
-<section class="hero">
+<section class="section hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
@@ -397,7 +437,7 @@
 
 
 <!-- Image: Saliency Analysis -->
-<section class="hero is-light">
+<section class="section hero is-light">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">

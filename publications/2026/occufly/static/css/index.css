@@ -62,7 +62,8 @@ body {
   line-height: 1.4 !important;
   text-align: center !important;
   cursor: pointer !important;
-  z-index: 10;
+  z-index: 1;
+  isolation: isolate; /* Creates new stacking context */
 }
 
 .button.is-dark::before {
@@ -75,7 +76,7 @@ body {
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
   transition: left 0.6s;
   pointer-events: none;
-  z-index: -1;
+  z-index: 0;
 }
 
 .button.is-dark:hover::before {
@@ -103,7 +104,8 @@ body {
 
 .button.is-dark .icon,
 .button.is-dark span {
-  /* Allow normal clicking - removed pointer-events: none */
+  position: relative;
+  z-index: 1;
 }
 
 .footer .icon-link {

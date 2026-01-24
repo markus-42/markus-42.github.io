@@ -120,6 +120,12 @@ body {
     color: var(--text-primary) !important;
     margin-bottom: 2rem !important;
     line-height: 1.1 !important;
+    font-size: 2.1rem !important; /* Even smaller than before */
+}
+
+/* More specific selector for title font size */
+h1.title.is-1.publication-title {
+    font-size: 2.1rem !important; /* Even smaller than before */
 }
 
 .publication-banner {
@@ -149,6 +155,27 @@ body {
     font-family: 'Inter', sans-serif !important;
     font-weight: 500;
     margin-bottom: 1.5rem;
+    font-size: 1.1rem !important; /* Override Bulma's .is-size-5 default of 1.25rem */
+    /* Modern text balancing for better line distribution */
+    text-wrap: balance; /* Modern browsers - helps prevent orphaned authors */
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* Prevent single author orphans with intelligent wrapping */
+@supports (text-wrap: balance) {
+    .publication-authors {
+        text-wrap: balance;
+    }
+}
+
+/* Fallback for browsers without text-wrap support */
+@supports not (text-wrap: balance) {
+    .publication-authors {
+        /* Use a more balanced approach with specific break points */
+        word-spacing: 0.1em;
+        text-align: center;
+    }
 }
 
 .publication-venue {
@@ -203,6 +230,25 @@ body {
 .author-block {
   display: inline-block;
   margin-right: 0.5rem;
+  /* Prevent awkward single-author line breaks */
+  break-inside: avoid;
+}
+
+/* Enhanced author wrapping for desktop */
+@media (min-width: 769px) {
+  .publication-authors {
+    /* Slightly tighter spacing on desktop to encourage better grouping */
+    word-spacing: 0.05em;
+    /* Add subtle letter spacing for better visual balance */
+    letter-spacing: 0.005em;
+  }
+  
+  /* Smart wrapping to avoid single orphaned authors */
+  .author-block:nth-last-child(1):nth-child(n+3) {
+    /* If this is the last author and there are 3+ authors total */
+    /* Add slight preference to wrap with previous author */
+    margin-left: -0.1em;
+  }
 }
 
 .publication-banner img {
@@ -615,7 +661,7 @@ code {
   }
   
   .publication-authors {
-    font-size: 1rem !important;
+    font-size: 0.9rem !important;
   }
   
   .button {
@@ -821,4 +867,117 @@ a:focus {
 
 .abstract-toggle:checked ~ .abstract-toggle-btn .arrow {
   transform: rotate(180deg);
+}
+
+/* Institution and Group Styling */
+.institution-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(20px, 4vw, 40px) clamp(30px, 6vw, 60px);
+  margin: 10px 0;
+  justify-items: center;
+  align-items: start;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.institution-item {
+  text-align: center;
+  width: 100%;
+  max-width: 350px;
+  min-width: 250px;
+}
+
+.institution-name {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 1.15rem;
+  margin-bottom: 0.25rem;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.group-name {
+  font-weight: 400;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+  line-height: 1.3;
+}
+
+/* Institution Link Styling */
+.institution-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: var(--border-radius);
+  padding: 0.75rem;
+  margin: -0.75rem;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.institution-link:hover {
+  color: inherit;
+  text-decoration: none;
+  background-color: var(--background-accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.institution-link:hover .institution-name {
+  color: var(--primary-color);
+}
+
+.institution-link:hover .group-name {
+  color: var(--text-primary);
+  opacity: 1;
+}
+
+.institution-link:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* Responsive adjustments for affiliations */
+@media (max-width: 768px) {
+  .institution-grid {
+    grid-template-columns: 1fr;
+    gap: clamp(15px, 3vw, 25px);
+    max-width: 100%;
+  }
+  
+  .institution-item {
+    max-width: 100%;
+    min-width: auto;
+  }
+  
+  .institution-name {
+    font-size: 1rem;
+  }
+  
+  .group-name {
+    font-size: 0.85rem;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+  .institution-grid {
+    gap: 20px;
+  }
+  
+  .institution-name {
+    font-size: 0.95rem;
+    white-space: normal;
+  }
+  
+  .group-name {
+    font-size: 0.8rem;
+  }
 }

@@ -1,8 +1,8 @@
 ---
 title:          "Collaborative Semantic Occupancy Prediction with Hybrid Feature Fusion in Connected Automated Vehicles"
 date:           2024-01-05 00:01:00 +0800
-selected:       true
-pub:            "Conference on Computer Vision and Pattern Recognition (CVPR)"
+selected:       false
+pub:            "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)"
 pub_date:       "2024"
 cover:          /assets/images/covers/cohff.png
 authors:

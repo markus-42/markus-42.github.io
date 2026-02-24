@@ -3,7 +3,7 @@ title:          "OccuFly: A 3D Vision Benchmark for Semantic Scene Completion fr
 date:           2026-02-20 00:01:00 +0800
 selected:       true
 pub:            "Accepted to CVPR"
-pub_date:       "2026 (oral recommended)"
+pub_date:       "2026 (Oral recommendation)"
 cover:          /assets/images/covers/occufly.png
 authors:
 - <b>Markus Gross</b>

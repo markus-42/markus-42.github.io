@@ -376,13 +376,10 @@
           </video>
           <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #ff840f;">Unmute the video to listen to a 1 minute summary.</p>
         <!-- TODO: Replace with your video description -->
-        <div class="content has-text-justified" style="max-width: 700px; margin: 20px auto 0;">
-          <b>TL;DR:</b> A lightweight, vision-based system that enables real-time, human-safe landing using only a camera and height sensor — no prior maps, no heavy sensors.
-          <ul>
-            <li>Works in urban, industrial, and rural environments</li>
-            <li>Handles dynamic obstacles like humans</li>
-            <li>Achieves 95% success rate with sub-second reaction time</li>
-          </ul>
+        <div class="content has-text-justified" style="max-width: 100%; margin: 20px auto 0;">
+          <b>TL;DR:</b> A lightweight, vision-based system that enables real-time, human-safe landing using only a camera and height sensor — no 
+          prior maps, no heavy sensors. Works in urban, industrial, and rural environments, handles dynamic obstacles like humans and achieves a 95% 
+          success rate with sub-second reaction time.
         </div>
         </div>
     </div>
@@ -448,23 +445,33 @@
           <div class="column">
             <div class="box" style="height: 100%; text-align: left;">
               <h3 class="title is-5 has-text-centered">🆘 Challenge</h3>
-              <p class="content">Autonomous landing is one of the most safety-critical challenges for UAVs, especially in unknown and dynamic environments. Existing systems often:</p>
               <ul style="list-style: disc; list-style-position: outside; margin-left: 1.25rem;">
-                <li>rely on prior maps or prepared landing zones</li>
-                <li>depend on heavy sensors (LiDAR, radar)</li>
-                <li>fail to handle non-cooperative dynamic obstacles</li>
+                <li>Autonomous landing in unknown environments requires reliable perception without prior knowledge</li>
+                <li>UAVs are typically constrained to lightweight, low-cost sensors despite the need for rich environmental understanding</li>
+                <li>Dynamic obstacles such as humans introduce additional safety-critical uncertainty</li>
+                <li>Existing approaches rely on prior maps, prepared landing zones, or heavy sensing, limiting real-world deployment</li>
               </ul>
             </div>
           </div>
           <div class="column">
             <div class="box" style="height: 100%; text-align: left;">
-              <h3 class="title is-5 has-text-centered" >💡 Solution</h3>
-              <p class="content">We introduce a vision-based landing system that:</p>
+              <h3 class="title is-5 has-text-centered">💡 Solution</h3>
               <ul style="list-style: disc; list-style-position: outside; margin-left: 1.25rem;">
-                <li>builds a semantic understanding of the ground in real time</li>
-                <li>converts it into a metric landing map</li>
-                <li>filters uncertainty over time</li>
-                <li>reacts adaptively during landing</li>
+                <li>Safeland provides a vision-based system using onboard RGB input and height estimation</li>
+                <li>Online construction of a metric, semantic ground map enables safe operation in previously unseen environments</li>
+                <li>Temporal Bayesian filtering ensures robustness to noise and changing observations</li>
+                <li>Adaptive decision-making enables safe and real-time reaction during landing</li>
+              </ul>
+            </div>
+          </div>
+          <div class="column">
+            <div class="box" style="height: 100%; text-align: left;">
+              <h3 class="title is-5 has-text-centered">🎯 Why It Matters</h3>
+              <ul style="list-style: disc; list-style-position: outside; margin-left: 1.25rem;">
+                <li>No prior knowledge required – works in unseen environments without maps or preparation</li>
+                <li>Minimal hardware footprint – relies only on onboard vision and a height sensor</li>
+                <li>Robust in dynamic conditions – handles uncertainty and dynamic obstacles reliably</li>
+                <li>Validated in practice – consistent performance across extensive simulation and real-world flights</li>
               </ul>
             </div>
           </div>

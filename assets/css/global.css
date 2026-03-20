@@ -106,15 +106,29 @@ div.lazy {
 }
 
 /* Emoji bullet point styling with hanging indent */
-.publication-line {
-    display: block;
-    text-indent: -1.5em;
-    padding-left: 1.5em;
-    margin-bottom: 0.25rem;
+.publication-details .publication-line {
+    display: block !important;
+    text-indent: -1.5em !important;
+    padding-left: 1.5em !important;
+    margin-bottom: 0.25rem !important;
+    line-height: 1.4 !important;
 }
 
-.publication-details .publication-line {
-    line-height: 1.4;
+/* Ensure hanging indent works with Bootstrap paragraphs */
+.publication-details p.publication-line {
+    text-indent: -1.5em !important;
+    padding-left: 1.5em !important;
+    margin-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Additional safeguards for publication formatting */
+.publication-details {
+    text-align: left;
+}
+
+.publication-details .publication-line * {
+    text-indent: 0 !important;
 }
 
 .email-text {

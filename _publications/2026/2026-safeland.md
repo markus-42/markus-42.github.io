@@ -3,7 +3,7 @@ title:          "SafeLand: Safe Autonomous Landing in Unknown Environments with 
 date:           2026-03-05 00:01:00 +0800
 selected:       true
 pub:            "Preprint. Under Review."
-pub_date:       "2026"
+pub_date:       ""
 cover:          /assets/images/covers/safeland.png
 authors:
 - <b>Markus Gross</b>

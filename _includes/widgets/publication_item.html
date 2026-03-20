@@ -12,7 +12,7 @@
             <h6 class="mt-0 mb-1 font-weight-bold publication-title">{{ item.title }}</h6>
             <div class="publication-details">
                 <p class="mt-0 mb-1 publication-line">👥 {% include widgets/author_list.html authors=item.authors %}</p>
-                <p class="mt-0 mb-1 publication-line">📜 {{item.pub_pre}}<i>{{ item.pub }}</i>{{ item.pub_post }} {{ item.pub_date }} {{ item.pub_last }} <span data-semantic-scholar-id="{{ item.semantic_scholar_id }}"></span></p>
+                <p class="mt-0 mb-1 publication-line">📜 {{item.pub_pre}}{{ item.pub }}{{ item.pub_post }} {{ item.pub_date }} {{ item.pub_last }} <span data-semantic-scholar-id="{{ item.semantic_scholar_id }}"></span></p>
                 <p class="mt-0 mb-0 small text-muted">{{ item.abstract }}</p>
                 
                 <p class="publication-line pb-0 mb-0 lh-125 text-muted abstract-links">
@@ -38,7 +38,7 @@
                 <h6 class="mt-0 mb-1 font-weight-bold publication-title">{{ item.title }}</h6>
                 <div class="publication-details">
                     <p class="mt-0 mb-1 publication-line">👥 {% include widgets/author_list.html authors=item.authors %}</p>
-                    <p class="mt-0 mb-1 publication-line">📜 {{item.pub_pre}}<i>{{ item.pub }}</i>{{ item.pub_post }} {{ item.pub_date }} {{ item.pub_last }} <span data-semantic-scholar-id="{{ item.semantic_scholar_id }}"></span></p>
+                    <p class="mt-0 mb-1 publication-line">📜 {{item.pub_pre}}{{ item.pub }}{{ item.pub_post }} {{ item.pub_date }} {{ item.pub_last }} <span data-semantic-scholar-id="{{ item.semantic_scholar_id }}"></span></p>
                     <p class="mt-0 mb-2 small text-muted">{{ item.abstract }}</p>
                     
                     <p class="publication-line pb-0 mb-0 lh-125 text-muted abstract-links">

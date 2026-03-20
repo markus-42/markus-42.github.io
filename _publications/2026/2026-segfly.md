@@ -3,7 +3,7 @@ title:          "SegFly: A 2D-3D-2D Paradigm for Aerial RGB-Thermal Semantic Seg
 date:           2026-03-06 00:01:00 +0800
 selected:       true
 pub:            "Preprint. Under Review."
-pub_date:       "2026"
+pub_date:       ""
 cover:          /assets/images/covers/segfly.png
 authors:
 - <b>Markus Gross</b>

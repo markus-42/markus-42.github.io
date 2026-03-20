@@ -31,7 +31,7 @@
   <meta property="og:image:width" content="840">
   <meta property="og:image:height" content="424">
   <meta property="og:image:alt" content="SafeLand">
-  <meta property="article:published_time" content="2026-03-05T00:00:00.000Z">
+  <meta property="article:published_time" content="2026-03-18T00:00:00.000Z">
   <meta property="article:author" content="Markus Gross">
   <meta property="article:section" content="Research">
   <meta property="article:tag" content="Autonomous Landing">
@@ -174,7 +174,7 @@
         }
       }
     ],
-    "datePublished": "2025-12-23",
+    "datePublished": "2026-03-18",
     "publisher": {
       "@type": "Organization",
       "name": "ArXiv"
@@ -285,7 +285,7 @@
                           <a href="https://www.ivi.fraunhofer.de/en/research-fields/advanced-air-mobility/autonomous-flying.html" target="_blank" class="institution-link">
                             <div class="institution-name"><sup>1 </sup>Fraunhofer<br>Institute IVI</div>
                             <div class="group-name">Autonomous Aerial Systems</div>
-                            <img src="static/images/fraunhofer_logo_2.png" alt="Fraunhofer Institute" style="height: 30px; width: auto; margin-top: 8px; max-width: 100%; object-fit: contain; flex-shrink: 0;">
+                            <img src="static/images/fraunhofer_logo_2.png" alt="Fraunhofer Institute" style="height: 26px; width: auto; margin-top: 8px; max-width: 100%; object-fit: contain; flex-shrink: 0;">
                           </a>
                         </div>
                         <!-- Column 2: TUM -->
@@ -301,7 +301,7 @@
                           <a href="https://mcml.ai/research/groups/cremers/" target="_blank" class="institution-link">
                             <div class="institution-name"><sup>3 </sup>Munich Center for Machine Learning</div>
                             <div class="group-name">Research Group Daniel Cremers</div>
-                            <img src="static/images/mcml_logo.jpg" alt="Munich Center for Machine Learning" style="height: 30px; width: auto; margin-top: 8px; max-width: 100%; object-fit: contain; flex-shrink: 0;">
+                            <img src="static/images/mcml_logo.jpg" alt="Munich Center for Machine Learning" style="height: 24px; width: auto; margin-top: 8px; max-width: 100%; object-fit: contain; flex-shrink: 0;">
                           </a>
                         </div>
                       </div>
@@ -415,7 +415,7 @@
           <input type="checkbox" id="abstract-toggle" class="abstract-toggle">
           <div class="content has-text-justified abstract-content">
             <p>
-              Autonomous landing of uncrewed aerial vehicles (UAVs) in unknown, dynamic environments poses significant safety challenges, particularly near people and infrastructure, as UAVs transition to routine urban and rural operations. Existing methods often rely on prior maps, heavy sensors like LiDAR, static markers, or fail to handle non-cooperative dynamic obstacles like humans, limiting generalization and real-time performance. To address these challenges, we introduce SafeLand, a lean, vision-based system for safe autonomous landing (SAL) that requires no prior information and operates only with a camera and a lightweight height sensor. Our approach constructs an online semantic ground map via deep learning-based semantic segmentation, optimized for embedded deployment and trained on a consolidation of seven curated public aerial datasets (achieving 70.22% mIoU across 20 classes), which is further refined through Bayesian probabilistic filtering with temporal semantic decay to robustly identify metric-scale landing spots. A behavior tree then governs adaptive landing, iteratively validates the spot, and reacts in real time to dynamic obstacles by pausing, climbing, or rerouting to alternative spots, maximizing human safety. We extensively evaluate our method in 200 simulations and 60 end-to-end field tests across industrial, urban, and rural environments at altitudes up to 100m, demonstrating zero false negatives for human detection. Compared to the state of the art, SafeLand achieves sub-second response latency, substantially lower than previous methods, while maintaining a superior success rate of 95%. To facilitate further research in aerial robotics, we release SafeLand's segmentation model as a plug-and-play ROS package.            </p>
+              Autonomous landing of uncrewed aerial vehicles (UAVs) in unknown, dynamic environments poses significant safety challenges, particularly near people and infrastructure, as UAVs transition to routine urban and rural operations. Existing methods often rely on prior maps, heavy sensors like LiDAR, static markers, or fail to handle non-cooperative dynamic obstacles like humans, limiting generalization and real-time performance. To address these challenges, we introduce SafeLand, a lean, vision-based system for safe autonomous landing (SAL) that requires no prior information and operates only with a camera and a lightweight height sensor. Our approach constructs an online semantic ground map via deep learning-based semantic segmentation, optimized for embedded deployment and trained on a consolidation of seven curated public aerial datasets (achieving 70.22% mIoU across 20 classes), which is further refined through Bayesian probabilistic filtering with temporal semantic decay to robustly identify metric-scale landing spots. A behavior tree then governs adaptive landing, iteratively validates the spot, and reacts in real time to dynamic obstacles by pausing, climbing, or rerouting to alternative spots, maximizing human safety. We extensively evaluate our method in 200 simulations and 60 end-to-end field tests across industrial, urban, and rural environments at altitudes up to 100m, demonstrating zero false negatives for human detection. Compared to the state of the art, SafeLand achieves sub-second response latency, substantially lower than previous methods, while maintaining a superior success rate of 95%. To facilitate further research in aerial robotics, we release SafeLand's segmentation model as a plug-and-play ROS package, available at <a href="https://github.com/markus-42/safeland">https://github.com/markus-42/safeland</a>. </p>
           </div>
           <label for="abstract-toggle" class="abstract-toggle-btn">
             <span class="expand-text">Show more</span>
@@ -444,7 +444,7 @@
         <div class="columns is-variable is-4" style="margin-top: 1.25rem;">
           <div class="column">
             <div class="box" style="height: 100%; text-align: left;">
-              <h3 class="title is-5 has-text-centered">🆘 Challenge</h3>
+              <h3 class="title is-5 has-text-centered">🆘 Challenges</h3>
               <ul style="list-style: disc; list-style-position: outside; margin-left: 1.25rem;">
                 <li>Autonomous landing in unknown environments requires reliable perception without prior knowledge</li>
                 <li>UAVs are typically constrained to lightweight, low-cost sensors despite the need for rich environmental understanding</li>
@@ -455,7 +455,7 @@
           </div>
           <div class="column">
             <div class="box" style="height: 100%; text-align: left;">
-              <h3 class="title is-5 has-text-centered">💡 Solution</h3>
+              <h3 class="title is-5 has-text-centered">💡 Solutions</h3>
               <ul style="list-style: disc; list-style-position: outside; margin-left: 1.25rem;">
                 <li>Safeland provides a vision-based system using onboard RGB input and height estimation</li>
                 <li>Online construction of a metric, semantic ground map enables safe operation in previously unseen environments</li>

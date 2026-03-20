@@ -6,36 +6,36 @@
   
   <!-- Primary Meta Tags -->
   <!-- TODO: Replace with your paper title and author names -->
-  <meta name="title" content="SafeLand: Safe Autonomous Landing in Unknown Environments with Bayesian Semantic Mapping">
+  <meta name="title" content="SegFly: A 2D-3D-2D Paradigm for Aerial RGB-Thermal Semantic Segmentation at Scale">
   <!-- TODO: Write a compelling 150-160 character description of your research -->
-  <meta name="description" content="SafeLand is a lightweight, vision-based system for safe autonomous UAV landing that uses a camera and height sensor to build a Bayesian semantic ground map and select human-safe landing spots in real time.">
+  <meta name="description" content="SegFly: Scalable 2D-3D-2D pipeline auto-propagates &lt;3% manual RGB labels to 20k+ RGB &amp; 15k+ aligned RGB-T aerial images, creating SegFly benchmark + strong Firefly baseline.">
   <!-- TODO: Add 5-10 relevant keywords for your research area -->
-  <meta name="keywords" content="Autonomous Systems, UAV Landing, Bayesian Mapping, Semantic Ground Map, Real-Time Decision Making, Computer Vision, Robotics, Safety, Unmanned Aerial Vehicles, Environmental Perception">
+  <meta name="keywords" content="computer vision, semantic segmentation, aerial imagery, RGB-thermal, multi-modal segmentation, data generation, pseudo-labeling, 3D reconstruction, drone perception, remote sensing">
   <!-- TODO: List all authors -->
-  <meta name="author" content="Markus Gross, Andreas Greiner, Sai Bharadhwaj Matha, Felix Soest, Daniel Cremers, Henri Meeß">
+  <meta name="author" content="Markus Gross, Sai Bharadhwaj Matha, Rui Song, Viswanathan Muthuveerappan, Conrad Christoph, Julius Huber, Daniel Cremers">
   <meta name="robots" content="index, follow">
   <meta name="language" content="English">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
   <!-- TODO: Replace with your institution or lab name -->
-  <meta property="og:site_name" content="Fraunhofer Institut IVI, Technical University of Munich (TUM), Munich Center for Machine Learning (MCML)">
+  <meta property="og:site_name" content="Fraunhofer Institute IVI, Technical University of Munich (TUM), Munich Center for Machine Learning (MCML), University of California Los Angeles, University of Cambridge">
   <!-- TODO: Same as paper title above -->
-  <meta property="og:title" content="SafeLand: Safe Autonomous Landing in Unknown Environments with Bayesian Semantic Mapping">
+  <meta property="og:title" content="SegFly: A 2D-3D-2D Paradigm for Aerial RGB-Thermal Semantic Segmentation at Scale">
   <!-- TODO: Same as description above -->
-  <meta property="og:description" content="SafeLand is a lightweight, vision-based system for safe autonomous UAV landing that uses a camera and height sensor to build a Bayesian semantic ground map and select human-safe landing spots in real time.">
+  <meta property="og:description" content="SegFly: Scalable 2D-3D-2D pipeline auto-propagates &lt;3% manual RGB labels to 20k+ RGB &amp; 15k+ aligned RGB-T aerial images, creating SegFly benchmark + strong Firefly baseline.">
   <!-- TODO: Replace with your actual website URL -->
-  <meta property="og:url" content="https://markus-42.github.io/publications/2026/safeland/">
+  <meta property="og:url" content="https://markus-42.github.io/publications/2026/segfly/">
   <!-- TODO: Create a 1200x630px preview image and update path -->
-  <meta property="og:image" content="https://markus-42.github.io/publications/2026/safeland/static/images/banner.png">
-  <meta property="og:image:width" content="840">
-  <meta property="og:image:height" content="424">
-  <meta property="og:image:alt" content="SafeLand">
-  <meta property="article:published_time" content="2026-03-05T00:00:00.000Z">
+  <meta property="og:image" content="https://markus-42.github.io/publications/2026/segfly/static/images/banner.png">
+  <meta property="og:image:width" content="2240">
+  <meta property="og:image:height" content="855">
+  <meta property="og:image:alt" content="SegFly">
+  <meta property="article:published_time" content="2026-03-18T00:00:00.000Z">
   <meta property="article:author" content="Markus Gross">
   <meta property="article:section" content="Research">
-  <meta property="article:tag" content="Autonomous Landing">
-  <meta property="article:tag" content="Vision-based Semantic Segmentation">
+  <meta property="article:tag" content="RGB-Thermal Semantic Segmentation">
+  <meta property="article:tag" content="Aerial Imagery">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
@@ -44,25 +44,25 @@
   <!-- TODO: Replace with first author's Twitter handle -->
   <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
   <!-- TODO: Same as paper title above -->
-  <meta name="twitter:title" content="SafeLand: Safe Autonomous Landing in Unknown Environments with Bayesian Semantic Mapping">
+  <meta name="twitter:title" content="SegFly: A 2D-3D-2D Paradigm for Aerial RGB-Thermal Semantic Segmentation at Scale">
   <!-- TODO: Same as description above -->
-  <meta name="twitter:description" content="SafeLand is a lightweight, vision-based system for safe autonomous UAV landing that 
-  uses a camera and height sensor to build a Bayesian semantic ground map and select human-safe landing spots in real time.">
+  <meta name="twitter:description" content="SegFly: Scalable 2D-3D-2D pipeline auto-propagates &lt;3% manual RGB labels to 20k+ RGB &amp; 15k+ aligned RGB-T aerial images, creating SegFly benchmark + strong Firefly baseline.">
   <!-- TODO: Same as social preview image above -->
-  <meta name="twitter:image" content="https://markus-42.github.io/publications/2026/safeland/static/images/banner.png">
-  <meta name="twitter:image:alt" content="SafeLand - Research Preview">
+  <meta name="twitter:image" content="https://markus-42.github.io/publications/2026/segfly/static/images/banner.png">
+  <meta name="twitter:image:alt" content="SegFly - Research Preview">
 
   <!-- Academic/Research Specific -->
-  <meta name="citation_title" content="SafeLand: Safe Autonomous Landing in Unknown Environments with Bayesian Semantic Mapping">
+  <meta name="citation_title" content="SegFly: A 2D-3D-2D Paradigm for Aerial RGB-Thermal Semantic Segmentation at Scale">
   <meta name="citation_author" content="Gross, Markus">
-  <meta name="citation_author" content="Greiner, Andreas">
   <meta name="citation_author" content="Matha, Sai Bharadhwaj">
-  <meta name="citation_author" content="Soest, Felix">
+  <meta name="citation_author" content="Song, Rui">
+  <meta name="citation_author" content="Muthuveerappan, Viswanathan">
+  <meta name="citation_author" content="Christoph, Conrad">
+  <meta name="citation_author" content="Huber, Julius">
   <meta name="citation_author" content="Cremers, Daniel">
-  <meta name="citation_author" content="Meeß, Henri">
   <meta name="citation_publication_date" content="2026">
   <meta name="citation_conference_title" content="ArXiv">
-  <meta name="citation_pdf_url" content="https://arxiv.org/abs/2603.17430">
+  <meta name="citation_pdf_url" content="https://arxiv.org/abs/2603.17920">
   
   <!-- Additional SEO -->
   <meta name="theme-color" content="#2563eb">
@@ -79,7 +79,7 @@
 
 
   <!-- TODO: Replace with your paper title and authors -->
-  <title>SafeLand: Safe Autonomous Landing in Unknown Environments with Bayesian Semantic Mapping</title>
+  <title>SegFly: A 2D-3D-2D Paradigm for Aerial RGB-Thermal Semantic Segmentation at Scale</title>
   
   <!-- Favicon and App Icons -->
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
@@ -122,23 +122,15 @@
   {
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
-    "headline": "SafeLand: Safe Autonomous Landing in Unknown Environments with Bayesian Semantic Mapping",
-    "description": "SafeLand is a lightweight, vision-based system for safe autonomous UAV landing that uses a camera and height sensor to build a Bayesian semantic ground map and select human-safe landing spots in real time.",
+    "headline": "SegFly: A 2D-3D-2D Paradigm for Aerial RGB-Thermal Semantic Segmentation at Scale",
+    "description": "SegFly: Scalable 2D-3D-2D pipeline auto-propagates &lt;3% manual RGB labels to 20k+ RGB &amp; 15k+ aligned RGB-T aerial images, creating SegFly benchmark + strong Firefly baseline.",
     "author": [
       {
         "@type": "Person",
         "name": "Markus Gross",
         "affiliation": {
           "@type": "Organization",
-          "name": "Fraunhofer Institut IVI, Technical University of Munich (TUM), Munich Center for Machine Learning (MCML)"
-        }
-      },
-      {
-        "@type": "Person",
-        "name": "Andreas Greiner",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "Fraunhofer Institut IVI"
+          "name": "Fraunhofer Institute IVI, Technical University of Munich, Munich Center for Machine Learning"
         }
       },
       {
@@ -146,15 +138,39 @@
         "name": "Sai Bharadhwaj Matha",
         "affiliation": {
           "@type": "Organization",
-          "name": "Fraunhofer Institut IVI"
+          "name": "Fraunhofer Institute IVI"
         }
       },
       {
         "@type": "Person",
-        "name": "Felix Soest",
+        "name": "Rui Song",
         "affiliation": {
           "@type": "Organization",
-          "name": "Fraunhofer Institut IVI"
+          "name": "University of California Los Angeles, University of Cambridge"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Viswanathan Muthuveerappan",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Fraunhofer Institute IVI"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Conrad Christoph",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Fraunhofer Institute IVI"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Julius Huber",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Fraunhofer Institute IVI"
         }
       },
       {
@@ -162,53 +178,53 @@
         "name": "Daniel Cremers",
         "affiliation": {
           "@type": "Organization",
-          "name": "Technical University of Munich (TUM), Munich Center for Machine Learning (MCML)"
-        }
-      },
-      {
-        "@type": "Person",
-        "name": "Henri Meeß",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "Fraunhofer Institut IVI"
+          "name": "Technical University of Munich, Munich Center for Machine Learning"
         }
       }
     ],
-    "datePublished": "2025-12-23",
+    "datePublished": "2026-03-18",
     "publisher": {
       "@type": "Organization",
       "name": "ArXiv"
     },
-    "url": "https://markus-42.github.io/publications/2026/safeland/",
-    "image": "https://markus-42.github.io/publications/2026/safeland/static/images/banner.png",
+    "url": "https://markus-42.github.io/publications/2026/segfly/",
+    "image": "https://markus-42.github.io/publications/2026/segfly/static/images/banner.png",
     "keywords": [
-      "Autonomous Systems",
-      "UAV Landing",
-      "Bayesian Mapping",
-      "Semantic Ground Map",
-      "Real-Time Decision Making",
       "Computer Vision",
-      "Robotics",
-      "Safety",
-      "Unmanned Aerial Vehicles",
-      "Environmental Perception"
+      "Semantic Segmentation",
+      "Aerial Imagery",
+      "RGB-Thermal",
+      "Multi-Modal Segmentation",
+      "Data Generation",
+      "Pseudo-Labeling",
+      "3D Reconstruction",
+      "Drone Perception",
+      "Remote Sensing"
     ],
-    "abstract": "Autonomous landing of uncrewed aerial vehicles (UAVs) in unknown, dynamic environments poses significant safety challenges, particularly near people and infrastructure, as UAVs transition to routine urban and rural operations. Existing methods often rely on prior maps, heavy sensors like LiDAR, static markers, or fail to handle non-cooperative dynamic obstacles like humans, limiting generalization and real-time performance. To address these challenges, we introduce SafeLand, a lean, vision-based system for safe autonomous landing (SAL) that requires no prior information and operates only with a camera and a lightweight height sensor. Our approach constructs an online semantic ground map via deep learning-based semantic segmentation, optimized for embedded deployment and trained on a consolidation of seven curated public aerial datasets (achieving 70.22% mIoU across 20 classes), which is further refined through Bayesian probabilistic filtering with temporal semantic decay to robustly identify metric-scale landing spots. A behavior tree then governs adaptive landing, iteratively validates the spot, and reacts in real time to dynamic obstacles by pausing, climbing, or rerouting to alternative spots, maximizing human safety. We extensively evaluate our method in 200 simulations and 60 end-to-end field tests across industrial, urban, and rural environments at altitudes up to 100m, demonstrating zero false negatives for human detection. Compared to the state of the art, SafeLand achieves sub-second response latency, substantially lower than previous methods, while maintaining a superior success rate of 95%. To facilitate further research in aerial robotics, we release SafeLand's segmentation model as a plug-and-play ROS package, available at  https://github.com/markus-42/SafeLand.",
-    "citation": "@misc{gross2026safelandsafeautonomouslanding, title={SafeLand: Safe Autonomous Landing in Unknown Environments with Bayesian Semantic Mapping}, author={Markus Gross and Andreas Greiner and Sai Bharadhwaj Matha and Felix Soest and Daniel Cremers and Henri Meeß}, year={2026}, eprint={2603.17430}, archivePrefix={arXiv}, primaryClass={cs.RO}, url={https://arxiv.org/abs/2603.17430}}",
+    "abstract": "Semantic segmentation for uncrewed aerial vehicles (UAVs) is fundamental for aerial scene understanding, yet existing RGB and RGB-T datasets remain limited in scale, diversity, and annotation efficiency due to the high cost of manual labeling and the difficulties of accurate RGB-T alignment on off-the-shelf UAVs. To address these challenges, we propose a scalable geometry-driven 2D-3D-2D paradigm that leverages multi-view redundancy in high-overlap aerial imagery to automatically propagate labels from a small subset of manually annotated RGB images to both RGB and thermal modalities within a unified framework. By lifting less than 3% of RGB images into a semantic 3D point cloud and reprojecting it into all views, our approach enables dense pseudo ground-truth generation across large image collections, automatically producing 97% of RGB labels and 100% of thermal labels while achieving 91% and 88% annotation accuracy without any 2D manual refinement. We further extend this 2D-3D-2D paradigm to cross-modal image registration, using 3D geometry as an intermediate alignment space to obtain fully automatic, strong pixel-level RGB-T alignment with 87% registration accuracy and no hardware-level synchronization. Applying our framework to existing geo-referenced aerial imagery, we construct SegFly, a large-scale benchmark with over 20,000 high-resolution RGB images and more than 15,000 geometrically aligned RGB-T pairs spanning diverse urban, industrial, and rural environments across multiple altitudes and seasons. On SegFly, we establish the Firefly baseline for RGB and thermal semantic segmentation and show that both conventional architectures and vision foundation models benefit substantially from SegFly supervision, highlighting the potential of geometry-driven 2D-3D-2D pipelines for scalable multi-modal scene understanding. Data and Code available at https://github.com/markus-42/SegFly.",
+    "citation": "@misc{gross2026segfly2d3d2dparadigmaerial,
+      title={SegFly: A 2D-3D-2D Paradigm for Aerial RGB-Thermal Semantic Segmentation at Scale}, 
+      author={Markus Gross and Sai Bharadhwaj Matha and Rui Song and Viswanathan Muthuveerappan and Conrad Christoph and Julius Huber and Daniel Cremers},
+      year={2026},
+      eprint={2603.17920},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2603.17920}, 
+}",
     "isAccessibleForFree": true,
     "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
     "mainEntity": {
       "@type": "WebPage",
-      "@id": "https://markus-42.github.io/publications/2026/safeland/"
+      "@id": "https://markus-42.github.io/publications/2026/segfly/"
     },
     "about": [
       {
         "@type": "Thing",
-        "name": "Safe Autonomous Landing"
+        "name": "RGB-Thermal Semantic Segmentation"
       },
       {
         "@type": "Thing", 
-        "name": "Environmental Perception"
+        "name": "Aerial Imagery"
       }
     ]
   }
@@ -221,7 +237,7 @@
     "@type": "Organization",
     "name": "TUM Computer Vision Group",
     "url": "https://cvg.cit.tum.de/",
-    "logo": "https://markus-42.github.io/publications/2026/safeland/static/images/favicon.ico",
+    "logo": "https://markus-42.github.io/publications/2026/segfly/static/images/favicon.ico",
     "sameAs": [
       "https://markus-42.github.io/",
       "https://github.com/markus-42"
@@ -246,26 +262,29 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">SafeLand: Safe Autonomous Landing in Unknown Environments with Bayesian Semantic Mapping</h1>
+            <h1 class="title is-1 publication-title">SegFly: A 2D-3D-2D Paradigm for Aerial RGB-Thermal Semantic Segmentation at Scale</h1>
             <div class="is-size-5 publication-authors">
               <!-- TODO: Replace with your paper authors and their personal links -->
               <span class="author-block">
-                <a href="https://markus-42.github.io/" target="_blank">Markus Gross</a><sup>1,2,3,<a href="mailto:markus.gross@tum.de?subject=IPFormer" style="color: #4799e0;">📧</a></sup>,
+                <a href="https://markus-42.github.io/" target="_blank">Markus Gross</a><sup>1,2,3,<a href="mailto:markus.gross@tum.de?subject=SegFly" style="color: #4799e0;">📧</a></sup>,
               </span>
               <span class="author-block">
-                <a href="https://www.linkedin.com/in/andreas--greiner/" target="_blank">Andreas Greiner</a><sup>1</sup>,
+                 <a href="https://www.linkedin.com/in/saibharadhwajmatha/" target="_blank">Sai Bharadhwaj Matha</a><sup>1</sup>,
               </span>
               <span class="author-block">
-                 <a href="https://www.linkedin.com/in/saibharadhwajmatha/" target="_blank">Sai B. Matha</a><sup>1</sup>,
+                <a href="https://rruisong.github.io/" target="_blank">Rui Song</a><sup>4,5</sup>,
               </span>
               <span class="author-block">
-                <a href="https://www.linkedin.com/in/fsoest/" target="_blank">Felix Soest</a><sup>1</sup>
-              </span>              
-              <span class="author-block">
-                <a href="https://cvg.cit.tum.de/members/cremers" target="_blank">Daniel Cremers</a><sup>2,3</sup>,
+                <a href="https://www.linkedin.com/in/viswanathan-muthuveerappan-839246193/" target="_blank">Viswanathan Muthuveerappan</a><sup>1</sup>,
               </span>
               <span class="author-block">
-                <a href="https://scholar.google.com/citations?user=7Qdm9jUAAAAJ&hl=en" target="_blank">Henri Meeß</a><sup>1</sup>
+                <a href="https://www.linkedin.com/in/conrad-christoph-216255341/" target="_blank">Conrad Christoph</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/julius-huber-ai/" target="_blank">Julius Huber</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://cvg.cit.tum.de/members/cremers" target="_blank">Daniel Cremers</a><sup>2,3</sup>
               </span>
 <!--               <div>
                 <br><span class="is-size-4" style="color: #ff7721;">🌟  CVPR 2026  🌟</span> 
@@ -280,28 +299,39 @@
                     <span class="author-block">
                       <!-- Institution columns with names and logos -->
                       <div class="institution-grid">
-                        <!-- Column 1: Fraunhofer -->
                         <div class="institution-item">
                           <a href="https://www.ivi.fraunhofer.de/en/research-fields/advanced-air-mobility/autonomous-flying.html" target="_blank" class="institution-link">
-                            <div class="institution-name"><sup>1 </sup>Fraunhofer<br>Institute IVI</div>
+                            <div class="institution-name"><sup>1 </sup>Fraunhofer <br>Institute IVI</div>
                             <div class="group-name">Autonomous Aerial Systems</div>
-                            <img src="static/images/fraunhofer_logo_2.png" alt="Fraunhofer Institute" style="height: 30px; width: auto; margin-top: 8px; max-width: 100%; object-fit: contain; flex-shrink: 0;">
+                            <img src="static/images/fraunhofer_logo_2.png" alt="Fraunhofer Institute" style="height: 26px; width: auto; margin-top: 8px; max-width: 100%; object-fit: contain; flex-shrink: 0;">
                           </a>
                         </div>
-                        <!-- Column 2: TUM -->
                         <div class="institution-item">
                           <a href="https://cvg.cit.tum.de/" target="_blank" class="institution-link">
-                            <div class="institution-name"><sup>2 </sup>Technical University<br>of Munich</div>
+                            <div class="institution-name"><sup>2 </sup>Technical University <br>of Munich</div>
                             <div class="group-name">Computer Vision Group</div>
                             <img src="static/images/tum_cvg_logo_3.png" alt="Technical University of Munich" style="height: 30px; width: auto; margin-top: 8px; max-width: 100%; object-fit: contain; flex-shrink: 0;">
                           </a>
                         </div>
-                        <!-- Column 2: MCML -->
                         <div class="institution-item">
                           <a href="https://mcml.ai/research/groups/cremers/" target="_blank" class="institution-link">
                             <div class="institution-name"><sup>3 </sup>Munich Center for Machine Learning</div>
                             <div class="group-name">Research Group Daniel Cremers</div>
-                            <img src="static/images/mcml_logo.jpg" alt="Munich Center for Machine Learning" style="height: 30px; width: auto; margin-top: 8px; max-width: 100%; object-fit: contain; flex-shrink: 0;">
+                            <img src="static/images/mcml_logo.jpg" alt="Munich Center for Machine Learning" style="height: 24px; width: auto; margin-top: 8px; max-width: 100%; object-fit: contain; flex-shrink: 0;">
+                          </a>
+                        </div>
+                        <div class="institution-item">
+                          <a href="https://www.ucla.edu/" target="_blank" class="institution-link">
+                            <div class="institution-name"><sup>4 </sup>University of California <br>Los Angeles</div>
+                            <div class="group-name">Mobility Lab</div>
+                            <img src="static/images/ucla_logo.png" alt="University of California Los Angeles" style="height: 28px; width: auto; margin-top: 8px; max-width: 100%; object-fit: contain; flex-shrink: 0;">
+                          </a>
+                        </div>
+                        <div class="institution-item">
+                          <a href="https://www.cam.ac.uk/" target="_blank" class="institution-link">
+                            <div class="institution-name"><sup>5 </sup>University of <br>Cambridge</div>
+                            <div class="group-name">Computer Vision for Digital Twins</div>
+                            <img src="static/images/cambridge_logo.png" alt="University of Cambridge" style="height: 30px; width: auto; margin-top: 8px; max-width: 100%; object-fit: contain; flex-shrink: 0;">
                           </a>
                         </div>
                       </div>
@@ -316,7 +346,7 @@
 
                     <!-- PDF -->
                     <span class="link-block">
-                      <a href="static/pdfs/SafeLand_2026_Gross.pdf" target="_blank"
+                      <a href="static/pdfs/SegFly_2026_Gross.pdf" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         <i class="fas fa-file-pdf"></i>
@@ -327,7 +357,7 @@
 
                          <!-- ArXiv -->
                       <span class="link-block">
-                        <a href="https://arxiv.org/abs/2603.17430" target="_blank"
+                        <a href="https://arxiv.org/abs/2603.17920" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="ai ai-arxiv"></i>
@@ -338,12 +368,12 @@
 
                   <!-- GitHub -->
                   <span class="link-block">
-                    <a href="https://github.com/markus-42/SafeLand" target="_blank"
+                    <a href="https://github.com/markus-42/SegFly" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         <i class="fab fa-github"></i>
                       </span>
-                    <span>Code</span>
+                    <span>Data + Code</span>
                   </a>
                 </span>
 
@@ -367,22 +397,20 @@
 
 
 <!-- Intro video-->
-<section class="section hero" style="margin-top: clamp(-6rem, -8vw, -3rem);">
-    <div class="hero-body" style="padding-top: clamp(-3rem, -4vw, -2rem);">
+<section class="section hero" style="margin-top: clamp(-3.5rem, -5.5vw, -2.5rem);">
+  <div class="hero-body" style="padding-top: 0;">
       <div class="container is-max-desktop">
         <div style="text-align: center;">
-          <video poster="" id="tree" autoplay muted controls playsinline height="100%" preload="metadata" style="width: 100%; height: auto;">
-            <source src="static/videos/SafeLand.mp4" type="video/mp4">
-          </video>
-          <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #ff840f;">Unmute the video to listen to a 1 minute summary.</p>
+          <div class="columns is-centered has-text-centered">
+            <img src="static/images/segfly.png" alt="SegFly" style="width: 100%; height: auto;" loading="lazy"/>
+          </div>
         <!-- TODO: Replace with your video description -->
-        <div class="content has-text-justified" style="max-width: 700px; margin: 20px auto 0;">
-          <b>TL;DR:</b> A lightweight, vision-based system that enables real-time, human-safe landing using only a camera and height sensor — no prior maps, no heavy sensors.
-          <ul>
-            <li>Works in urban, industrial, and rural environments</li>
-            <li>Handles dynamic obstacles like humans</li>
-            <li>Achieves 95% success rate with sub-second reaction time</li>
-          </ul>
+        <div class="content has-text-justified" style="max-width: 100%; margin: 20px auto 0;">
+          <b>TL;DR:</b> We introduce SegFly, a large-scale aerial semantic segmentation benchmark with over 20K RGB samples and 15K geometrically 
+          aligned RGB–thermal samples, generated via a scalable 2D→3D→2D paradigm: By lifting manual annotations from less than 3% of RGB images into 3D 
+          and rendering them across all views, we automatically generate dense pseudo ground truth for both RGB and thermal data. We further 
+          enable geometry-driven RGB–thermal registration without hardware synchronization, and establish Firefly as a strong baseline, showing 
+          that both classical models and vision foundation models benefit substantially from SegFly supervision.
         </div>
         </div>
     </div>
@@ -417,8 +445,21 @@
         <div class="abstract-container">
           <input type="checkbox" id="abstract-toggle" class="abstract-toggle">
           <div class="content has-text-justified abstract-content">
-            <p>
-              Autonomous landing of uncrewed aerial vehicles (UAVs) in unknown, dynamic environments poses significant safety challenges, particularly near people and infrastructure, as UAVs transition to routine urban and rural operations. Existing methods often rely on prior maps, heavy sensors like LiDAR, static markers, or fail to handle non-cooperative dynamic obstacles like humans, limiting generalization and real-time performance. To address these challenges, we introduce SafeLand, a lean, vision-based system for safe autonomous landing (SAL) that requires no prior information and operates only with a camera and a lightweight height sensor. Our approach constructs an online semantic ground map via deep learning-based semantic segmentation, optimized for embedded deployment and trained on a consolidation of seven curated public aerial datasets (achieving 70.22% mIoU across 20 classes), which is further refined through Bayesian probabilistic filtering with temporal semantic decay to robustly identify metric-scale landing spots. A behavior tree then governs adaptive landing, iteratively validates the spot, and reacts in real time to dynamic obstacles by pausing, climbing, or rerouting to alternative spots, maximizing human safety. We extensively evaluate our method in 200 simulations and 60 end-to-end field tests across industrial, urban, and rural environments at altitudes up to 100m, demonstrating zero false negatives for human detection. Compared to the state of the art, SafeLand achieves sub-second response latency, substantially lower than previous methods, while maintaining a superior success rate of 95%. To facilitate further research in aerial robotics, we release SafeLand's segmentation model as a plug-and-play ROS package.            </p>
+            <p>Semantic segmentation for uncrewed aerial vehicles (UAVs) is fundamental for aerial scene understanding, yet existing RGB and RGB-T 
+              datasets remain limited in scale, diversity, and annotation efficiency due to the high cost of manual labeling and the difficulties 
+              of accurate RGB-T alignment on off-the-shelf UAVs. To address these challenges, we propose a scalable geometry-driven 2D-3D-2D paradigm 
+              that leverages multi-view redundancy in high-overlap aerial imagery to automatically propagate labels from a small subset of manually 
+              annotated RGB images to both RGB and thermal modalities within a unified framework. By lifting less than 3% of RGB images into a 
+              semantic 3D point cloud and reprojecting it into all views, our approach enables dense pseudo ground-truth generation across large 
+              image collections, automatically producing 97% of RGB labels and 100% of thermal labels while achieving 91% and 88% annotation accuracy 
+              without any 2D manual refinement. We further extend this 2D-3D-2D paradigm to cross-modal image registration, using 3D geometry as an 
+              intermediate alignment space to obtain fully automatic, strong pixel-level RGB-T alignment with 87% registration accuracy and no 
+              hardware-level synchronization. Applying our framework to existing geo-referenced aerial imagery, we construct SegFly, a large-scale 
+              benchmark with over 20,000 high-resolution RGB images and more than 15,000 geometrically aligned RGB-T pairs spanning diverse urban, 
+              industrial, and rural environments across multiple altitudes and seasons. On SegFly, we establish the Firefly baseline for RGB and 
+              thermal semantic segmentation and show that both conventional architectures and vision foundation models benefit substantially from 
+              SegFly supervision, highlighting the potential of geometry-driven 2D-3D-2D pipelines for scalable multi-modal scene understanding. 
+              Data and Code available at <a href="https://github.com/markus-42/SegFly" target="_blank">https://github.com/markus-42/SegFly</a></p>
           </div>
           <label for="abstract-toggle" class="abstract-toggle-btn">
             <span class="expand-text">Show more</span>
@@ -434,37 +475,32 @@
 
 
 
-<!-- Image: Overview -->
+<!-- Overview -->
 <section class="section hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
           <h2 class="title is-3">Overview</h2>
         </div>
-        <div class="columns is-centered has-text-centered">
-          <img src="static/images/banner.png" alt="Overview" class="mobile-full-width" style="width: 50%; height: auto;" loading="lazy"/>
-        </div>
         <div class="columns is-variable is-4" style="margin-top: 1.25rem;">
-          <div class="column">
+          <div class="column is-half">
             <div class="box" style="height: 100%; text-align: left;">
-              <h3 class="title is-5 has-text-centered">🆘 Challenge</h3>
-              <p class="content">Autonomous landing is one of the most safety-critical challenges for UAVs, especially in unknown and dynamic environments. Existing systems often:</p>
+              <h3 class="title is-5 has-text-centered">🆘 Challenges</h3>
               <ul style="list-style: disc; list-style-position: outside; margin-left: 1.25rem;">
-                <li>rely on prior maps or prepared landing zones</li>
-                <li>depend on heavy sensors (LiDAR, radar)</li>
-                <li>fail to handle non-cooperative dynamic obstacles</li>
+                <li><b>Dense annotation at scale is prohibitively expensive:</b> High-resolution aerial imagery requires detailed pixel-wise labeling, making large-scale datasets costly to produce. As a result, most existing benchmarks remain limited in size and restrict the training of modern deep learning models.</li>
+                <li><b>RGB-thermal datasets are particularly constrained:</b> In addition to annotation cost, RGB-thermal datasets require accurate cross-modal alignment. Existing approaches typically rely on hardware synchronization or manual refinement, limiting scalability and flexibility.</li>
+                <li><b>Cross-modal registration is difficult without specialized setups:</b> Differences in sensor characteristics, asynchronous capture, and platform motion make precise alignment between RGB and thermal images challenging when using off-the-shelf UAV systems.</li>
               </ul>
             </div>
           </div>
-          <div class="column">
+          <div class="column is-half">
             <div class="box" style="height: 100%; text-align: left;">
-              <h3 class="title is-5 has-text-centered" >💡 Solution</h3>
-              <p class="content">We introduce a vision-based landing system that:</p>
+              <h3 class="title is-5 has-text-centered">💡 Our Approach</h3>
+              <p class="content" style="margin-bottom: 0.5rem;">We propose a geometry-driven 2D-&gt;3D-&gt;2D paradigm that addresses these limitations in a unified framework:</p>
               <ul style="list-style: disc; list-style-position: outside; margin-left: 1.25rem;">
-                <li>builds a semantic understanding of the ground in real time</li>
-                <li>converts it into a metric landing map</li>
-                <li>filters uncertainty over time</li>
-                <li>reacts adaptively during landing</li>
+                <li><b>Label lifting and propagation via 3D reconstruction:</b> A small subset of RGB images (&lt;3%) is manually annotated. These annotations are lifted into a reconstructed 3D point cloud and propagated across all views, enabling dense pseudo-label generation for both RGB and thermal images.</li>
+                <li><b>Scalable pseudo ground-truth generation:</b> By exploiting multi-view redundancy, our pipeline automatically generates 97% of RGB labels and 100% of thermal labels, without any additional manual refinement, while maintaining high annotation accuracy.</li>
+                <li><b>Geometry-driven RGB-thermal registration:</b> Instead of relying on hardware synchronization or 2D matching, we reconstruct thermal imagery in 3D, align it with the RGB point cloud, and perform registration via lens-distortion transfer, achieving strong pixel-level alignment entirely in software.</li>
               </ul>
             </div>
           </div>
@@ -475,71 +511,66 @@
 
 
 
-<!-- Method -->
+<!-- Data Generation via 2D → 3D → 2D -->
 <section class="section hero is-light">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
-          <h2 class="title is-3">Method</h2>
+          <h2 class="title is-3">Data Generation via 2D→3D→2D</h2>
         </div>
         <div class="columns is-centered has-text-centered">
-          <img src="static/images/safeland.png" alt="SafeLand Method Overview" style="width: 100%; height: auto;" loading="lazy"/>
+          <img src="static/images/2d3d2d.png" alt="Data Generation via 2D→3D→2D" style="width: 100%; height: auto;" loading="lazy"/>
         </div>
-        <div class="content has-text-justified" style="max-width: 800px; margin: 0 auto;">
-            <ol>
-              <li><b>Semantic Scene Understanding:</b> A lightweight aerial segmentation network predicts pixel-wise semantic classes from RGB images, distinguishing safe and unsafe landing regions.</li>
-              <li><b>Metric Ground Projection:</b> The semantic predictions are projected onto a metric ground plane using height measurements to resolve scale ambiguity.</li>
-              <li><b>Bayesian Semantic Mapping:</b> Observations are fused over time into a probabilistic map, incorporating temporal filtering and semantic decay to handle noise and dynamic changes.</li>
-              <li><b>Landing Site Selection:</b> Candidate landing areas are identified based on safety, size constraints, and temporal consistency within the map.</li>
-              <li><b>Adaptive Landing Strategy:</b> A behavior tree continuously evaluates the selected landing site and dynamically reacts to environmental changes during descent.</li>
-            </ol>
-        </div>
-        <div class="columns is-centered has-text-centered" style="margin-top: 1rem;">
-          <img src="static/images/landing_procedure.png" alt="Landing Procedure" class="mobile-full-width" style="width: 50%; height: auto;" loading="lazy"/>
+        <div class="columns is-variable is-4" style="margin-top: 1.25rem;">
+          <div class="column is-half">
+            <div class="box" style="height: 100%; text-align: left;">
+              <h3 class="title is-5 has-text-centered">2D->3D: Semantic Reconstruction</h3>
+              <ul style="list-style: disc; list-style-position: outside; margin-left: 1.25rem;">
+                <li>Multi-view RGB images are used to reconstruct a dense 3D point cloud.</li>
+                <li>A small subset (&lt;3%) of images is manually annotated.</li>
+                <li>Labels are lifted into 3D via 2D-3D correspondences.</li>
+                <li><b>Outcome:</b> Dense 3D point cloud with semantic labels.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="column is-half">
+            <div class="box" style="height: 100%; text-align: left;">
+              <h3 class="title is-5 has-text-centered">3D->2D: Semantic Rendering</h3>
+              <ul style="list-style: disc; list-style-position: outside; margin-left: 1.25rem;">
+                <li>The labeled 3D point cloud is projected into all RGB and thermal images.</li>
+                <li>A depth-aware rendering pipeline enforces visibility consistency (Z-buffering and occlusion filtering), spatial densification (splatting), and complete coverage (depth-guided label distribution).</li>
+                <li><b>Outcome:</b> 97% of RGB labels and 100% of thermal labels are generated automatically, with no manual refinement required.</li>
+              </ul>
+            </div>
+          </div>
         </div>
     </div>
 </section>
 <!-- End image-->
 
 
-<!-- Experiments -->
+
+<!-- The SegFly Dataset -->
 <section class="section hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
-          <h2 class="title is-3">Experiments</h2>
+          <h2 class="title is-3">The SegFly Dataset</h2>
         </div>
+        <h2 class="content has-text-centered has-text-justified" style="margin-top: 1rem;">
+          SegFly is built upon the geo-referenced aerial imagery of the <a href="https://markus-42.github.io/publications/2026/occufly/" style="text-decoration: underline;">OccuFly benchmark</a> and contains 9 distinct scenes captured with DJI Phantom 4 RTK and 
+          Mavic 3 Enterprise Series UAVs. It comprises 20,606 high-resolution RGB images and 15,007 geometrically aligned RGB-T pairs  
+          across all seasons and 30m, 40m, and 50m altitudes in urban, industrial, and rural environments. Only 586 RGB images (2.84%) 
+          at 50m altitude were manually annotated, while our 2D-3D-2D framework automatically generates the remaining 97.16% of RGB labels and 100 % of thermal 
+          labels, with 15 semantic classes. SegFly is provided in two variants: SegFly-RGB (all 20,606 images) and SegFly-RGB-T (the 15,007 aligned pairs from 
+          thermal-capable flights).
+        </h2>
         <div class="columns is-centered has-text-centered">
-          <img src="static/images/hardware.jpg" alt="Hardware" class="mobile-full-width" style="width: 60%; height: auto;" loading="lazy"/>
+          <img src="static/images/pseudo_vs_manual.png" alt="The SegFly Dataset Examples" class="mobile-full-width" style="width: 100%; height: auto;" loading="lazy"/>
         </div>
-        <div class="columns is-variable is-4" style="margin-top: 1.25rem;">
-          <div class="column">
-            <div class="box" style="height: 100%; text-align: left;">
-              <h3 class="title is-5 has-text-centered">⚙️ Setup</h3>
-              <ul style="list-style: disc; list-style-position: outside; margin-left: 3rem;">
-                <li>200 simulations</li>
-                <li>60 end-to-end field tests</li>
-                <li>Urban, industrial and rural environments</li>
-                <li>Altitudes up to 100m</li>
-                <li>Deliberate human interference to test safety</li>
-              </ul>
-            </div>
-          </div>
-          <div class="column">
-            <div class="box" style="height: 100%; text-align: left;">
-              <h3 class="title is-5 has-text-centered">✅ Results</h3>
-              <ul style="list-style: disc; list-style-position: outside; margin-left: 3rem;">
-                <li>95% landing success rate</li>
-                <li> Sub-second reaction time</li>
-                <li>Robust across diverse environments</li>
-                <li>Safe for humans and property</li>
-                <li>Outperforms state-of-the-art methods</li>
-              </ul>
-            </div>
-          </div>
+        <div class="columns is-centered has-text-centered" style="margin-top: 1rem;">
+          <img src="static/images/segfly_dataset.png" alt="The SegFly Dataset Table" class="mobile-full-width" style="width: 100%; height: auto;" loading="lazy"/>
         </div>
-        <div class="columns is-centered has-text-centered">
-          <img src="static/images/experiments.jpg" alt="Experiments" style="width: 100%; height: auto;" loading="lazy"/>
         </div>
     </div>
 </section>
@@ -547,29 +578,149 @@
 
 
 
-<!-- SafeLand in Comparison -->
+<!-- RGB–Thermal Image Registration via 2D → 3D → 2D -->
 <section class="section hero is-light">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
-          <h2 class="title is-3">SafeLand in Comparison</h2>
+          <h2 class="title is-3">RGB-T Image Registration via 2D→3D→2D</h2>
         </div>
-        <h2 class="content has-text-centered has-text-justified">
-          SafeLand advances beyond existing and state-of-the-art UAV landing approaches by unifying real-time semantic understanding, probabilistic mapping, 
-          and adaptive decision-making within a lightweight system. In contrast to methods that depend on prior maps, dedicated landing zones, or heavy sensing 
-          such as LiDAR, SafeLand operates using only an onboard RGB camera and a height sensor while constructing an online semantic ground map of previously 
-          unseen environments. Its Bayesian temporal filtering with semantic decay ensures robustness against noise and dynamic changes, while an adaptive 
-          behavior tree enables safe and reactive landing in the presence of moving obstacles, including humans. This combination yields a solution that is not 
-          only more scalable and deployable, but also demonstrably more reliable and safety-aware, as evidenced by extensive real-world validation and consistently 
-          safe human interaction without missed detections.
-        </h2>
-        <div class="columns is-vcentered is-centered" style="margin-top: 0.1rem;">
-          <div class="column has-text-centered">
-            <img src="static/images/safeland_in_comparison.jpg" alt="SafeLand Comparison" class="mobile-full-width" style="width: 100%; max-width: 100%; height: auto;" loading="lazy"/>
+        <div class="columns is-centered has-text-centered">
+          <img src="static/images/rgb_thermal_alignment.jpg" alt="RGB-T Image Registration Setup" class="mobile-full-width" style="width: 100%; height: auto;" loading="lazy"/>
+        </div>
+        <div class="columns is-variable is-4" style="margin-top: 1.0rem;">
+          <div class="column">
+            <div class="box" style="height: 100%; text-align: left;">
+              <h3 class="title is-5 has-text-centered">💡 Key Idea</h3>
+              <ul style="list-style: disc; list-style-position: outside; margin-left: 3rem;">
+                <li>Reconstruct RGB and thermal imagery independently in 3D.</li>
+                <li>Align thermal point cloud to RGB-based semantic point cloud using ICP.</li>
+                <li>Transfer alignment back to 2D via thermal lens-distortion-aware reprojection.</li>
+              </ul>
+            </div>
           </div>
-          <div class="column has-text-centered">
-            <img src="static/images/response_latency.jpg" alt="SafeLand Response Latency" class="mobile-full-width" style="width: 100%; max-width: 100%; height: auto;" loading="lazy"/>
+          <div class="column">
+            <div class="box" style="height: 100%; text-align: left;">
+              <h3 class="title is-5 has-text-centered">✅ Result</h3>
+              <ul style="list-style: disc; list-style-position: outside; margin-left: 3rem;">
+                <li>87.05% pixel-level registration accuracy.</li>
+                <li>Applicable to off-the-shelf UAV platforms.</li>
+                <li>No hardware synchronization required.</li>
+                <li>No cross-modal feature matching.</li>
+                <li>Enables scalable RGB-T-aligned data generation.</li>
+              </ul>
+            </div>
           </div>
+        </div>
+        <div class="columns is-centered has-text-centered" style="margin-top: 1.0rem;">
+          <img src="static/images/kust4k_vs_segfly.jpg" alt="Kust4K vs SegFly Comparison" class="mobile-full-width" style="width: 100%; height: auto;" loading="lazy"/>
+        </div>
+    </div>
+</section>
+<!-- End image-->
+
+
+
+
+<!-- Firefly Baseline -->
+<section class="section hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title is-3">Firefly Baseline</h2>
+        </div>
+        <div class="columns is-centered has-text-centered" style="margin-top: 0.5rem;">
+          <img src="static/images/firefly.png" alt="Firefly Baseline" class="mobile-full-width" style="width: 60%; height: auto;" loading="lazy"/>
+        </div>
+        <div class="columns is-centered" style="margin-top: 1rem;">
+          <div class="box" style="width: 80%; text-align: left;">
+            <p style="margin-bottom: 1rem;">Firefly is a unified approach for RGB and thermal semantic segmentation trained in three stages:</p>
+            <ol style="list-style: decimal; list-style-position: outside; margin-left: 1.25rem;">
+              <li><b>RGB Pre-training:</b> A fixed DINOv3 encoder is combined with a lightweight MLP head and optimized on labeled RGB data. This represents standalone RGB semantic segmentation.</li>
+              <li><b>RGB-Thermal Domain Adaptation:</b> Registered RGB-T pairs are used for self-supervised, parameter-efficient alignment. Thermal-specific Rein adapters learn residual mappings into the RGB feature space while all other parameters remain frozen.</li>
+              <li><b>Thermal Fine-Tuning:</b> A dedicated thermal MLP head (initialized from the RGB head) is trained jointly with the Rein adapters on labeled thermal data, while encoder and RGB head stay frozen.</li>
+            </ol>
+          </div>
+        </div>
+        <div class="columns is-centered has-text-centered" style="margin-top: 1.0rem;">
+          <img src="static/images/quan_results.png" alt="Quantitative Results" class="mobile-full-width" style="width: 80%; height: auto;" loading="lazy"/>
+        </div>
+        <div class="columns is-centered has-text-centered" style="margin-top: 1.0rem;">
+          <img src="static/images/qual_results.png" alt="Qualitative Results" class="mobile-full-width" style="width: 80%; height: auto;" loading="lazy"/>
+        </div>
+      </div>
+    </div>
+</section>
+<!-- End image-->
+
+
+
+<!-- Aerial Vision Foundation Models-->
+<section class="section hero is-light">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title is-3">Aerial Vision Foundation Models</h2>
+        </div>
+        <div class="columns is-centered has-text-centered">
+          <img src="static/images/vision_foundation_models.jpg" alt="Aerial Vision Foundation Models" class="mobile-full-width" style="width: 50%; height: auto;" loading="lazy"/>
+        </div>
+        <div class="columns is-variable is-4" style="margin-top: 1.0rem;">
+          <div class="column">
+            <div class="box" style="height: 100%; text-align: left;">
+              <h3 class="title is-5 has-text-centered">⚙️ Setup</h3>
+              <ul style="list-style: disc; list-style-position: outside; margin-left: 3rem;">
+                <li>We evaluate SegFly on modern vision foundation models.</li>
+                <li>Zero-shot vs fine-tuned evaluation.</li>
+                <li>RGB Model: CatSeg (CVPR 2024).</li>
+                <li>Thermal Model: AnyThermal (ICRA 2026).</li>
+              </ul>
+            </div>
+          </div>
+          <div class="column">
+            <div class="box" style="height: 100%; text-align: left;">
+              <h3 class="title is-5 has-text-centered">✅ Result</h3>
+              <ul style="list-style: disc; list-style-position: outside; margin-left: 3rem;">
+                <li>Fine-tuning on SegFly leads to substantial gains: CatSeg improves from ~47->70% accuracy, and AnyThermal improves from ~25->40% accuracy.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="column">
+            <div class="box" style="height: 100%; text-align: left;">
+              <h3 class="title is-5 has-text-centered">🧩 Conclusion</h3>
+              <ul style="list-style: disc; list-style-position: outside; margin-left: 3rem;">
+                <li>SegFly provides an effective supervision signal for adapting foundation models to aerial RGB and thermal segmentation tasks.</li>
+                <li>Zero-shot performance is limited on aerial data.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </div>
+</section>
+<!-- End image-->
+
+
+
+<!-- Key Findings -->
+<section class="section hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title is-3">Key Findings</h2>
+        </div>
+        <div class="columns is-centered is-variable is-4" style="margin-top: 1rem;">
+          <div class="column is-full">
+            <div class="box" style="height: 100%; text-align: left;">
+              <ul style="list-style: disc; list-style-position: outside; margin-left: 1.25rem;">
+                <li><b>Geometry-driven supervision scales effectively:</b><br>Dense pseudo-labels generated from minimal manual annotation achieve high accuracy (~91% RGB, ~88% thermal) and provide strong supervision for training segmentation models.</li>
+                <li><b>SegFly supervision consistently outperforms limited manual labels:</b><br>Across multiple architectures, models trained on SegFly pseudo-labels outperform those trained only on sparse manual annotations, demonstrating the effectiveness of the 2D-&gt;3D-&gt;2D pipeline.</li>
+                <li><b>RGB-thermal alignment can be achieved without hardware synchronization:</b><br>The proposed geometry-based registration achieves strong pixel-level accuracy (~87%) using only software-based alignment.</li>
+                <li><b>Vision foundation models benefit substantially from SegFly:</b><br>While zero-shot performance is limited in aerial settings, fine-tuning on SegFly leads to significant improvements, highlighting the importance of large-scale, well-structured supervision.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
         </div>
     </div>
 </section>
@@ -614,7 +765,7 @@
 
 
 <!--BibTex citation -->
-  <section class="section" id="BibTeX">
+  <section class="section hero is-light" id="BibTeX">
     <div class="container is-max-desktop content">
       <div class="bibtex-header">
         <h2 class="title">BibTeX</h2>
@@ -624,14 +775,14 @@
         </button>
       </div>
       <pre id="bibtex-code"><code>
-@misc{gross2026safeland,
-      title={SafeLand: Safe Autonomous Landing in Unknown Environments with Bayesian Semantic Mapping}, 
-      author={Markus Gross and Andreas Greiner and Sai Bharadhwaj Matha and Felix Soest and Daniel Cremers and Henri Meeß},
+@misc{gross2026segfly,
+      title={SegFly: A 2D-3D-2D Paradigm for Aerial RGB-Thermal Semantic Segmentation at Scale}, 
+      author={Markus Gross and Sai Bharadhwaj Matha and Rui Song and Viswanathan Muthuveerappan and Conrad Christoph and Julius Huber and Daniel Cremers},
       year={2026},
-      eprint={2603.17430},
+      eprint={2603.17920},
       archivePrefix={arXiv},
-      primaryClass={cs.RO},
-      url={https://arxiv.org/abs/2603.17430}, 
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2603.17920}, 
 }
       </code></pre>
     </div>
@@ -727,7 +878,7 @@
 <!-- Statcounter tracking code -->
 <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
 <!-- Default Statcounter code for OccuFly
-https://markus-42.github.io/publications/2026/safeland/ -->
+https://markus-42.github.io/publications/2026/segfly/ -->
 <script type="text/javascript">
 var sc_project=13194136; 
 var sc_invisible=1; 

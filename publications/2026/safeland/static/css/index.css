@@ -913,22 +913,27 @@ a:focus {
 /* Institution and Group Styling */
 /* Institution and Group Styling */
 .institution-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: clamp(12px, 2vw, 20px) clamp(10px, 2.2vw, 20px);
-  margin: 10px 0;
-  justify-items: center;
-  align-items: start;
+  margin: 10px auto;
   max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .institution-item {
   text-align: center;
-  width: 100%;
+  flex: 0 1 calc((100% - 2 * clamp(10px, 2.2vw, 20px)) / 3);
   max-width: 300px;
+  width: 100%;
   min-width: 0;
+}
+
+/* Avoid a visually awkward 3+1 split: for exactly 4 institutions use 2+2 */
+.institution-item:first-child:nth-last-child(4),
+.institution-item:first-child:nth-last-child(4) ~ .institution-item {
+  flex-basis: calc((100% - clamp(10px, 2.2vw, 20px)) / 2);
+  max-width: none;
 }
 
 .institution-name {
@@ -986,21 +991,34 @@ a:focus {
   filter: brightness(1.1);
 }
 
+.institution-grid img {
+  margin-top: 4px !important;
+}
+
 /* Responsive adjustments for affiliations */
 @media (max-width: 768px) {
   .institution-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: flex-start;
     gap: clamp(15px, 3vw, 25px);
     max-width: 100%;
   }
   
   .institution-item {
+    flex: 0 1 100%;
     max-width: 100%;
     min-width: auto;
   }
   
   .institution-name {
     font-size: 1rem;
+    white-space: nowrap;
+  }
+
+  .institution-name br {
+    display: none;
   }
   
   .group-name {

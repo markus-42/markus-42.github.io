@@ -86,6 +86,37 @@ div.lazy {
     font-size: 100%;
 }
 
+/* Publication styling customizations */
+.abstract-links {
+    font-size: 0.95rem; /* Slightly bigger than default small text */
+}
+
+.abstract-links a {
+    font-weight: 500; /* Make links slightly bolder to stand out */
+}
+
+.publication-image-col {
+    max-width: 40%; /* Set image column to exactly 40% width */
+}
+
+@media (min-width: 768px) {
+    .publication-image-col {
+        flex: 0 0 40%;
+    }
+}
+
+/* Emoji bullet point styling with hanging indent */
+.publication-line {
+    display: block;
+    text-indent: -1.5em;
+    padding-left: 1.5em;
+    margin-bottom: 0.25rem;
+}
+
+.publication-details .publication-line {
+    line-height: 1.4;
+}
+
 .email-text {
     font-family: Source Code Pro, monospace;
 }

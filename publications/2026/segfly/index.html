@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Primary Meta Tags -->
+  <!-- TODO: Replace with your paper title and author names -->
+  <meta name="title" content="SafeLand: Safe Autonomous Landing in Unknown Environments with Bayesian Semantic Mapping">
+  <!-- TODO: Write a compelling 150-160 character description of your research -->
+  <meta name="description" content="SafeLand is a lightweight, vision-based system for safe autonomous UAV landing that uses a camera and height sensor to build a Bayesian semantic ground map and select human-safe landing spots in real time.">
+  <!-- TODO: Add 5-10 relevant keywords for your research area -->
+  <meta name="keywords" content="Autonomous Systems, UAV Landing, Bayesian Mapping, Semantic Ground Map, Real-Time Decision Making, Computer Vision, Robotics, Safety, Unmanned Aerial Vehicles, Environmental Perception">
+  <!-- TODO: List all authors -->
+  <meta name="author" content="Markus Gross, Andreas Greiner, Sai Bharadhwaj Matha, Felix Soest, Daniel Cremers, Henri Meeß">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <!-- TODO: Replace with your institution or lab name -->
+  <meta property="og:site_name" content="Fraunhofer Institut IVI, Technical University of Munich (TUM), Munich Center for Machine Learning (MCML)">
+  <!-- TODO: Same as paper title above -->
+  <meta property="og:title" content="SafeLand: Safe Autonomous Landing in Unknown Environments with Bayesian Semantic Mapping">
+  <!-- TODO: Same as description above -->
+  <meta property="og:description" content="SafeLand is a lightweight, vision-based system for safe autonomous UAV landing that uses a camera and height sensor to build a Bayesian semantic ground map and select human-safe landing spots in real time.">
+  <!-- TODO: Replace with your actual website URL -->
+  <meta property="og:url" content="https://markus-42.github.io/publications/2026/safeland/">
+  <!-- TODO: Create a 1200x630px preview image and update path -->
+  <meta property="og:image" content="https://markus-42.github.io/publications/2026/safeland/static/images/banner.png">
+  <meta property="og:image:width" content="840">
+  <meta property="og:image:height" content="424">
+  <meta property="og:image:alt" content="SafeLand">
+  <meta property="article:published_time" content="2026-03-05T00:00:00.000Z">
+  <meta property="article:author" content="Markus Gross">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="Autonomous Landing">
+  <meta property="article:tag" content="Vision-based Semantic Segmentation">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- TODO: Replace with your lab/institution Twitter handle -->
+  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
+  <!-- TODO: Replace with first author's Twitter handle -->
+  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
+  <!-- TODO: Same as paper title above -->
+  <meta name="twitter:title" content="SafeLand: Safe Autonomous Landing in Unknown Environments with Bayesian Semantic Mapping">
+  <!-- TODO: Same as description above -->
+  <meta name="twitter:description" content="SafeLand is a lightweight, vision-based system for safe autonomous UAV landing that 
+  uses a camera and height sensor to build a Bayesian semantic ground map and select human-safe landing spots in real time.">
+  <!-- TODO: Same as social preview image above -->
+  <meta name="twitter:image" content="https://markus-42.github.io/publications/2026/safeland/static/images/banner.png">
+  <meta name="twitter:image:alt" content="SafeLand - Research Preview">
+
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="SafeLand: Safe Autonomous Landing in Unknown Environments with Bayesian Semantic Mapping">
+  <meta name="citation_author" content="Gross, Markus">
+  <meta name="citation_author" content="Greiner, Andreas">
+  <meta name="citation_author" content="Matha, Sai Bharadhwaj">
+  <meta name="citation_author" content="Soest, Felix">
+  <meta name="citation_author" content="Cremers, Daniel">
+  <meta name="citation_author" content="Meeß, Henri">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_conference_title" content="ArXiv">
+  <meta name="citation_pdf_url" content="https://arxiv.org/abs/2603.17430">
+  
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://documentcloud.adobe.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+
+  <!-- TODO: Replace with your paper title and authors -->
+  <title>SafeLand: Safe Autonomous Landing in Unknown Environments with Bayesian Semantic Mapping</title>
+  
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico"> 
+  
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+  
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- KaTeX for LaTeX math rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+  
+  <!-- Defer non-critical JavaScript -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+  
+  <!-- Structured Data for Academic Papers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "SafeLand: Safe Autonomous Landing in Unknown Environments with Bayesian Semantic Mapping",
+    "description": "SafeLand is a lightweight, vision-based system for safe autonomous UAV landing that uses a camera and height sensor to build a Bayesian semantic ground map and select human-safe landing spots in real time.",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "Markus Gross",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Fraunhofer Institut IVI, Technical University of Munich (TUM), Munich Center for Machine Learning (MCML)"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Andreas Greiner",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Fraunhofer Institut IVI"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Sai Bharadhwaj Matha",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Fraunhofer Institut IVI"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Felix Soest",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Fraunhofer Institut IVI"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Daniel Cremers",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Technical University of Munich (TUM), Munich Center for Machine Learning (MCML)"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Henri Meeß",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Fraunhofer Institut IVI"
+        }
+      }
+    ],
+    "datePublished": "2025-12-23",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ArXiv"
+    },
+    "url": "https://markus-42.github.io/publications/2026/safeland/",
+    "image": "https://markus-42.github.io/publications/2026/safeland/static/images/banner.png",
+    "keywords": [
+      "Autonomous Systems",
+      "UAV Landing",
+      "Bayesian Mapping",
+      "Semantic Ground Map",
+      "Real-Time Decision Making",
+      "Computer Vision",
+      "Robotics",
+      "Safety",
+      "Unmanned Aerial Vehicles",
+      "Environmental Perception"
+    ],
+    "abstract": "Autonomous landing of uncrewed aerial vehicles (UAVs) in unknown, dynamic environments poses significant safety challenges, particularly near people and infrastructure, as UAVs transition to routine urban and rural operations. Existing methods often rely on prior maps, heavy sensors like LiDAR, static markers, or fail to handle non-cooperative dynamic obstacles like humans, limiting generalization and real-time performance. To address these challenges, we introduce SafeLand, a lean, vision-based system for safe autonomous landing (SAL) that requires no prior information and operates only with a camera and a lightweight height sensor. Our approach constructs an online semantic ground map via deep learning-based semantic segmentation, optimized for embedded deployment and trained on a consolidation of seven curated public aerial datasets (achieving 70.22% mIoU across 20 classes), which is further refined through Bayesian probabilistic filtering with temporal semantic decay to robustly identify metric-scale landing spots. A behavior tree then governs adaptive landing, iteratively validates the spot, and reacts in real time to dynamic obstacles by pausing, climbing, or rerouting to alternative spots, maximizing human safety. We extensively evaluate our method in 200 simulations and 60 end-to-end field tests across industrial, urban, and rural environments at altitudes up to 100m, demonstrating zero false negatives for human detection. Compared to the state of the art, SafeLand achieves sub-second response latency, substantially lower than previous methods, while maintaining a superior success rate of 95%. To facilitate further research in aerial robotics, we release SafeLand's segmentation model as a plug-and-play ROS package, available at  https://github.com/markus-42/SafeLand.",
+    "citation": "@misc{gross2026safelandsafeautonomouslanding, title={SafeLand: Safe Autonomous Landing in Unknown Environments with Bayesian Semantic Mapping}, author={Markus Gross and Andreas Greiner and Sai Bharadhwaj Matha and Felix Soest and Daniel Cremers and Henri Meeß}, year={2026}, eprint={2603.17430}, archivePrefix={arXiv}, primaryClass={cs.RO}, url={https://arxiv.org/abs/2603.17430}}",
+    "isAccessibleForFree": true,
+    "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "mainEntity": {
+      "@type": "WebPage",
+      "@id": "https://markus-42.github.io/publications/2026/safeland/"
+    },
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "Safe Autonomous Landing"
+      },
+      {
+        "@type": "Thing", 
+        "name": "Environmental Perception"
+      }
+    ]
+  }
+  </script>
+  
+  <!-- Website/Organization Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TUM Computer Vision Group",
+    "url": "https://cvg.cit.tum.de/",
+    "logo": "https://markus-42.github.io/publications/2026/safeland/static/images/favicon.ico",
+    "sameAs": [
+      "https://markus-42.github.io/",
+      "https://github.com/markus-42"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+
+
+  <main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <!-- TODO: Replace with your paper title -->
+            <h1 class="title is-1 publication-title">SafeLand: Safe Autonomous Landing in Unknown Environments with Bayesian Semantic Mapping</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- TODO: Replace with your paper authors and their personal links -->
+              <span class="author-block">
+                <a href="https://markus-42.github.io/" target="_blank">Markus Gross</a><sup>1,2,3,<a href="mailto:markus.gross@tum.de?subject=IPFormer" style="color: #4799e0;">📧</a></sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/andreas--greiner/" target="_blank">Andreas Greiner</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                 <a href="https://www.linkedin.com/in/saibharadhwajmatha/" target="_blank">Sai B. Matha</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/fsoest/" target="_blank">Felix Soest</a><sup>1</sup>
+              </span>              
+              <span class="author-block">
+                <a href="https://cvg.cit.tum.de/members/cremers" target="_blank">Daniel Cremers</a><sup>2,3</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=7Qdm9jUAAAAJ&hl=en" target="_blank">Henri Meeß</a><sup>1</sup>
+              </span>
+<!--               <div>
+                <br><span class="is-size-4" style="color: #ff7721;">🌟  CVPR 2026  🌟</span> 
+                <br>
+                <div style="text-align: center; margin-top: 10px;">
+                  <img src="static/images/CVPR_2026.jpg" alt="CVPR 2026" style="max-width: 350px; height: auto;">
+                </div>
+              </div>   -->                                      
+            </div>
+                  <div class="is-size-5 publication-authors">
+                    <!-- TODO: Replace with your institution and conference/journal info -->
+                    <span class="author-block">
+                      <!-- Institution columns with names and logos -->
+                      <div class="institution-grid">
+                        <!-- Column 1: Fraunhofer -->
+                        <div class="institution-item">
+                          <a href="https://www.ivi.fraunhofer.de/en/research-fields/advanced-air-mobility/autonomous-flying.html" target="_blank" class="institution-link">
+                            <div class="institution-name"><sup>1 </sup>Fraunhofer<br>Institute IVI</div>
+                            <div class="group-name">Autonomous Aerial Systems</div>
+                            <img src="static/images/fraunhofer_logo_2.png" alt="Fraunhofer Institute" style="height: 30px; width: auto; margin-top: 8px; max-width: 100%; object-fit: contain; flex-shrink: 0;">
+                          </a>
+                        </div>
+                        <!-- Column 2: TUM -->
+                        <div class="institution-item">
+                          <a href="https://cvg.cit.tum.de/" target="_blank" class="institution-link">
+                            <div class="institution-name"><sup>2 </sup>Technical University<br>of Munich</div>
+                            <div class="group-name">Computer Vision Group</div>
+                            <img src="static/images/tum_cvg_logo_3.png" alt="Technical University of Munich" style="height: 30px; width: auto; margin-top: 8px; max-width: 100%; object-fit: contain; flex-shrink: 0;">
+                          </a>
+                        </div>
+                        <!-- Column 2: MCML -->
+                        <div class="institution-item">
+                          <a href="https://mcml.ai/research/groups/cremers/" target="_blank" class="institution-link">
+                            <div class="institution-name"><sup>3 </sup>Munich Center for Machine Learning</div>
+                            <div class="group-name">Research Group Daniel Cremers</div>
+                            <img src="static/images/mcml_logo.jpg" alt="Munich Center for Machine Learning" style="height: 30px; width: auto; margin-top: 8px; max-width: 100%; object-fit: contain; flex-shrink: 0;">
+                          </a>
+                        </div>
+                      </div>
+                      <!-- <br><i><span style="color: magenta;">Neural Information Processing Systems (NeurIPS) 2025</span></i>-->
+                    </span>
+                    <!-- TODO: Remove this line if no equal contribution -->
+                    <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+
+                    <!-- PDF -->
+                    <span class="link-block">
+                      <a href="static/pdfs/SafeLand_2026_Gross.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Paper Preprint</span>
+                    </a>
+                  </span>
+
+                         <!-- ArXiv -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/abs/2603.17430" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="ai ai-arxiv"></i>
+                        </span>
+                        <span>ArXiv Preprint</span>
+                      </a>
+                    </span>
+
+                  <!-- GitHub -->
+                  <span class="link-block">
+                    <a href="https://github.com/markus-42/SafeLand" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- Video -->
+<!--                 <span class="link-block">
+                  <a href="YOUR_LINK_URL_HERE" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Intro video-->
+<section class="section hero" style="margin-top: clamp(-6rem, -8vw, -3rem);">
+    <div class="hero-body" style="padding-top: clamp(-3rem, -4vw, -2rem);">
+      <div class="container is-max-desktop">
+        <div style="text-align: center;">
+          <video poster="" id="tree" autoplay muted controls playsinline height="100%" preload="metadata" style="width: 100%; height: auto;">
+            <source src="static/videos/SafeLand.mp4" type="video/mp4">
+          </video>
+          <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #ff840f;">Unmute the video to listen to a 1 minute summary.</p>
+        <!-- TODO: Replace with your video description -->
+        <div class="content has-text-justified" style="max-width: 700px; margin: 20px auto 0;">
+          <b>TL;DR:</b> A lightweight, vision-based system that enables real-time, human-safe landing using only a camera and height sensor — no prior maps, no heavy sensors.
+          <ul>
+            <li>Works in urban, industrial, and rural environments</li>
+            <li>Handles dynamic obstacles like humans</li>
+            <li>Achieves 95% success rate with sub-second reaction time</li>
+          </ul>
+        </div>
+        </div>
+    </div>
+</section>
+<!-- End teaser video -->
+
+
+<!-- Paper abstract - NORMAL FULL TEXT -->
+<!-- <section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            ADD YOUR PAPER ABSTRACT HERE
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- End paper abstract -->
+
+
+<!-- Paper abstract - TOGGL TO EXPAND FULL TEXT -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="abstract-container">
+          <input type="checkbox" id="abstract-toggle" class="abstract-toggle">
+          <div class="content has-text-justified abstract-content">
+            <p>
+              Autonomous landing of uncrewed aerial vehicles (UAVs) in unknown, dynamic environments poses significant safety challenges, particularly near people and infrastructure, as UAVs transition to routine urban and rural operations. Existing methods often rely on prior maps, heavy sensors like LiDAR, static markers, or fail to handle non-cooperative dynamic obstacles like humans, limiting generalization and real-time performance. To address these challenges, we introduce SafeLand, a lean, vision-based system for safe autonomous landing (SAL) that requires no prior information and operates only with a camera and a lightweight height sensor. Our approach constructs an online semantic ground map via deep learning-based semantic segmentation, optimized for embedded deployment and trained on a consolidation of seven curated public aerial datasets (achieving 70.22% mIoU across 20 classes), which is further refined through Bayesian probabilistic filtering with temporal semantic decay to robustly identify metric-scale landing spots. A behavior tree then governs adaptive landing, iteratively validates the spot, and reacts in real time to dynamic obstacles by pausing, climbing, or rerouting to alternative spots, maximizing human safety. We extensively evaluate our method in 200 simulations and 60 end-to-end field tests across industrial, urban, and rural environments at altitudes up to 100m, demonstrating zero false negatives for human detection. Compared to the state of the art, SafeLand achieves sub-second response latency, substantially lower than previous methods, while maintaining a superior success rate of 95%. To facilitate further research in aerial robotics, we release SafeLand's segmentation model as a plug-and-play ROS package.            </p>
+          </div>
+          <label for="abstract-toggle" class="abstract-toggle-btn">
+            <span class="expand-text">Show more</span>
+            <span class="collapse-text">Show less</span>
+            <i class="fas fa-chevron-down arrow"></i>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Image: Overview -->
+<section class="section hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title is-3">Overview</h2>
+        </div>
+        <div class="columns is-centered has-text-centered">
+          <img src="static/images/banner.png" alt="Overview" class="mobile-full-width" style="width: 50%; height: auto;" loading="lazy"/>
+        </div>
+        <div class="columns is-variable is-4" style="margin-top: 1.25rem;">
+          <div class="column">
+            <div class="box" style="height: 100%; text-align: left;">
+              <h3 class="title is-5 has-text-centered">🆘 Challenge</h3>
+              <p class="content">Autonomous landing is one of the most safety-critical challenges for UAVs, especially in unknown and dynamic environments. Existing systems often:</p>
+              <ul style="list-style: disc; list-style-position: outside; margin-left: 1.25rem;">
+                <li>rely on prior maps or prepared landing zones</li>
+                <li>depend on heavy sensors (LiDAR, radar)</li>
+                <li>fail to handle non-cooperative dynamic obstacles</li>
+              </ul>
+            </div>
+          </div>
+          <div class="column">
+            <div class="box" style="height: 100%; text-align: left;">
+              <h3 class="title is-5 has-text-centered" >💡 Solution</h3>
+              <p class="content">We introduce a vision-based landing system that:</p>
+              <ul style="list-style: disc; list-style-position: outside; margin-left: 1.25rem;">
+                <li>builds a semantic understanding of the ground in real time</li>
+                <li>converts it into a metric landing map</li>
+                <li>filters uncertainty over time</li>
+                <li>reacts adaptively during landing</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </div>
+</section>
+<!-- End image-->
+
+
+
+<!-- Method -->
+<section class="section hero is-light">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title is-3">Method</h2>
+        </div>
+        <div class="columns is-centered has-text-centered">
+          <img src="static/images/safeland.png" alt="SafeLand Method Overview" style="width: 100%; height: auto;" loading="lazy"/>
+        </div>
+        <div class="content has-text-justified" style="max-width: 800px; margin: 0 auto;">
+            <ol>
+              <li><b>Semantic Scene Understanding:</b> A lightweight aerial segmentation network predicts pixel-wise semantic classes from RGB images, distinguishing safe and unsafe landing regions.</li>
+              <li><b>Metric Ground Projection:</b> The semantic predictions are projected onto a metric ground plane using height measurements to resolve scale ambiguity.</li>
+              <li><b>Bayesian Semantic Mapping:</b> Observations are fused over time into a probabilistic map, incorporating temporal filtering and semantic decay to handle noise and dynamic changes.</li>
+              <li><b>Landing Site Selection:</b> Candidate landing areas are identified based on safety, size constraints, and temporal consistency within the map.</li>
+              <li><b>Adaptive Landing Strategy:</b> A behavior tree continuously evaluates the selected landing site and dynamically reacts to environmental changes during descent.</li>
+            </ol>
+        </div>
+        <div class="columns is-centered has-text-centered" style="margin-top: 1rem;">
+          <img src="static/images/landing_procedure.png" alt="Landing Procedure" class="mobile-full-width" style="width: 50%; height: auto;" loading="lazy"/>
+        </div>
+    </div>
+</section>
+<!-- End image-->
+
+
+<!-- Experiments -->
+<section class="section hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title is-3">Experiments</h2>
+        </div>
+        <div class="columns is-centered has-text-centered">
+          <img src="static/images/hardware.jpg" alt="Hardware" class="mobile-full-width" style="width: 60%; height: auto;" loading="lazy"/>
+        </div>
+        <div class="columns is-variable is-4" style="margin-top: 1.25rem;">
+          <div class="column">
+            <div class="box" style="height: 100%; text-align: left;">
+              <h3 class="title is-5 has-text-centered">⚙️ Setup</h3>
+              <ul style="list-style: disc; list-style-position: outside; margin-left: 3rem;">
+                <li>200 simulations</li>
+                <li>60 end-to-end field tests</li>
+                <li>Urban, industrial and rural environments</li>
+                <li>Altitudes up to 100m</li>
+                <li>Deliberate human interference to test safety</li>
+              </ul>
+            </div>
+          </div>
+          <div class="column">
+            <div class="box" style="height: 100%; text-align: left;">
+              <h3 class="title is-5 has-text-centered">✅ Results</h3>
+              <ul style="list-style: disc; list-style-position: outside; margin-left: 3rem;">
+                <li>95% landing success rate</li>
+                <li> Sub-second reaction time</li>
+                <li>Robust across diverse environments</li>
+                <li>Safe for humans and property</li>
+                <li>Outperforms state-of-the-art methods</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="columns is-centered has-text-centered">
+          <img src="static/images/experiments.jpg" alt="Experiments" style="width: 100%; height: auto;" loading="lazy"/>
+        </div>
+    </div>
+</section>
+<!-- End image-->
+
+
+
+<!-- SafeLand in Comparison -->
+<section class="section hero is-light">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title is-3">SafeLand in Comparison</h2>
+        </div>
+        <h2 class="content has-text-centered has-text-justified">
+          SafeLand advances beyond existing and state-of-the-art UAV landing approaches by unifying real-time semantic understanding, probabilistic mapping, 
+          and adaptive decision-making within a lightweight system. In contrast to methods that depend on prior maps, dedicated landing zones, or heavy sensing 
+          such as LiDAR, SafeLand operates using only an onboard RGB camera and a height sensor while constructing an online semantic ground map of previously 
+          unseen environments. Its Bayesian temporal filtering with semantic decay ensures robustness against noise and dynamic changes, while an adaptive 
+          behavior tree enables safe and reactive landing in the presence of moving obstacles, including humans. This combination yields a solution that is not 
+          only more scalable and deployable, but also demonstrably more reliable and safety-aware, as evidenced by extensive real-world validation and consistently 
+          safe human interaction without missed detections.
+        </h2>
+        <div class="columns is-vcentered is-centered" style="margin-top: 0.1rem;">
+          <div class="column has-text-centered">
+            <img src="static/images/safeland_in_comparison.jpg" alt="SafeLand Comparison" class="mobile-full-width" style="width: 100%; max-width: 100%; height: auto;" loading="lazy"/>
+          </div>
+          <div class="column has-text-centered">
+            <img src="static/images/response_latency.jpg" alt="SafeLand Response Latency" class="mobile-full-width" style="width: 100%; max-width: 100%; height: auto;" loading="lazy"/>
+          </div>
+        </div>
+    </div>
+</section>
+<!-- End image-->
+
+
+
+<!-- Youtube video -->
+<!-- <section class="section hero is-light">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-3">IPFormer Full Explanation with Audio</h2>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          
+          <div class="publication-video">
+            <iframe src="https://www.youtube.com/embed/KlXAvp-mIU4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- End youtube video -->
+
+
+<!-- Poster -->
+<!-- <section class="section hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title is-3">Poster</h2>
+        </div>
+        <div class="columns is-centered has-text-centered">
+          <img src="static/images/poster_ipformer_4-3.png" alt="Poster" style="width: 100%; height: auto;" loading="lazy"/>
+        </div>
+    </div>
+</section> -->
+<!-- End image-->
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header">
+        <h2 class="title">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+      <pre id="bibtex-code"><code>
+@misc{gross2026safeland,
+      title={SafeLand: Safe Autonomous Landing in Unknown Environments with Bayesian Semantic Mapping}, 
+      author={Markus Gross and Andreas Greiner and Sai Bharadhwaj Matha and Felix Soest and Daniel Cremers and Henri Meeß},
+      year={2026},
+      eprint={2603.17430},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2603.17430}, 
+}
+      </code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+<!-- ------------------------------------------------------------------------------------- -->
+<!-- Image carousel -->
+<!-- <section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+          First image description.
+        </h2>
+      </div>
+      <div class="item">
+        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+          Second image description.
+        </h2>
+      </div>
+      <div class="item">
+        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+         Third image description.
+       </h2>
+     </div>
+     <div class="item">
+      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
+      <h2 class="subtitle has-text-centered">
+        Fourth image description.
+      </h2>
+    </div>
+  </div>
+</div>
+</div>
+</section> -->
+<!-- End image carousel -->
+<!-- ------------------------------------------------------------------------------------- -->
+<!-- Video carousel -->
+<!-- <section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Another Carousel</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-video1">
+          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/carousel1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video2">
+          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/carousel2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video3">
+          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/carousel3.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- End video carousel -->
+<!-- ------------------------------------------------------------------------------------- -->
+
+
+
+
+<!-- Statcounter tracking code -->
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+<!-- Default Statcounter code for OccuFly
+https://markus-42.github.io/publications/2026/safeland/ -->
+<script type="text/javascript">
+var sc_project=13194136; 
+var sc_invisible=1; 
+var sc_security="ba9cb84f"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics
+Made Easy - Statcounter" href="https://statcounter.com/"
+target="_blank"><img class="statcounter"
+src="https://c.statcounter.com/13194136/0/ba9cb84f/1/"
+alt="Web Analytics Made Easy - Statcounter"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+<!-- End of Statcounter Code -->
+
+  <!-- KaTeX JavaScript for math rendering -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false}
+        ],
+        throwOnError : false
+      });
+    });
+  </script>
+
+  </body>
+  </html>

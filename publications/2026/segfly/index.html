@@ -632,14 +632,16 @@
         <div class="columns is-centered has-text-centered" style="margin-top: 0.5rem;">
           <img src="static/images/firefly.png" alt="Firefly Baseline" class="mobile-full-width" style="width: 60%; height: auto;" loading="lazy"/>
         </div>
-        <div class="columns is-centered" style="margin-top: 1rem;">
-          <div class="box" style="width: 80%; text-align: left;">
-            <p style="margin-bottom: 1rem;">Firefly is a unified approach for RGB and thermal semantic segmentation trained in three stages:</p>
-            <ol style="list-style: decimal; list-style-position: outside; margin-left: 1.25rem;">
-              <li><b>RGB Pre-training:</b> A fixed DINOv3 encoder is combined with a lightweight MLP head and optimized on labeled RGB data. This represents standalone RGB semantic segmentation.</li>
-              <li><b>RGB-Thermal Domain Adaptation:</b> Registered RGB-T pairs are used for self-supervised, parameter-efficient alignment. Thermal-specific Rein adapters learn residual mappings into the RGB feature space while all other parameters remain frozen.</li>
-              <li><b>Thermal Fine-Tuning:</b> A dedicated thermal MLP head (initialized from the RGB head) is trained jointly with the Rein adapters on labeled thermal data, while encoder and RGB head stay frozen.</li>
-            </ol>
+        <div class="columns is-variable is-4" style="margin-top: 1.0rem;">
+          <div class="column">
+            <div class="box" style="height: 100%; text-align: left;">
+              <p style="margin-bottom: 1rem;">Firefly is a unified approach for RGB and thermal semantic segmentation trained in three stages:</p>
+              <ol style="list-style: decimal; list-style-position: outside; margin-left: 1.25rem;">
+                <li><b>RGB Pre-training:</b> A fixed DINOv3 encoder is combined with a lightweight MLP head and optimized on labeled RGB data. This represents standalone RGB semantic segmentation.</li>
+                <li><b>RGB-Thermal Domain Adaptation:</b> Registered RGB-T pairs are used for self-supervised, parameter-efficient alignment. Thermal-specific Rein adapters learn residual mappings into the RGB feature space while all other parameters remain frozen.</li>
+                <li><b>Thermal Fine-Tuning:</b> A dedicated thermal MLP head (initialized from the RGB head) is trained jointly with the Rein adapters on labeled thermal data, while encoder and RGB head stay frozen.</li>
+              </ol>
+            </div>
           </div>
         </div>
         <div class="columns is-centered has-text-centered" style="margin-top: 1.0rem;">

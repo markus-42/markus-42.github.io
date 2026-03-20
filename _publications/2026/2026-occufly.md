@@ -1,6 +1,6 @@
 ---
 title:          "OccuFly: A 3D Vision Benchmark for Semantic Scene Completion from the Aerial Perspective"
-date:           2026-06-20 00:01:00 +0800
+date:           2026-01-01 00:01:00 +0800
 selected:       true
 pub:            "Accepted to CVPR"
 pub_date:       "2026"

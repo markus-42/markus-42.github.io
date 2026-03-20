@@ -131,6 +131,26 @@ div.lazy {
     text-indent: 0 !important;
 }
 
+/* Mobile publication image styling */
+.publication-mobile-image {
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.publication-mobile-image img,
+.publication-mobile-image svg {
+    max-width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: contain;
+}
+
+/* Custom publication title sizing - between h5 and h6 */
+.publication-title {
+    font-size: 1.125rem !important; /* Between h5 (1.25rem) and h6 (1rem) */
+}
+
 .email-text {
     font-family: Source Code Pro, monospace;
 }

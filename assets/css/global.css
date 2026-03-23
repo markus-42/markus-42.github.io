@@ -105,6 +105,7 @@ h1, h2, h3, h4, h5, h6,
 
 .profile-list-card-content .institution-name {
     font-size: 1rem;
+    font-weight: 700;
 }
 
 /* Logo spacing for Education/Experience/Scholarships entries */
@@ -124,7 +125,103 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .institution-entry-date {
-    font-size: 0.9rem;
+    font-size: 0.82rem;
+    display: block;
+    margin-top: -0.12rem;
+    margin-bottom: 0.06rem;
+    color: #9aa0a6;
+}
+
+.institution-entry-date + .small {
+    margin-top: -0.08rem;
+}
+
+.institution-entry-position {
+    display: block;
+    width: 100%;
+}
+
+/* Compact two-line styling for positions in the mini profile card */
+.mini-position-list {
+    max-width: 16rem;
+    margin: 0 auto;
+}
+
+.mini-position-entry {
+    margin-bottom: 0;
+}
+
+.mini-position-role {
+    font-size: 0.86rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #2f343a;
+    text-align: left;
+}
+
+.mini-position-institution-row {
+    display: flex;
+    align-items: center;
+    margin-top: 0.14rem;
+    line-height: 1.2;
+    text-align: left;
+}
+
+.mini-position-logo {
+    height: auto;
+    max-height: 28px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.mini-position-logo-slot {
+    width: var(--mini-position-logo-slot-width, 28px);
+    margin-right: 0.35rem;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.mini-position-institution {
+    font-size: 0.8rem;
+    color: #5f6368;
+}
+
+.mini-social-icons {
+    font-size: 1.75rem;
+    line-height: 1;
+}
+
+.mini-social-icons a {
+    color: #1f6feb;
+}
+
+.mini-social-icons a:hover {
+    color: #0f4fc7;
+}
+
+.mini-email-display {
+    font-size: 0.78rem;
+    color: #1f6feb;
+}
+
+.mini-email-display:hover {
+    color: #0f4fc7;
+}
+
+/* Automatic news bullets with hanging indent for wrapped lines */
+.news-bullet-item {
+    position: relative;
+    padding-left: 1.1rem;
+    line-height: 1.45;
+}
+
+.news-bullet-item::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: inherit;
 }
 
 @media (max-width: 767.98px) {

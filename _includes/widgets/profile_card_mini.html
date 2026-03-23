@@ -26,66 +26,100 @@
                     </div>
                 </div>
 
-                <div class="row small">
-                    <div class="col text-center">
+                <div class="row mt-2">
+                    <div class="col">
+                        {% assign max_position_logo_width = 0 %}
                         {% for position in site.data.profile.positions %}
-                        {{ position.name }}<br/>
+                        {% assign current_logo_width = position.logo_width | default: '28px' | remove: 'px' | plus: 0 %}
+                        {% if current_logo_width > max_position_logo_width %}
+                        {% assign max_position_logo_width = current_logo_width %}
+                        {% endif %}
                         {% endfor %}
+                        <div class="mini-position-list" style="--mini-position-logo-slot-width: {{ max_position_logo_width }}px;">
+                            {% for position in site.data.profile.positions %}
+                            {% assign position_parts = position.name | split: ' @ ' %}
+                            {% assign position_role = position_parts[0] | strip %}
+                            {% assign institution_name = position_parts[1] | default: '' | strip %}
+                            <div class="mini-position-entry" style="margin-top: {% if forloop.first %}0rem{% else %}{{ position.top_margin | default: '0.9rem' }}{% endif %};">
+                                <div class="mini-position-role">{{ position_role }}</div>
+                                {% if institution_name != '' or position.logo %}
+                                <div class="mini-position-institution-row">
+                                    <div class="mini-position-logo-slot">
+                                        {% if position.logo %}
+                                        <img src="{{ position.logo | relative_url }}" alt="Logo" class="mini-position-logo" style="width: {{ position.logo_width | default: '28px' }};"/>
+                                        {% endif %}
+                                    </div>
+                                    {% if institution_name != '' %}
+                                    <span class="mini-position-institution">{{ institution_name }}</span>
+                                    {% endif %}
+                                </div>
+                                {% endif %}
+                            </div>
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
 
-                <div class="row small">
-                    <div class="col text-center">
-                        <a class="email-text" href="mailto:{{ site.data.profile.email | encode_email }}">
-                            {{ site.data.profile.email | replace: "@", "(at)" }}
+                <div class="row pt-4">
+                    <div class="col text-center mini-social-icons">
+                        {% if site.data.profile.email %}
+                        <a class="px-2 no-break" href="mailto:{{ site.data.profile.email | encode_email }}" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
                         </a>
-                    </div>
-                </div>
+                        {% endif %}
 
-                <div class="row pt-2">
-                    <div class="col text-center h4">
+                        {% if site.data.profile.linkedin %}
+                        <a class="px-2 no-break" target="_blank" href="https://www.linkedin.com/in/{{ site.data.profile.linkedin }}" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        {% endif %}
+
                         {% if site.data.profile.gscholar %}
                         {%- if site.data.profile.gscholar contains 'scholar.google' -%}
                         {%- assign gscholar_url = site.data.profile.gscholar -%}
                         {%- else -%}
                         {%- assign gscholar_url = 'https://scholar.google.com/citations?user=' | append: site.data.profile.gscholar -%}
                         {%- endif -%}
-                        <a class="px-1 no-break" target="_blank" href="{{ gscholar_url }}">
-                            <i class="fab fa-google-scholar"></i>
+                        <a class="px-2 no-break" target="_blank" href="{{ gscholar_url }}" aria-label="Google Scholar">
+                            <i class="ai ai-google-scholar"></i>
                         </a>
                         {% endif %}
                         
                         {% if site.data.profile.github %}
-                        <a class="px-1 no-break" target="_blank" href="https://github.com/{{ site.data.profile.github }}">
+                        <a class="px-2 no-break" target="_blank" href="https://github.com/{{ site.data.profile.github }}" aria-label="GitHub">
                             <i class="fab fa-github"></i>
                         </a>
                         {% endif %}
 
                         {% if site.data.profile.wechat_qrcode %}
-                        <a class="px-1 no-break" data-toggle="modal" data-target="#modal-wechat">
+                        <a class="px-2 no-break" data-toggle="modal" data-target="#modal-wechat" aria-label="WeChat">
                             <i class="fab fa-weixin"></i>
                         </a>
                         {% endif %}
 
                         {% if site.data.profile.twitter %}
-                        <a class="px-1 no-break" target="_blank" href="https://twitter.com/{{ site.data.profile.twitter }}">
+                        <a class="px-2 no-break" target="_blank" href="https://twitter.com/{{ site.data.profile.twitter }}" aria-label="Twitter">
                             <i class="fab fa-twitter"></i>
                         </a>
                         {% endif %}
 
-                        {% if site.data.profile.linkedin %}
-                        <a class="px-1 no-break" target="_blank" href="https://www.linkedin.com/in/{{ site.data.profile.linkedin }}">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        {% endif %}
-
                         {% if site.data.profile.orcid %}
-                        <a class="px-1 no-break" target="_blank" href="https://orcid.org/{{ site.data.profile.orcid }}">
+                        <a class="px-2 no-break" target="_blank" href="https://orcid.org/{{ site.data.profile.orcid }}" aria-label="ORCID">
                             <i class="fab fa-orcid"></i>
                         </a>
                         {% endif %}
                     </div>
                 </div>
+
+                {% if site.data.profile.email %}
+                <div class="row pt-2">
+                    <div class="col text-center">
+                        <a class="email-text mini-email-display" href="mailto:{{ site.data.profile.email | encode_email }}">
+                            {{ site.data.profile.email }}
+                        </a>
+                    </div>
+                </div>
+                {% endif %}
             </div>
         </div>
     </div>

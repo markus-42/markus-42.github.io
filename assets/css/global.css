@@ -123,6 +123,10 @@ h1, h2, h3, h4, h5, h6,
     margin-bottom: 0 !important;
 }
 
+.institution-entry-date {
+    font-size: 0.9rem;
+}
+
 @media (max-width: 767.98px) {
     .homepage-card {
         margin: 0.6rem 0 0.9rem;

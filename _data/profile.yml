@@ -42,7 +42,8 @@ portrait_url: /assets/images/photos/mg_2.jpg
 
 education:
 - name: Technical University of Munich
-  logo: /assets/images/badges/tum_logo_2_margin.png
+  logo: /assets/images/badges/tum_logo_2_noMargin.png
+  logo_vertical_margin: 7px
   position: >- 
     Ph.D. Student<br/>
     Advisor: <a href="https://cvg.cit.tum.de/members/cremers" target="_blank">Prof. Daniel Cremers</a> <br/>
@@ -50,7 +51,8 @@ education:
     TUM School of CIT
   date: 10/2024 - present
 - name: Munich University of Applied Sciences
-  logo: /assets/images/badges/hm.png
+  logo: /assets/images/badges/hm_noMargin.png
+  logo_vertical_margin: 7px
   position: >- 
     M. Sc. in Computer Science<br/>
     Grad. with highest distinction 
@@ -58,13 +60,15 @@ education:
 
 experience:
 - name: Munich Center for Machine Learning
-  logo: /assets/images/badges/mcml.jpg
+  logo: /assets/images/badges/mcml_noMargin.jpg
+  logo_vertical_margin: 8px
   position: >- 
     Affiliated Researcher <br/>
     <a href="https://mcml.ai/research/groups/cremers/" target="_blank">Group Daniel Cremers</a>
   date: 12/2025 - present
 - name: Fraunhofer Institute IVI
   logo: /assets/images/badges/fhg.png
+  logo_vertical_margin: 7px
   position: >- 
     Research Associate <br/>
     <a href="https://www.ivi.fraunhofer.de/en/research-fields/advanced-air-mobility/autonomous-flying.html" target="_blank">Autonomous Aerial Systems</a>
@@ -73,14 +77,17 @@ experience:
 scholarships:
 - name: Friedrich Naumann Foundation for Freedom
   logo: /assets/images/badges/fnf.png
+  logo_vertical_margin: 7px
   position: Non-financial support and financial funding
   date: 10/2020 - 07/2022
 - name: Schotstek Foundation
   logo: /assets/images/badges/schotstek.jpg
+  logo_vertical_margin: 7px
   position: Non-financial support
   date: 10/2018 - 09/2019
 - name: The Boston Consulting Group
   logo: /assets/images/badges/bcg.png
+  logo_vertical_margin: 7px
   position: Mentorship program
   date: 10/2018 - 03/2019
 

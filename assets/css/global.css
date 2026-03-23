@@ -53,6 +53,86 @@ h1, h2, h3, h4, h5, h6,
     line-break: unset;
 }
 
+/* Homepage card spacing and typography tuning */
+.homepage-card {
+    margin: 0.75rem 0.35rem 1rem;
+}
+
+.homepage-card .card-body {
+    padding: 1.65rem !important;
+}
+
+.homepage-card-content {
+    font-size: 1.04rem;
+    line-height: 1.56;
+}
+
+.homepage-card-content .small {
+    font-size: 0.95rem;
+}
+
+.homepage-card-content .institution-name {
+    font-size: 1rem;
+}
+
+/* Slightly smaller text scale for the About Me card */
+.about-me-card-content {
+    font-size: 0.99rem;
+    line-height: 1.54;
+}
+
+.about-me-card-content .h3 {
+    font-size: 1.12rem;
+}
+
+/* Match News/Education/Experience/Scholarships to a clearer text size */
+.profile-list-card-content {
+    font-size: 1rem;
+    line-height: 1.55;
+}
+
+.profile-list-card-content h6 {
+    font-size: 1.12rem;
+}
+
+.publication-card-heading {
+    font-size: 1.12rem;
+}
+
+.profile-list-card-content .small {
+    font-size: 1rem;
+}
+
+.profile-list-card-content .institution-name {
+    font-size: 1rem;
+}
+
+/* Logo spacing for Education/Experience/Scholarships entries */
+.institution-entry-logo {
+    margin-left: 0.5rem;
+    margin-right: 1.05rem;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+.institution-entry-item {
+    margin-bottom: 0.9rem !important;
+}
+
+.institution-entry-item:last-child {
+    margin-bottom: 0 !important;
+}
+
+@media (max-width: 767.98px) {
+    .homepage-card {
+        margin: 0.6rem 0 0.9rem;
+    }
+
+    .homepage-card .card-body {
+        padding: 1.3rem !important;
+    }
+}
+
 .no-break {
     white-space: nowrap;
 }

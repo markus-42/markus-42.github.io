@@ -12,7 +12,7 @@ positions:
   logo_width: 26px
   top_margin: 0.8rem
 - name: Affiliated Researcher @ Munich Center for Machine Learning
-  logo: /assets/images/badges/mcml_noMargin.jpg
+  logo: /assets/images/badges/mcml_noMargin.png
   logo_width: 34px
   top_margin: 1.3rem
 
@@ -70,7 +70,7 @@ education:
 
 experience:
 - name: Munich Center for Machine Learning
-  logo: /assets/images/badges/mcml_noMargin.jpg
+  logo: /assets/images/badges/mcml_noMargin.png
   logo_vertical_margin: 8px
   position: >- 
     Affiliated Researcher <br/>

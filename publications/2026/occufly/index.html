@@ -118,6 +118,119 @@ of RGB images, semantic occupancy grids, and metric depth maps">
   <script defer src="static/js/bulma-carousel.min.js"></script>
   <script defer src="static/js/bulma-slider.min.js"></script>
   <script defer src="static/js/index.js"></script>
+  <style>
+    .site-with-navbar {
+      padding-top: 4.8rem;
+    }
+
+    .site-with-navbar #main-content > .hero:first-child .hero-body {
+      padding-top: 0.35rem;
+    }
+
+    .site-publication-navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: linear-gradient(110deg, #f4f5f7 0%, #eceff3 100%);
+      border-bottom: 1px solid rgba(17, 24, 39, 0.14);
+      box-shadow: 0 1px 4px rgba(17, 24, 39, 0.08);
+    }
+
+    .site-publication-navbar-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0.3rem 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.7rem;
+    }
+
+    .site-publication-brand,
+    .site-publication-link {
+      position: relative;
+      display: inline-block;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .site-publication-brand {
+      color: #111827;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      font-size: 1.02rem;
+    }
+
+    .site-publication-links {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+
+    .site-publication-link {
+      color: #374151;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      padding: 0.2rem 0;
+    }
+
+    .site-publication-brand::after,
+    .site-publication-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-bottom: 1px solid currentColor;
+      transition: width 0.22s ease;
+      opacity: 0.62;
+    }
+
+    .site-publication-brand::after {
+      bottom: 0.08rem;
+    }
+
+    .site-publication-link::after {
+      bottom: 0.05rem;
+    }
+
+    .site-publication-brand:hover,
+    .site-publication-brand:focus-visible,
+    .site-publication-link:hover,
+    .site-publication-link:focus-visible,
+    .site-publication-link.is-active {
+      color: #0f172a;
+      outline: none;
+    }
+
+    .site-publication-brand:hover::after,
+    .site-publication-brand:focus-visible::after,
+    .site-publication-link:hover::after,
+    .site-publication-link:focus-visible::after,
+    .site-publication-link.is-active::after {
+      width: 100%;
+    }
+
+    @media (max-width: 640px) {
+      .site-with-navbar #main-content > .hero:first-child .hero-body {
+        padding-top: 0.25rem;
+      }
+
+      .site-publication-navbar-inner {
+        padding: 0.32rem 0.9rem;
+      }
+
+      .site-publication-brand {
+        font-size: 0.96rem;
+      }
+
+      .site-publication-link {
+        font-size: 0.94rem;
+      }
+    }
+  </style>
   
   <!-- Structured Data for Academic Papers -->
   <script type="application/ld+json">
@@ -183,7 +296,7 @@ of RGB images, semantic occupancy grids, and metric depth maps">
     "url": "https://markus-42.github.io/publications/2026/occufly/",
     "image": "https://markus-42.github.io/publications/2026/occufly/static/images/thumbnail_16-9.jpg",
     "keywords": ["aerial", "semantic scene completion", "scene understanding", "3d reconstruction", "machine learning", "computer vision"],
-    "abstract": "Semantic Scene Completion (SSC) is crucial for 3D perception in mobile robotics, as it enables holistic scene understanding by jointly estimating dense volumetric occupancy and per-voxel semantics. Although SSC has been widely studied in terrestrial domains such as autonomous driving, aerial scenarios like  autonomous flying remain largely unexplored, thereby limiting progress on downstream applications. Furthermore, LiDAR sensors represent the primary modality for SSC data generation, which poses challenges for most uncrewed aerial vehicles (UAVs) due to flight regulations, mass and energy constraints, and the sparsity of LiDAR-based point clouds from elevated viewpoints. To address these limitations, we introduce OccuFly, the first real-world, camera-based aerial SSC benchmark, captured at altitudes of 50m, 40m, and 30m during spring, summer, fall, and winter. OccuFly covers urban, industrial, and rural scenarios, provides 22 semantic classes, and the data format adheres to established conventions to facilitate seamless integration with existing research. Crucially, we propose a LiDAR-free data generation framework based on camera modality, which is ubiquitous on modern UAVs. By utilizing traditional 3D reconstruction, our framework automates label transfer by lifting a subset of annotated 2D masks into the reconstructed point cloud, thereby substantially minimizing manual 3D annotation effort. Finally, we benchmark the state-of-the-art on OccuFly and highlight challenges specific to elevated viewpoints, yielding a comprehensive vision benchmark for holistic aerial 3D scene understanding.",
+    "abstract": "Semantic Scene Completion (SSC) is essential for 3D perception in mobile robotics, as it enables holistic scene understanding by jointly estimating dense volumetric occupancy and per-voxel semantics. Although SSC has been widely studied in terrestrial domains such as autonomous driving, aerial settings like autonomous flying remain largely unexplored, thereby limiting progress on downstream applications. Furthermore, LiDAR sensors are the primary modality for SSC data generation, which poses challenges for most uncrewed aerial vehicles (UAVs) due to flight regulations, mass and energy constraints, and the sparsity of LiDAR point clouds from elevated viewpoints. To address these limitations, we propose a LiDAR-free, camera-based data generation framework. By leveraging classical 3D reconstruction, our framework automates semantic label transfer by lifting <10% of annotated images into the reconstructed point cloud, substantially minimizing manual 3D annotation effort. Based on this framework, we introduce OccuFly, the first real-world, camera-based aerial SSC benchmark, captured across multiple altitudes and all seasons. OccuFly provides over 20,000 samples of images, semantic voxel grids, and metric depth maps across 21 semantic classes in urban, industrial, and rural environments, and follows established data organization for seamless integration. We benchmark both SSC and metric monocular depth estimation on OccuFly, revealing fundamental limitations of current vision foundation models in aerial settings and establishing new challenges for robust 3D scene understanding in the aerial domain.",
     "citation": "@misc{gross2025occufly, title={OccuFly: A 3D Vision Benchmark for Semantic Scene Completion from the Aerial Perspective}, author={Markus Gross and Sai B. Matha and Aya Fahmy and Rui Song and Daniel Cremers and Henri Meess}, year={2025}, eprint={2512.20770}, archivePrefix={arXiv}, primaryClass={cs.CV}, url={https://arxiv.org/abs/2512.20770}}",
     "isAccessibleForFree": true,
     "license": "https://creativecommons.org/licenses/by/4.0/",
@@ -219,7 +332,17 @@ of RGB images, semantic occupancy grids, and metric depth maps">
   }
   </script>
 </head>
-<body>
+<body class="site-with-navbar">
+
+  <nav class="site-publication-navbar" aria-label="Primary">
+    <div class="site-publication-navbar-inner">
+      <a class="site-publication-brand" href="../../../">Markus Gross</a>
+      <div class="site-publication-links">
+        <a class="site-publication-link" href="../../../">Home</a>
+        <a class="site-publication-link is-active" href="../../../publications/">Publications</a>
+      </div>
+    </div>
+  </nav>
 
 
   <!-- Scroll to Top Button -->
@@ -236,86 +359,88 @@ of RGB images, semantic occupancy grids, and metric depth maps">
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">OccuFly: A 3D Vision Benchmark for Semantic Scene Completion from the Aerial Perspective</h1>
-            <div class="is-size-5 publication-authors">
-              <!-- TODO: Replace with your paper authors and their personal links -->
-              <span class="author-block">
-                <a href="https://markus-42.github.io/" target="_blank">Markus Gross</a><sup>1,2,3,<a href="mailto:markus.gross@tum.de?subject=IPFormer" style="color: #4799e0;">📧</a></sup>,
-              </span>
-              <span class="author-block">
-                 <a href="https://www.linkedin.com/in/saibharadhwajmatha/" target="_blank">Sai B. Matha</a><sup>1</sup>,
-              </span>
-              <span class="author-block">
-                <a href="https://www.linkedin.com/in/aya-fahmy-7373441bb/" target="_blank">Aya Fahmy</a><sup>1</sup>,
-              </span>
-              <span class="author-block">
-                <a href="https://rruisong.github.io/" target="_blank">Rui Song</a><sup>4</sup>
-              </span>              
-              <span class="author-block">
-                <a href="https://cvg.cit.tum.de/members/cremers" target="_blank">Daniel Cremers</a><sup>2,3</sup>,
-              </span>
-              <span class="author-block">
-                <a href="https://scholar.google.com/citations?user=7Qdm9jUAAAAJ&hl=en" target="_blank">Henri Meeß</a><sup>1</sup>
-              </span>
-              <div>
-                <br><span class="is-size-4" style="color: #ff7721;">🌟  CVPR 2026  🌟</span> 
-                <br>
-                <div style="text-align: center; margin-top: 10px;">
-                  <img src="static/images/CVPR_2026.jpg" alt="CVPR 2026" style="max-width: 350px; height: auto;">
-                </div>
-              </div>                                        
-            </div>
+            <div class="publication-heading-panel">
+              <h1 class="title is-1 publication-title">OccuFly: A 3D Vision Benchmark for Semantic Scene Completion from the Aerial Perspective</h1>
+              <div class="is-size-5 publication-authors">
+                <!-- TODO: Replace with your paper authors and their personal links -->
+                <span class="author-block">
+                  <a href="https://markus-42.github.io/" target="_blank">Markus Gross</a><sup>1,2,3,<a href="mailto:markus.gross@tum.de?subject=IPFormer" style="color: #4799e0;">📧</a></sup>,
+                </span>
+                <span class="author-block">
+                   <a href="https://www.linkedin.com/in/saibharadhwajmatha/" target="_blank">Sai B. Matha</a><sup>1</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="https://www.linkedin.com/in/aya-fahmy-7373441bb/" target="_blank">Aya Fahmy</a><sup>1</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="https://rruisong.github.io/" target="_blank">Rui Song</a><sup>4</sup>,
+                </span>              
+                <span class="author-block">
+                  <a href="https://cvg.cit.tum.de/members/cremers" target="_blank">Daniel Cremers</a><sup>2,3</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="https://scholar.google.com/citations?user=7Qdm9jUAAAAJ&hl=en" target="_blank">Henri Meeß</a><sup>1</sup>
+                </span>
+                <div>
+                  <br><span class="is-size-4" style="color: #ff7721;">🌟  CVPR 2026 Oral 🌟</span>   
+                  <br>
+<!--                   <div style="text-align: center; margin-top: 10px;">
+                    <img src="static/images/cvpr_2026.png" alt="CVPR 2026" style="max-width: 350px; height: auto;">
+                  </div> -->
+                </div>                                        
+              </div>
 
-                  <div class="is-size-5 publication-authors">
-                    <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block">
-                      <!-- Institution columns with names and logos -->
-                      <div class="institution-grid">
-                        <!-- Column 1: Fraunhofer -->
-                        <div class="institution-item">
-                          <a href="https://www.ivi.fraunhofer.de/en/research-fields/advanced-air-mobility/autonomous-flying.html" target="_blank" class="institution-link">
-                            <div class="institution-name"><sup>1 </sup>Fraunhofer Institute IVI</div>
-                            <div class="group-name">Autonomous Aerial Systems</div>
-                            <img src="static/images/fraunhofer_logo_2.png" alt="Fraunhofer Institute" style="height: 26px; width: auto; margin-top: 8px; max-width: 100%; object-fit: contain; flex-shrink: 0;">
-                          </a>
-                        </div>
-                        <!-- Column 2: TUM -->
-                        <div class="institution-item">
-                          <a href="https://cvg.cit.tum.de/" target="_blank" class="institution-link">
-                            <div class="institution-name"><sup>2 </sup>Technical University of Munich</div>
-                            <div class="group-name">Computer Vision Group</div>
-                            <img src="static/images/tum_cvg_logo_3.png" alt="Technical University of Munich" style="height: 30px; width: auto; margin-top: 8px; max-width: 100%; object-fit: contain; flex-shrink: 0;">
-                          </a>
-                        </div>
-                        <!-- Column 2: MCML -->
-                        <div class="institution-item">
-                          <a href="https://mcml.ai/research/groups/cremers/" target="_blank" class="institution-link">
-                            <div class="institution-name"><sup>3 </sup>Munich Center for Machine Learning</div>
-                            <div class="group-name">Research Group Daniel Cremers</div>
-                            <img src="static/images/mcml_logo.jpg" alt="Munich Center for Machine Learning" style="height: 24px; width: auto; margin-top: 8px; max-width: 100%; object-fit: contain; flex-shrink: 0;">
-                          </a>
-                        </div>
-                        <!-- Column 2: UCLA -->
-                        <div class="institution-item">
-                          <a href="https://mobility-lab.seas.ucla.edu/" target="_blank" class="institution-link">
-                            <div class="institution-name"><sup>4 </sup>University of California, Los Angeles</div>
-                            <div class="group-name">Mobility Lab</div>
-                            <img src="static/images/ucla_logo.png" alt="University of California, Los Angeles" style="height: 28px; width: auto; margin-top: 8px; max-width: 100%; object-fit: contain; flex-shrink: 0;">
-                          </a>
-                        </div>
-                      </div>
-                      <!-- <br><i><span style="color: magenta;">Neural Information Processing Systems (NeurIPS) 2025</span></i>-->
-                    </span>
-                    <!-- TODO: Remove this line if no equal contribution -->
-                    <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
+              <div class="is-size-5 publication-authors">
+                <!-- TODO: Replace with your institution and conference/journal info -->
+                <span class="author-block">
+                  <!-- Institution columns with names and logos -->
+                  <div class="institution-grid">
+                    <!-- Column 1: Fraunhofer -->
+                    <div class="institution-item">
+                      <a href="https://www.ivi.fraunhofer.de/en/research-fields/advanced-air-mobility/autonomous-flying.html" target="_blank" class="institution-link">
+                        <div class="institution-name"><sup>1 </sup>Fraunhofer Institute IVI</div>
+                        <div class="group-name">Autonomous Aerial Systems</div>
+                        <img src="static/images/fraunhofer_logo_2.png" alt="Fraunhofer Institute" style="height: 26px; width: auto; margin-top: 8px; max-width: 100%; object-fit: contain; flex-shrink: 0;">
+                      </a>
+                    </div>
+                    <!-- Column 2: TUM -->
+                    <div class="institution-item">
+                      <a href="https://cvg.cit.tum.de/" target="_blank" class="institution-link">
+                        <div class="institution-name"><sup>2 </sup>Technical University of Munich</div>
+                        <div class="group-name">Computer Vision Group</div>
+                        <img src="static/images/tum_cvg_logo_3.png" alt="Technical University of Munich" style="height: 30px; width: auto; margin-top: 8px; max-width: 100%; object-fit: contain; flex-shrink: 0;">
+                      </a>
+                    </div>
+                    <!-- Column 2: MCML -->
+                    <div class="institution-item">
+                      <a href="https://mcml.ai/research/groups/cremers/" target="_blank" class="institution-link">
+                        <div class="institution-name"><sup>3 </sup>Munich Center for Machine Learning</div>
+                        <div class="group-name">Research Group Daniel Cremers</div>
+                        <img src="static/images/mcml_logo.jpg" alt="Munich Center for Machine Learning" style="height: 24px; width: auto; margin-top: 8px; max-width: 100%; object-fit: contain; flex-shrink: 0;">
+                      </a>
+                    </div>
+                    <!-- Column 2: UCLA -->
+                    <div class="institution-item">
+                      <a href="https://mobility-lab.seas.ucla.edu/" target="_blank" class="institution-link">
+                        <div class="institution-name"><sup>4 </sup>University of California, Los Angeles</div>
+                        <div class="group-name">Mobility Lab</div>
+                        <img src="static/images/ucla_logo.png" alt="University of California, Los Angeles" style="height: 28px; width: auto; margin-top: 8px; max-width: 100%; object-fit: contain; flex-shrink: 0;">
+                      </a>
+                    </div>
                   </div>
+                  <!-- <br><i><span style="color: magenta;">Neural Information Processing Systems (NeurIPS) 2025</span></i>-->
+                </span>
+                <!-- TODO: Remove this line if no equal contribution -->
+                <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
+              </div>
+            </div>
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
 
                     <!-- PDF -->
                     <span class="link-block">
-                      <a href="static/pdfs/Gross_OccuFly_2512.20770v1.pdf" target="_blank"
+                      <a href="static/pdfs/OccuFly_CVPR26.pdf" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         <i class="fas fa-file-pdf"></i>
@@ -370,17 +495,36 @@ of RGB images, semantic occupancy grids, and metric depth maps">
     <div class="hero-body" style="padding-top: clamp(-3rem, -4vw, -2rem);">
       <div class="container is-max-desktop">
         <div style="text-align: center;">
-          <video poster="" id="tree" autoplay muted loop playsinline height="100%" preload="metadata" style="width: 100%; height: auto;">
-            <source src="static/videos/occufly_preview.mp4" type="video/mp4">
+          <video poster="" id="tree" autoplay muted controls playsinline loop height="100%" preload="metadata" style="width: 100%; height: auto;">
+            <source src="static/videos/OccuFly.mp4" type="video/mp4">
           </video>
+          <script>
+            document.addEventListener("DOMContentLoaded", function () {
+              const v = document.getElementById("tree");
+              v.volume = 0.6; // 60%
+            });
+          </script>
+          <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #ff840f;">Unmute for a 50 second summary.</p>
         <!-- TODO: Replace with your video description -->
         <div class="content has-text-justified" style="max-width: 900px; margin: 20px auto 0;">
           <b>TL;DR</b>
-          <ul>
-            <li>We present OccuFly, the first real-world aerial SSC vision benchmark, consisting of 9 scenes that provide over 20,000 images with corresponding 3D semantic occupancy grids and metric depth maps, including 22 semantic classes. OccuFly covers almost 200,000 m<sup>2</sup> at 50m, 40m, and 30m altitude in urban, industrial, and rural scenarios during spring, summer, fall, and winter.</li>
-            <li>In addition to the SSC samples, OccuFly offers more than 20,000 per-frame metric depth maps. Furthermore, we train and evaluate Depth-Anything-V2 on these depth maps, and release it to enable state-of-the-art SSC.</li>
-            <li>We propose a novel and scalable data generation framework to construct SSC ground-truth, thereby (i) relying on camera modality to avoid LiDAR-based point cloud sparsity from elevated viewpoints, (ii) avoiding LiDAR hardware to adhere to mass and energy constraints of most UAVs, and (iii) reducing manual semantic labeling from tedious 3D annotation to efficient 2D annotation.</li>
-            <li>We show that state-of-the-art SSC models trained on OccuFly can recover coarse geometry but struggle with semantic consistency, revealing fundamental domain-specific challenges, which position OccuFly as a robust benchmark for advancing aerial vision-based 3D scene understanding.</li>
+          <ul style="list-style: none; margin-left: 0; padding-left: 0;">
+            <li style="display: flex; align-items: flex-start; gap: 0.55rem; margin-bottom: 0.5rem;">
+              <span aria-hidden="true">🆘</span>
+              <span>Outdoor Semantic Scene Completion (SSC) datasets are restricted to ground-level views and rely on LiDAR sensors for data generation, which are costly, heavy, and inherently sparse from aerial viewpoints.</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 0.55rem; margin-bottom: 0.5rem;">
+              <span aria-hidden="true">📷</span>
+              <span>We address this with a LiDAR-free, <b>camera-based framework:</b> by labeling &lt;10% of images in 2D and lifting them into a dense 3D representation, we enable scalable and cost-efficient dataset generation.</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 0.55rem; margin-bottom: 0.5rem;">
+              <span aria-hidden="true">📊</span>
+              <span>Built on this, we introduce <b>OccuFly:</b> a large-scale dataset for SSC and metric monocular depth estimation, with 20,000+ samples across multiple altitudes, environments, and seasons.</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 0.55rem;">
+              <span aria-hidden="true">💡</span>
+              <span><b>Benchmarking</b> reveals a clear gap: state-of-the-art models struggle in aerial scenarios, and even powerful 3D vision foundation models underperform significantly in zero-shot settings (&gt;500% scale deviation) and continue to degrade with altitude after finetuning, revealing domain-specific challenges and the need for dedicated datasets like OccuFly.</span>
+            </li>
           </ul>
         </div>
         </div>
@@ -417,7 +561,20 @@ of RGB images, semantic occupancy grids, and metric depth maps">
           <input type="checkbox" id="abstract-toggle" class="abstract-toggle">
           <div class="content has-text-justified abstract-content">
             <p>
-              Semantic Scene Completion (SSC) is crucial for 3D perception in mobile robotics, as it enables holistic scene understanding by jointly estimating dense volumetric occupancy and per-voxel semantics. Although SSC has been widely studied in terrestrial domains such as autonomous driving, aerial scenarios like  autonomous flying remain largely unexplored, thereby limiting progress on downstream applications. Furthermore, LiDAR sensors represent the primary modality for SSC data generation, which poses challenges for most uncrewed aerial vehicles (UAVs) due to flight regulations, mass and energy constraints, and the sparsity of LiDAR-based point clouds from elevated viewpoints. To address these limitations, we introduce OccuFly, the first real-world, camera-based aerial SSC benchmark, captured at altitudes of 50m, 40m, and 30m during spring, summer, fall, and winter. OccuFly covers urban, industrial, and rural scenarios, provides 22 semantic classes, and the data format adheres to established conventions to facilitate seamless integration with existing research. Crucially, we propose a LiDAR-free data generation framework based on camera modality, which is ubiquitous on modern UAVs. By utilizing traditional 3D reconstruction, our framework automates label transfer by lifting a subset of annotated 2D masks into the reconstructed point cloud, thereby substantially minimizing manual 3D annotation effort. Finally, we benchmark the state-of-the-art on OccuFly and highlight challenges specific to elevated viewpoints, yielding a comprehensive vision benchmark for holistic aerial 3D scene understanding.
+              Semantic Scene Completion (SSC) is essential for 3D perception in mobile robotics, as it enables holistic scene 
+              understanding by jointly estimating dense volumetric occupancy and per-voxel semantics. Although SSC has been widely 
+              studied in terrestrial domains such as autonomous driving, aerial settings like autonomous flying remain largely unexplored, 
+              thereby limiting progress on downstream applications. Furthermore, LiDAR sensors are the primary modality for SSC data 
+              generation, which poses challenges for most uncrewed aerial vehicles (UAVs) due to flight regulations, mass and energy 
+              constraints, and the sparsity of LiDAR point clouds from elevated viewpoints. To address these limitations, we propose a 
+              LiDAR-free, camera-based data generation framework. By leveraging classical 3D reconstruction, our framework automates 
+              semantic label transfer by lifting &lt;10% of annotated images into the reconstructed point cloud, substantially minimizing 
+              manual 3D annotation effort. Based on this framework, we introduce OccuFly, the first real-world, camera-based aerial SSC 
+              benchmark, captured across multiple altitudes and all seasons. OccuFly provides over 20,000 samples of images, semantic 
+              voxel grids, and metric depth maps across 21 semantic classes in urban, industrial, and rural environments, and follows 
+              established data organization for seamless integration. We benchmark both SSC and metric monocular depth estimation on 
+              OccuFly, revealing fundamental limitations of current vision foundation models in aerial settings and establishing new 
+              challenges for robust 3D scene understanding in the aerial domain.
             </p>
           </div>
           <label for="abstract-toggle" class="abstract-toggle-btn">
@@ -445,9 +602,11 @@ of RGB images, semantic occupancy grids, and metric depth maps">
           <img src="static/images/banner.jpg" alt="Challenge & Solution" style="width: 100%; height: auto;" loading="lazy"/>
         </div>
         <h2 class="content has-text-centered has-text-justified">
-          <br>🆘<b>Challenge:</b> Terrestrial SSC datasets are typically built by fusing multiple sparse LiDAR sweeps to form a dense point cloud, 
+          <br>🆘<b>Challenge:</b> Autonomous aerial perception requires holistic 3D scene understanding from sparse visual 
+          observations, yet existing datasets and methods are predominantly designed for terrestrial environments. Such SSC 
+          datasets are typically built by fusing multiple sparse LiDAR sweeps to form a dense point cloud, 
           manually annotating each point, and voxelizing the result into ground-truth labels. While this pipeline works well for 
-          ground vehicles, it is poorly suited to aerial scenarios: UAV platforms face strict payload and power constraints that 
+          ground vehicles, it is poorly suited for aerial settings: UAV platforms face strict payload and power constraints that 
           limit the use of LiDAR sensors, and the elevated viewpoint further exacerbates LiDAR sparsity, leaving large regions 
           unobserved and resulting in incomplete or low-quality ground truth.
           <br><br>
@@ -476,8 +635,8 @@ of RGB images, semantic occupancy grids, and metric depth maps">
             <li><b>3D Reconstruction:</b>  We utilize geo-referenced images to apply traditional multi-view reconstruction, generating a metric 
                     3D point cloud. This approach additionally yields 2D–3D correspondences, allowing image pixels to be associated with reconstructed 
                     3D points, effectively streamlining the creation of 3D semantic annotations.
-            <li><b>2D Semantic Annotation:</b> We enable highly efficient label transfer by manually annotating only a small subset of the camera images
-                    (&lt;10% on average) and lifting the semantic pixels into the reconstructed point cloud.
+            <li><b>Semantic Annotation:</b> We enable highly efficient label transfer by manually annotating only a small subset of the camera images
+                    (&lt;10% on average) and automatically lifting the semantic pixels into &gt;99% of the reconstructed points.
                     This reduces costly 3D annotation to efficient 2D image labeling, substantially lowering annotation effort.
             <li><b>Densification & Voxelization:</b> Our pipeline first separates semantic classes into three distinct groups, and applies specialized 
                     densification strategies to each. Individual objects are then voxelized separately and aggregated to form a complete and 
@@ -505,8 +664,8 @@ of RGB images, semantic occupancy grids, and metric depth maps">
       <h2 class="content has-text-centered has-text-justified">
         OccuFly introduces the first real-world, aerial 3D SSC benchmark dataset, 
         consisting of 9 scenes that provide over 20,000 samples of RGB images, semantic occupancy grids, 
-        and metric depth maps, including 22 semantic classes. OccuFly covers almost 200,000m<sup>2</sup> 
-        at 50m, 40m, and 30m altitude in urban, industrial, and rural scenarios 
+        and metric depth maps, including 21 semantic classes. OccuFly covers almost 200,000m<sup>2</sup> 
+        at 50m, 40m, and 30m altitude in urban, industrial, and rural environments 
         during spring, summer, fall, and winter.
       </h2>
         <div class="columns is-centered has-text-centered">
@@ -537,7 +696,7 @@ of RGB images, semantic occupancy grids, and metric depth maps">
           Since no real-world aerial SSC datasets exist, we compare OccuFly with established vision-based terrestrial SSC datasets. Similar to SemanticKITTI, which introduced real-world SSC 
           to autonomous driving, OccuFly introduces real-world SSC to the aerial domain, but at a substantially larger scale: the number of samples
           is more than 5x higher, and the total number of labeled voxels is over 6x larger than SemanticKITTI. OccuFly further 
-          provides the largest class taxonomy (22 classes) among the compared SSC datasets.
+          provides the largest class taxonomy (21 classes) among the compared SSC datasets.
         </h2>
         <div class="columns is-centered has-text-centered">
           <img src="static/images/tab_occufly_comparison.png" alt="OccuFly Comparison" style="width: 75%; max-width: 100%; height: auto;" loading="lazy"/>
@@ -555,7 +714,7 @@ of RGB images, semantic occupancy grids, and metric depth maps">
           Furthermore, we compare OccuFly to other real-world, low-altitude aerial datasets that include metric depth maps.
           To the best of our knowledge, WildUAV and UseGeo are the only publicly available dataset of this kind. Notably, OccuFly is 
           substantially larger, providing more than 13x and more than 24x as many metric depth maps, respectively, while 
-          spanning a broader range of scenarios and seasons. This positions OccuFly as the largest and most diverse publicly 
+          spanning a broader range of environments and seasons. This positions OccuFly as the largest and most diverse publicly 
           available low‑altitude metric depth estimation dataset to date.
         </h2>
         <div class="columns is-centered has-text-centered">
@@ -575,24 +734,28 @@ of RGB images, semantic occupancy grids, and metric depth maps">
 
 
 
-<!-- Evaluation of Semantic Scene Completion -->
+<!-- Semantic Scene Completion -->
 <section class="section hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
-          <h2 class="title is-3">Evaluation of Semantic Scene Completion</h2>
+          <h2 class="title is-3">Semantic Scene Completion</h2>
         </div>
-        <h2 class="content has-text-centered has-text-justified">
-           We benchmark CGFormer, a state-of-the-art and established SSC method. Our results show that, although coarse geometry is captured, semantic consistency suffers 
-           significantly and performs inferiorly compared to terrestrial settings. This gap exposes the domain-specific challenges of aerial imagery and 
-           reveals that existing SSC models fall short in this domain. OccuFly therefore serves as a rigorous testbed to propel progress on aerial image-based 3D scene understanding
-      </h2>
+          <h2 class="content has-text-centered has-text-justified">
+            We benchmark state-of-the-art SSC models and observe a pronounced domain gap when transferring from terrestrial to aerial 
+            data. While models can recover coarse scene geometry, semantic predictions degrade significantly, leading to inconsistent 
+            and noisy class assignments. This highlights that existing SSC approaches, largely developed for ground-level driving 
+            scenarios, fail to generalize to aerial viewpoints characterized by different scales, perspectives, and sparsity patterns. 
+            Notably, altitude-wise evaluation shows that performance remains uniformly low across all flight heights, indicating that 
+            viewpoint altitude has only a limited effect compared to the overall difficulty of the task. OccuFly therefore exposes 
+            fundamental limitations of current models and establishes a challenging benchmark for aerial 3D scene understanding.
+          </h2>
         <div class="columns is-centered has-text-centered">
-          <img src="static/images/eval_ssc_qual.png" alt="Evaluation of Semantic Scene Completion" style="width: 100%; height: auto;" loading="lazy"/>
+          <img src="static/images/eval_ssc_quan.png" alt="Semantic Scene Completion" style="width: 45%; height: auto;" loading="lazy"/>
         </div>
         <br>
         <div class="columns is-centered has-text-centered">
-          <img src="static/images/eval_ssc_quan.png" alt="Evaluation of Semantic Scene Completion" style="width: 100%; height: auto;" loading="lazy"/>
+          <img src="static/images/eval_ssc_qual.png" alt="Semantic Scene Completion" style="width: 100%; height: auto;" loading="lazy"/>
         </div>
     </div>
 </section>
@@ -600,20 +763,25 @@ of RGB images, semantic occupancy grids, and metric depth maps">
 
 
 
-<!-- Evaluation of Metric Monocular Depth Estimation -->
+<!-- Metric Monocular Depth Estimation & 3D Foundation Models -->
 <section class="section hero is-light">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
-          <h2 class="title is-3">Evaluation of Metric Monocular Depth Estimation</h2>
+          <h2 class="title is-3">Metric Monocular Depth Estimation & 3D Foundation Models</h2>
         </div>
-        <h2 class="content has-text-centered has-text-justified">
-           Notably, no established metric monocular depth estimation models exist for the aerial domain. Therefore, we evaluate the potential of OccuFly's metric depth 
-           maps by benchmarking Depth Anything V2 ViT-Small Metric (DAv2-metric), a state-of-the-art metric monocular model. We follow the DAv2 metric adaptation 
-           protocol and fine-tune the affine-invariant model on OccuFly’s training split with metric depth supervision, referred to as DAv2-OccuFly.
-        </h2>
+          <h2 class="content has-text-centered has-text-justified">
+            We evaluate metric monocular depth estimation with 3D foundation models and observe that existing approaches struggle 
+            significantly in aerial settings. In particular, 3D foundation models such as DepthAnything3 exhibit severe metric 
+            inconsistencies, with an average scale deviation exceeding 500%, highlighting their inability to recover accurate geometry 
+            from aerial imagery. While fine-tuning on OccuFly substantially improves depth prediction accuracy across all metrics, a 
+            clear altitude-dependent trend remains: relative errors stay stable, whereas absolute errors increase with flight height 
+            due to larger scene depth and reduced resolution. These findings demonstrate that both geometric reconstruction and depth 
+            estimation remain challenging in aerial domains, positioning OccuFly as a crucial benchmark for improving metric 3D 
+            understanding from UAV imagery.
+          </h2>
         <div class="columns is-centered has-text-centered">
-          <img src="static/images/eval_depth_quan.png" alt="Evaluation of Monocular Depth Estimation" style="width: 70%; max-width: 100%; height: auto;" loading="lazy"/>
+          <img src="static/images/eval_depth_quan.png" alt="Metric Monocular Depth Estimation & 3D Foundation Models" style="width: 70%; max-width: 100%; height: auto;" loading="lazy"/>
           <style>
             /* 768px is standard mobile/tablet breakpoint */
             @media (max-width: 768px) {
@@ -623,18 +791,25 @@ of RGB images, semantic occupancy grids, and metric depth maps">
             }
           </style>
         </div>
-        <h2 class="content has-text-centered has-text-justified">
-           Our results show that our DAv2-OccuFly consistently and substantially outperforms DAv2-metric across all 
-           metrics and altitudes. Notably, normalized error measures (AbsRel, SILog) remain relatively stable with altitude, indicating that the model exhibits robust
-           scale-invariant behavior. In contrast, absolute errors (RMSE, MAE) increase with altitude, suggesting a positive correlation between viewpoint height and 
-           metric error. Consequently, OccuFly provides a robust benchmark to advance aerial image-based 3D scene understanding.
-        </h2>
+        <br>
         <div class="columns is-centered has-text-centered">
-          <img src="static/images/eval_depth_qual.png" alt="Evaluation of Monocular Depth Estimation" style="width: 100%; max-width: 100%; height: auto;" loading="lazy"/>
+          <img src="static/images/eval_depth_qual.png" alt="Metric Monocular Depth Estimation & 3D Foundation Models" style="width: 100%; max-width: 100%; height: auto;" loading="lazy"/>
           <style>
             /* 768px is standard mobile/tablet breakpoint */
             @media (max-width: 768px) {
               img[src*="eval_depth_qual.png"] {
+                width: 100% !important;
+              }
+            }
+          </style>
+        </div>
+        <br>
+        <div class="columns is-centered has-text-centered">
+          <img src="static/images/depthanythinng3.png" alt="Metric Monocular Depth Estimation & 3D Foundation Models" style="width: 100%; max-width: 100%; height: auto;" loading="lazy"/>
+          <style>
+            /* 768px is standard mobile/tablet breakpoint */
+            @media (max-width: 768px) {
+              img[src*="depthanythinng3.png"] {
                 width: 100% !important;
               }
             }
@@ -698,7 +873,7 @@ of RGB images, semantic occupancy grids, and metric depth maps">
     author={Markus Gross and Sai B. Matha and Aya Fahmy and Rui Song and Daniel Cremers and Henri Meess},
     year={2025},
     eprint={2512.20770},
-    archivePrefix={arXiv},
+    archivePrefix={Accepted to CVPR 2026. arXiv},
     primaryClass={cs.CV},
     url={https://arxiv.org/abs/2512.20770} 
 }

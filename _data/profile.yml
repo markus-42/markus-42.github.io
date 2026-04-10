@@ -32,9 +32,9 @@ short_bio_text_justify: True
 short_bio: |
   <p>
     I'm a second-year Ph.D. student at the <a href="https://cvg.cit.tum.de/" target="_blank">Computer Vision Group</a> of the Technical University of Munich (TUM),  
-    advised by <a href="https://cvg.cit.tum.de/members/cremers" target="_blank">Prof. Dr. Daniel Cremers</a>, a research associate at the
+    advised by <a href="https://cvg.cit.tum.de/members/cremers" target="_blank">Prof. Dr. Daniel Cremers</a>; a research associate at the
     <a href="https://www.ivi.fraunhofer.de/en/research-fields/advanced-air-mobility/autonomous-flying.html" target="_blank">Autonomous Aerial Systems Group</a>
-    of the Fraunhofer Institute, and an affiliated researcher 
+    of the Fraunhofer Institute; and an affiliated researcher 
     at the <a href="https://mcml.ai/research/groups/cremers/" target="_blank">Munich Center for Machine Learning</a> (MCML). Prior to that, I obtained the 
     Master of Science in Computer Science with highest distinction from the 
     <a href="https://hm.edu/en/index.en.html" target="_blank">Munich University of Applied Sciences</a>.

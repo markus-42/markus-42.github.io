@@ -108,6 +108,119 @@
   <script defer src="static/js/bulma-carousel.min.js"></script>
   <script defer src="static/js/bulma-slider.min.js"></script>
   <script defer src="static/js/index.js"></script>
+  <style>
+    .site-with-navbar {
+      padding-top: 4.8rem;
+    }
+
+    .site-with-navbar #main-content > .hero:first-child .hero-body {
+      padding-top: 0.35rem;
+    }
+
+    .site-publication-navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: linear-gradient(110deg, #f4f5f7 0%, #eceff3 100%);
+      border-bottom: 1px solid rgba(17, 24, 39, 0.14);
+      box-shadow: 0 1px 4px rgba(17, 24, 39, 0.08);
+    }
+
+    .site-publication-navbar-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0.3rem 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.7rem;
+    }
+
+    .site-publication-brand,
+    .site-publication-link {
+      position: relative;
+      display: inline-block;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .site-publication-brand {
+      color: #111827;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      font-size: 1.02rem;
+    }
+
+    .site-publication-links {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+
+    .site-publication-link {
+      color: #374151;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      padding: 0.2rem 0;
+    }
+
+    .site-publication-brand::after,
+    .site-publication-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-bottom: 1px solid currentColor;
+      transition: width 0.22s ease;
+      opacity: 0.62;
+    }
+
+    .site-publication-brand::after {
+      bottom: 0.08rem;
+    }
+
+    .site-publication-link::after {
+      bottom: 0.05rem;
+    }
+
+    .site-publication-brand:hover,
+    .site-publication-brand:focus-visible,
+    .site-publication-link:hover,
+    .site-publication-link:focus-visible,
+    .site-publication-link.is-active {
+      color: #0f172a;
+      outline: none;
+    }
+
+    .site-publication-brand:hover::after,
+    .site-publication-brand:focus-visible::after,
+    .site-publication-link:hover::after,
+    .site-publication-link:focus-visible::after,
+    .site-publication-link.is-active::after {
+      width: 100%;
+    }
+
+    @media (max-width: 640px) {
+      .site-with-navbar #main-content > .hero:first-child .hero-body {
+        padding-top: 0.25rem;
+      }
+
+      .site-publication-navbar-inner {
+        padding: 0.32rem 0.9rem;
+      }
+
+      .site-publication-brand {
+        font-size: 0.96rem;
+      }
+
+      .site-publication-link {
+        font-size: 0.94rem;
+      }
+    }
+  </style>
   
   <!-- Structured Data for Academic Papers -->
   <script type="application/ld+json">
@@ -178,7 +291,17 @@
   }
   </script>
 </head>
-<body>
+<body class="site-with-navbar">
+
+  <nav class="site-publication-navbar" aria-label="Primary">
+    <div class="site-publication-navbar-inner">
+      <a class="site-publication-brand" href="../../../">Markus Gross</a>
+      <div class="site-publication-links">
+        <a class="site-publication-link" href="../../../">Home</a>
+        <a class="site-publication-link is-active" href="../../../publications/">Publications</a>
+      </div>
+    </div>
+  </nav>
 
 
   <!-- Scroll to Top Button -->

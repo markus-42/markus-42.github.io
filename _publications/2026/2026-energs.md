@@ -1,9 +1,9 @@
 ---
 title:          "EnerGS: Energy-Based Gaussian Splatting with Partial Geometric Priors"
-date:           2026-05-02 00:01:00 +0800
+date:           2026-06-10 00:01:00 +0800
 selected:       false
-pub:            "ICML"
-pub_date:       "2026"
+pub:            "<span style='color: #00DA00;'>ICML 2026</span>"
+pub_date:       ""
 cover:          /assets/images/covers/energs.png
 authors:
 - Rui Song

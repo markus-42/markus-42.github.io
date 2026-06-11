@@ -2,8 +2,8 @@
 title:          "Collaborative Semantic Occupancy Prediction with Hybrid Feature Fusion in Connected Automated Vehicles"
 date:           2024-01-05 00:01:00 +0800
 selected:       false
-pub:            "CVPR"
-pub_date:       "2024"
+pub:            "<span style='color: #00DA00;'>CVPR 2024</span>"
+pub_date:       ""
 cover:          /assets/images/covers/cohff.png
 authors:
 - Rui Song*

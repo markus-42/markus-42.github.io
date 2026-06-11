@@ -1,9 +1,9 @@
 ---
 title:          "OccuFly: A 3D Vision Benchmark for Semantic Scene Completion from the Aerial Perspective"
-date:           2026-01-02 00:01:00 +0800
+date:           2026-06-11 00:01:00 +0800
 selected:       true
-pub:            "CVPR"
-pub_date:       "2026 (Oral)"
+pub:            "<span style='color: #00DA00;'>CVPR 2026 (Oral)</span>"
+pub_date:       ""
 cover:          /assets/images/covers/occufly.png
 authors:
 - <b>Markus Gross</b>

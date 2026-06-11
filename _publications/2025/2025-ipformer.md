@@ -2,8 +2,8 @@
 title:          "IPFormer: Visual 3D Panoptic Scene Completion with Context-Adaptive Instance Proposals"
 date:           2025-01-05 00:01:00 +0800
 selected:       true
-pub:            "NeurIPS"
-pub_date:       "2025"
+pub:            "<span style='color: #00DA00;'>NeurIPS 2025</span>"
+pub_date:       ""
 cover:          /assets/images/covers/ipformer.png
 authors:
 - <b>Markus Gross</b>

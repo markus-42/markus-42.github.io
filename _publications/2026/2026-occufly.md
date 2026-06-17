@@ -4,7 +4,7 @@ date:           2026-06-11 00:01:00 +0800
 selected:       true
 pub:            "<span style='color: #00DA00;'>CVPR 2026 (Oral)</span>"
 pub_date:       ""
-cover:          /assets/images/covers/occufly.png
+cover:          /assets/images/covers/occufly_1.png
 authors:
 - <b>Markus Gross</b>
 - Sai B. Matha

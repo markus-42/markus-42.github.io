@@ -6,8 +6,8 @@ pub:            "<span style='color: #00DA00;'>CVPR 2024</span>"
 pub_date:       ""
 cover:          /assets/images/covers/cohff.png
 authors:
-- Rui Song*
-- Chenwei Liang*
+- Rui Song
+- Chenwei Liang
 - Hu Cao
 - Zhiran Yan
 - Walter Zimmer

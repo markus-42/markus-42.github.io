@@ -1,8 +1,8 @@
 ---
 title:          "SafeLand: Safe Autonomous Landing in Unknown Environments with Bayesian Semantic Mapping"
 date:           2026-03-05 00:01:00 +0800
-selected:       true
-pub:            "Preprint. Under Review."
+selected:       false
+pub:            "Preprint"
 pub_date:       ""
 cover:          /assets/images/covers/safeland.png
 authors:

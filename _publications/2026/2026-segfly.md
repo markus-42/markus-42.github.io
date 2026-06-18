@@ -2,7 +2,7 @@
 title:          "SegFly: A 2D-3D-2D Paradigm for Aerial RGB-Thermal Semantic Segmentation at Scale"
 date:           2026-03-06 00:01:00 +0800
 selected:       true
-pub:            "Preprint. Under Review."
+pub:            "<span style='color: #00DA00;'>Accepted to ECCV 2026</span>"
 pub_date:       ""
 cover:          /assets/images/covers/segfly.png
 authors:

@@ -385,7 +385,10 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">SegFly: A 2D-3D-2D Paradigm for Aerial RGB-Thermal Semantic Segmentation at Scale</h1>
+            <div class="publication-title-lockup">
+              <img src="static/images/Firefly_icon.png" alt="Firefly" class="publication-title-icon">
+              <h1 class="title is-1 publication-title publication-title-text">SegFly: A Dataset and 2D-3D-2D Paradigm for Aerial RGB-Thermal Semantic Segmentation at Scale</h1>
+            </div>
             <div class="is-size-5 publication-authors">
               <!-- TODO: Replace with your paper authors and their personal links -->
               <span class="author-block">
@@ -411,7 +414,7 @@
               </span>
               <div>
                 <br>
-                <span class="is-size-4" style="color: #ff7721;">🌟  Accepted to ECCV 2026  🌟</span> 
+                <span class="is-size-4" style="color: #ff7721;">🌟 ECCV 2026  🌟</span> 
                 <br>
               </div>                    
             </div>
@@ -472,7 +475,7 @@
                       <span class="icon">
                         <i class="fas fa-file-pdf"></i>
                       </span>
-                      <span>Paper Preprint</span>
+                      <span>Paper</span>
                     </a>
                   </span>
 
@@ -483,7 +486,7 @@
                         <span class="icon">
                           <i class="ai ai-arxiv"></i>
                         </span>
-                        <span>ArXiv Preprint</span>
+                        <span>ArXiv</span>
                       </a>
                     </span>
 
@@ -494,9 +497,27 @@
                       <span class="icon">
                         <i class="fab fa-github"></i>
                       </span>
-                    <span>Data + Code</span>
+                    <span>Code & Docs</span>
                   </a>
                 </span>
+
+                <!-- SegFly Dataset -->
+                <span class="link-block">
+                  <a href="https://huggingface.co/datasets/markus-42/SegFly" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon" aria-hidden="true">🤗</span>
+                  <span>SegFly Dataset</span>
+                </a>
+              </span>
+
+                <!-- Firefly Model -->
+                <span class="link-block">
+                  <a href="https://huggingface.co/markus-42/SegFly-Firefly" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon" aria-hidden="true">🤗</span>
+                  <span>Firefly Model</span>
+                </a>
+              </span>
 
                 <!-- Video -->
 <!--                 <span class="link-block">
@@ -751,7 +772,10 @@
           <h2 class="title is-3">Firefly Baseline</h2>
         </div>
         <div class="columns is-centered has-text-centered" style="margin-top: 0.5rem;">
-          <img src="static/images/firefly.png" alt="Firefly Baseline" class="mobile-full-width" style="width: 60%; height: auto;" loading="lazy"/>
+          <div class="firefly-figure-lockup">
+            <img src="static/images/Firefly_icon.png" alt="Firefly" class="firefly-figure-icon">
+            <img src="static/images/firefly.png" alt="Firefly Architecture" class="firefly-figure-image mobile-full-width" loading="lazy"/>
+          </div>
         </div>
         <div class="columns is-variable is-4" style="margin-top: 1.0rem;">
           <div class="column">
@@ -793,10 +817,10 @@
             <div class="box" style="height: 100%; text-align: left;">
               <h3 class="title is-5 has-text-centered">⚙️ Setup</h3>
               <ul style="list-style: disc; list-style-position: outside; margin-left: 3rem;">
-                <li>We evaluate SegFly on modern vision foundation models.</li>
-                <li>Zero-shot vs fine-tuned evaluation.</li>
-                <li>RGB Model: CatSeg (CVPR 2024).</li>
-                <li>Thermal Model: AnyThermal (ICRA 2026).</li>
+                <li>We evaluate SegFly on modern vision foundation models</li>
+                <li>Zero-shot vs fine-tuned on SegFly. Evaluate on independent test sets</li>
+                <li>RGB Model: CatSeg (CVPR 2024)</li>
+                <li>Thermal Model: AnyThermal (ICRA 2026)</li>
               </ul>
             </div>
           </div>
@@ -804,9 +828,9 @@
             <div class="box" style="height: 100%; text-align: left;">
               <h3 class="title is-5 has-text-centered">✅ Result</h3>
               <ul style="list-style: disc; list-style-position: outside; margin-left: 3rem;">
-                <li>Fine-tuning on SegFly leads to substantial gains for both RGB and thermal modalities
-                <li>CatSeg improves from ~47% to 70% accuracy.</li>
-                <li>AnyThermal improves from ~25 to 40% accuracy.</li>
+                <li>Fine-tuning on SegFly leads to substantial gains on independent test sets for both RGB and thermal modalities
+                <li>CatSeg improves accuracy by +163%</li>
+                <li>AnyThermal improves accuracy by +28%</li>
               </ul>
             </div>
           </div>
@@ -814,8 +838,8 @@
             <div class="box" style="height: 100%; text-align: left;">
               <h3 class="title is-5 has-text-centered">🧩 Conclusion</h3>
               <ul style="list-style: disc; list-style-position: outside; margin-left: 3rem;">
-                <li>SegFly provides an effective supervision signal for adapting foundation models to aerial RGB and thermal segmentation tasks.</li>
-                <li>Zero-shot performance is limited on aerial data.</li>
+                <li>SegFly provides an effective supervision signal for adapting foundation models to aerial RGB and thermal segmentation tasks</li>
+                <li>Zero-shot performance is limited on aerial data</li>
               </ul>
             </div>
           </div>
@@ -900,14 +924,11 @@
         </button>
       </div>
       <pre id="bibtex-code"><code>
-@misc{gross2026segfly,
-      title={SegFly: A 2D-3D-2D Paradigm for Aerial RGB-Thermal Semantic Segmentation at Scale}, 
-      author={Markus Gross and Sai Bharadhwaj Matha and Rui Song and Viswanathan Muthuveerappan and Conrad Christoph and Julius Huber and Daniel Cremers},
-      year={2026},
-      eprint={2603.17920},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2603.17920}, 
+@inproceedings{gross2026segfly,
+  title={{SegFly: A Dataset and 2D-3D-2D Paradigm for Aerial RGB-Thermal Semantic Segmentation at Scale}}, 
+  author={Markus Gross and Sai Bharadhwaj Matha and Rui Song and Viswanathan Muthuveerappan and Conrad Christoph and Julius Huber and Daniel Cremers},
+  booktitle = {Proceedings of the European Conference on Computer Vision (ECCV)},
+  year={2026},
 }
       </code></pre>
     </div>

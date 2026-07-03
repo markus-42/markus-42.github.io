@@ -170,12 +170,53 @@ body {
     color: var(--text-primary) !important;
     margin-bottom: 2rem !important;
     line-height: 1.1 !important;
-    font-size: 2.1rem !important; /* Even smaller than before */
+    font-size: 1.9rem !important;
 }
 
-/* More specific selector for title font size */
-h1.title.is-1.publication-title {
-    font-size: 2.1rem !important; /* Even smaller than before */
+.publication-title-lockup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0rem;
+  margin-bottom: 2rem;
+}
+
+.publication-title-icon {
+  height: clamp(4.25rem, 9.5vw, 6.25rem);
+  width: clamp(4.25rem, 9.5vw, 6.25rem);
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.22));
+  flex-shrink: 0;
+}
+
+.publication-title-text {
+  flex: 0 1 auto;
+  min-width: 0;
+  margin-bottom: 0 !important;
+  text-align: center !important;
+  line-height: 1.15 !important;
+}
+
+.firefly-figure-lockup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  width: 100%;
+}
+
+.firefly-figure-icon {
+  height: clamp(7rem, 16vw, 11rem);
+  width: clamp(7rem, 16vw, 11rem);
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.22));
+  flex-shrink: 0;
+}
+
+.firefly-figure-image {
+  width: 60%;
+  height: auto;
+  flex-shrink: 1;
 }
 
 .publication-banner {
@@ -705,9 +746,25 @@ code {
   }
   
   .publication-title {
-    font-size: 2.2rem !important;
+    font-size: 1rem !important;
     line-height: 1.2 !important;
     margin-bottom: 1.5rem !important;
+  }
+
+  .publication-title-lockup {
+    gap: 0.35rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .publication-title-icon {
+    height: clamp(3.5rem, 16vw, 4.5rem);
+    width: clamp(3.5rem, 16vw, 4.5rem);
+  }
+
+  .publication-title-text {
+    font-size: 1.95rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 0 !important;
   }
   
   .publication-authors {
@@ -754,7 +811,31 @@ code {
 
 @media screen and (max-width: 480px) {
   .publication-title {
-    font-size: 1.8rem !important;
+    font-size: 0.98rem !important;
+  }
+
+  .publication-title-lockup {
+    gap: 0.55rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .publication-title-icon {
+    height: clamp(5rem, 26vw, 6.25rem);
+    width: clamp(5rem, 26vw, 6.25rem);
+  }
+
+  .publication-title-text {
+    font-size: 0.98rem !important;
+    line-height: 1.22 !important;
+  }
+
+  .firefly-figure-lockup {
+    gap: 0.35rem;
+  }
+
+  .firefly-figure-icon {
+    height: clamp(3.25rem, 16vw, 4.75rem);
+    width: clamp(3.25rem, 16vw, 4.75rem);
   }
   
   .hero-body {
@@ -1056,5 +1137,21 @@ a:focus {
     width: 100% !important;
     max-width: 100% !important;
     height: auto !important;
+  }
+
+  .firefly-figure-lockup {
+    gap: 0.45rem;
+  }
+
+  .firefly-figure-icon {
+    height: clamp(3.5rem, 14vw, 5rem);
+    width: clamp(3.5rem, 14vw, 5rem);
+  }
+
+  .firefly-figure-image.mobile-full-width {
+    width: auto !important;
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 100% !important;
   }
 }

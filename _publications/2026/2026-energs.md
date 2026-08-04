@@ -17,4 +17,5 @@ authors:
 
 links:
   Paper: https://arxiv.org/abs/2604.26238
+  Code: https://github.com/ucla-mobility/EnerGS
 ---

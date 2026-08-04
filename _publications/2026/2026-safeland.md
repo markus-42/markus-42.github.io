@@ -1,8 +1,8 @@
 ---
 title:          "SafeLand: Safe Autonomous Landing in Unknown Environments with Bayesian Semantic Mapping"
 date:           2026-03-05 00:01:00 +0800
-selected:       false
-pub:            "Preprint"
+selected:       True
+pub:            "<span style='color: #00DA00;'>ECCV 2026 DriveX Workshop</span>"
 pub_date:       ""
 cover:          /assets/images/covers/safeland.png
 authors:

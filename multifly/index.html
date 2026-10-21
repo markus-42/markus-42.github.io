@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Primary Meta Tags -->
+  <!-- TODO: Replace with your paper title and author names -->
+  <meta name="title" content="MultiFly: A Real-World Multimodal Aerial Dataset with Annotation-Efficient Label Transfer and Cross-Modal Semantic Consistency">
+  <!-- TODO: Write a compelling 150-160 character description of your research -->
+  <meta name="description" content="MultiFly is a real-world low-altitude UAV dataset with 17,272 synchronized RGB, thermal, LiDAR and radar samples, labeled from only 115 annotated RGB images.">
+  <!-- TODO: Add 5-10 relevant keywords for your research area -->
+  <meta name="keywords" content="UAV Dataset, Multimodal Perception, Semantic Segmentation, RGB-Thermal, LiDAR, Radar, Label Transfer, Cross-Modal Semantic Consistency, Aerial Robotics, Sensor Calibration">
+  <!-- TODO: List all authors -->
+  <meta name="author" content="Markus Gross, Andreas Greiner, Taehyoung Kim, Sivasubiramaniam Subbiah, Tomaž Cotič, Conrad Christoph, Oussema Dhaouadi, Simon Zieher, Surya V. Kumar, Gordon Elger, Henri Meeß, Olaf Wysocki, Paul Spannaus, Daniel Cremers">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <!-- TODO: Replace with your institution or lab name -->
+  <meta property="og:site_name" content="Fraunhofer Institute IVI, Technical University of Munich (TUM), Munich Center for Machine Learning (MCML), University of Cambridge, University of Applied Sciences Ingolstadt (THI)">
+  <!-- TODO: Same as paper title above -->
+  <meta property="og:title" content="MultiFly: A Real-World Multimodal Aerial Dataset with Annotation-Efficient Label Transfer and Cross-Modal Semantic Consistency">
+  <!-- TODO: Same as description above -->
+  <meta property="og:description" content="MultiFly is a real-world low-altitude UAV dataset with 17,272 synchronized RGB, thermal, LiDAR and radar samples, labeled from only 115 annotated RGB images.">
+  <!-- TODO: Replace with your actual website URL -->
+  <meta property="og:url" content="https://markus-42.github.io/multifly/">
+  <!-- TODO: Create a 1200x630px preview image and update path -->
+  <meta property="og:image" content="https://markus-42.github.io/multifly/static/images/fig_1.png">
+  <meta property="og:image:width" content="1886">
+  <meta property="og:image:height" content="836">
+  <meta property="og:image:alt" content="MultiFly">
+  <meta property="article:published_time" content="2026-10-14T00:00:00.000Z">
+  <meta property="article:author" content="Markus Gross">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="Multimodal Aerial Dataset">
+  <meta property="article:tag" content="Semantic Segmentation">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- TODO: Replace with your lab/institution Twitter handle -->
+  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
+  <!-- TODO: Replace with first author's Twitter handle -->
+  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
+  <!-- TODO: Same as paper title above -->
+  <meta name="twitter:title" content="MultiFly: A Real-World Multimodal Aerial Dataset with Annotation-Efficient Label Transfer and Cross-Modal Semantic Consistency">
+  <!-- TODO: Same as description above -->
+  <meta name="twitter:description" content="MultiFly is a real-world low-altitude UAV dataset with 17,272 synchronized RGB, thermal, LiDAR and radar samples, labeled from only 115 annotated RGB images.">
+  <!-- TODO: Same as social preview image above -->
+  <meta name="twitter:image" content="https://markus-42.github.io/multifly/static/images/fig_1.png">
+  <meta name="twitter:image:alt" content="MultiFly - Research Preview">
+
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="MultiFly: A Real-World Multimodal Aerial Dataset with Annotation-Efficient Label Transfer and Cross-Modal Semantic Consistency">
+  <meta name="citation_author" content="Gross, Markus">
+  <meta name="citation_author" content="Greiner, Andreas">
+  <meta name="citation_author" content="Kim, Taehyoung">
+  <meta name="citation_author" content="Subbiah, Sivasubiramaniam">
+  <meta name="citation_author" content="Cotič, Tomaž">
+  <meta name="citation_author" content="Christoph, Conrad">
+  <meta name="citation_author" content="Dhaouadi, Oussema">
+  <meta name="citation_author" content="Zieher, Simon">
+  <meta name="citation_author" content="Kumar, Surya V.">
+  <meta name="citation_author" content="Elger, Gordon">
+  <meta name="citation_author" content="Meeß, Henri">
+  <meta name="citation_author" content="Wysocki, Olaf">
+  <meta name="citation_author" content="Spannaus, Paul">
+  <meta name="citation_author" content="Cremers, Daniel">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_conference_title" content="ArXiv">
+  <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2610.10359">
+  
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://documentcloud.adobe.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+
+  <!-- TODO: Replace with your paper title and authors -->
+  <title>MultiFly: A Real-World Multimodal Aerial Dataset with Annotation-Efficient Label Transfer and Cross-Modal Semantic Consistency</title>
+  
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico"> 
+  
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+  
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- KaTeX for LaTeX math rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+  
+  <!-- Defer non-critical JavaScript -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+  <style>
+    .site-with-navbar {
+      padding-top: 4.8rem;
+    }
+
+    .site-with-navbar #main-content > .hero:first-child .hero-body {
+      padding-top: 0.35rem;
+    }
+
+    .site-publication-navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: linear-gradient(110deg, #f4f5f7 0%, #eceff3 100%);
+      border-bottom: 1px solid rgba(17, 24, 39, 0.14);
+      box-shadow: 0 1px 4px rgba(17, 24, 39, 0.08);
+    }
+
+    .site-publication-navbar-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0.3rem 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.7rem;
+    }
+
+    .site-publication-brand,
+    .site-publication-link {
+      position: relative;
+      display: inline-block;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .site-publication-brand {
+      color: #111827;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      font-size: 1.02rem;
+    }
+
+    .site-publication-links {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+
+    .site-publication-link {
+      color: #374151;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      padding: 0.2rem 0;
+    }
+
+    .site-publication-brand::after,
+    .site-publication-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-bottom: 1px solid currentColor;
+      transition: width 0.22s ease;
+      opacity: 0.62;
+    }
+
+    .site-publication-brand::after {
+      bottom: 0.08rem;
+    }
+
+    .site-publication-link::after {
+      bottom: 0.05rem;
+    }
+
+    .site-publication-brand:hover,
+    .site-publication-brand:focus-visible,
+    .site-publication-link:hover,
+    .site-publication-link:focus-visible,
+    .site-publication-link.is-active {
+      color: #0f172a;
+      outline: none;
+    }
+
+    .site-publication-brand:hover::after,
+    .site-publication-brand:focus-visible::after,
+    .site-publication-link:hover::after,
+    .site-publication-link:focus-visible::after,
+    .site-publication-link.is-active::after {
+      width: 100%;
+    }
+
+    @media (max-width: 640px) {
+      .site-with-navbar #main-content > .hero:first-child .hero-body {
+        padding-top: 0.25rem;
+      }
+
+      .site-publication-navbar-inner {
+        padding: 0.32rem 0.9rem;
+      }
+
+      .site-publication-brand {
+        font-size: 0.96rem;
+      }
+
+      .site-publication-link {
+        font-size: 0.94rem;
+      }
+    }
+  </style>
+  
+  <!-- Structured Data for Academic Papers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "MultiFly: A Real-World Multimodal Aerial Dataset with Annotation-Efficient Label Transfer and Cross-Modal Semantic Consistency",
+    "description": "MultiFly is a real-world low-altitude UAV dataset with 17,272 synchronized RGB, thermal, LiDAR and radar samples, labeled from only 115 annotated RGB images.",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "Markus Gross",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Fraunhofer Institute IVI, Technical University of Munich (TUM), Munich Center for Machine Learning (MCML), University of Cambridge"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Andreas Greiner",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Fraunhofer Institute IVI, University of Applied Sciences Ingolstadt (THI)"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Taehyoung Kim",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Fraunhofer Institute IVI"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Sivasubiramaniam Subbiah",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Fraunhofer Institute IVI"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Tomaž Cotič",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Fraunhofer Institute IVI"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Conrad Christoph",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Fraunhofer Institute IVI"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Oussema Dhaouadi",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Technical University of Munich (TUM), Munich Center for Machine Learning (MCML), University of Cambridge"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Simon Zieher",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Fraunhofer Institute IVI"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Surya V. Kumar",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Fraunhofer Institute IVI"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Gordon Elger",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "University of Applied Sciences Ingolstadt (THI)"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Henri Meeß",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Fraunhofer Institute IVI"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Olaf Wysocki",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "University of Cambridge"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Paul Spannaus",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Fraunhofer Institute IVI"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Daniel Cremers",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Technical University of Munich (TUM), Munich Center for Machine Learning (MCML)"
+        }
+      }
+    ],
+    "datePublished": "2026-10-14",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ArXiv"
+    },
+    "url": "https://markus-42.github.io/multifly/",
+    "image": "https://markus-42.github.io/multifly/static/images/fig_1.png",
+    "keywords": [
+      "UAV Dataset",
+      "Multimodal Perception",
+      "Semantic Segmentation",
+      "RGB-Thermal",
+      "LiDAR",
+      "Radar",
+      "Label Transfer",
+      "Cross-Modal Semantic Consistency",
+      "Aerial Robotics",
+      "Sensor Calibration"
+    ],
+    "abstract": "We introduce MultiFly, a real-world, low-altitude UAV dataset for semantic perception across RGB, thermal, LiDAR, and radar modalities. MultiFly provides 17,272 synchronized samples from four suburban scenes with frame-wise annotations for 15 semantic classes, together with calibration and GNSS-RTK/IMU measurements. To avoid costly and inconsistent modality-specific annotation, we propagate labels from only 115 manually annotated RGB images through shared geometric representations to all four modalities. This approach generates semantic labels for 17,157 additional RGB images, 17,272 thermal images, 840M LiDAR points, and 3.4M radar points. Transferred annotations achieve 89.93% average agreement with held-out manual annotations, and 90.94% average semantic consistency across all six modality pairs. We further establish semantic segmentation benchmarks for all four modalities, revealing distinct architectural behavior for dense LiDAR and sparse radar data. Taken together, MultiFly provides a scalable foundation for multimodal aerial perception and, to the best of our knowledge, the first public real-world low-altitude aerial benchmark that combines consistent frame-wise semantic annotations for RGB, thermal, LiDAR, and radar. Data at https://github.com/markus-42/multifly.",
+    "citation": "@misc{gross2026multifly, title={MultiFly: A Real-World Multimodal Aerial Dataset with Annotation-Efficient Label Transfer and Cross-Modal Semantic Consistency}, author={Markus Gross and Andreas Greiner and Taehyoung Kim and Sivasubiramaniam Subbiah and Tomaž Cotič and Conrad Christoph and Oussema Dhaouadi and Simon Zieher and Surya V. Kumar and Gordon Elger and Henri Meeß and Olaf Wysocki and Paul Spannaus and Daniel Cremers}, year={2026}, eprint={2610.10359}, archivePrefix={arXiv}, primaryClass={cs.RO}, url={https://arxiv.org/abs/2610.10359}}",
+    "isAccessibleForFree": true,
+    "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "mainEntity": {
+      "@type": "WebPage",
+      "@id": "https://markus-42.github.io/multifly/"
+    },
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "Multimodal Aerial Perception"
+      },
+      {
+        "@type": "Thing", 
+        "name": "Semantic Segmentation"
+      }
+    ]
+  }
+  </script>
+  
+  <!-- Website/Organization Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TUM Computer Vision Group",
+    "url": "https://cvg.cit.tum.de/",
+    "logo": "https://markus-42.github.io/multifly/static/images/favicon.ico",
+    "sameAs": [
+      "https://markus-42.github.io/",
+      "https://github.com/markus-42"
+    ]
+  }
+  </script>
+</head>
+<body class="site-with-navbar">
+
+  <nav class="site-publication-navbar" aria-label="Primary">
+    <div class="site-publication-navbar-inner">
+      <a class="site-publication-brand" href="/">Markus Gross</a>
+      <div class="site-publication-links">
+        <a class="site-publication-link" href="/">Home</a>
+        <a class="site-publication-link is-active" href="/publications">Publications</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+
+
+  <main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <!-- TODO: Replace with your paper title -->
+            <h1 class="title is-1 publication-title">MultiFly: A Real-World Multimodal Aerial Dataset with Annotation-Efficient Label Transfer and Cross-Modal Semantic Consistency</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- TODO: Replace with your paper authors and their personal links -->
+              <span class="author-block">
+                <a href="https://markus-42.github.io/" target="_blank">Markus Gross</a><sup>1,2,3,4,*</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/andreas--greiner/" target="_blank">Andreas Greiner</a><sup>1,5,*</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/taehyoung-kim-935949140" target="_blank">Taehyoung Kim</a><sup>1,*</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/sivasubiramaniam-subbiah-61a997217/" target="_blank">Sivasubiramaniam Subbiah</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/toma%C5%BE-coti%C4%8D-080663333/" target="_blank">Tomaž Cotič</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/conrad-christoph-216255341/" target="_blank">Conrad Christoph</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://ussaema.github.io/" target="_blank">Oussema Dhaouadi</a><sup>2,3,4</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/simon-zieher-86b314222/" target="_blank">Simon Zieher</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/surya-kiran-v/" target="_blank">Surya V. Kumar</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=klF8NzoAAAAJ&hl=en" target="_blank">Gordon Elger</a><sup>5</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/henri-meess/" target="_blank">Henri Meeß</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=9xQhtFcAAAAJ&hl=en" target="_blank">Olaf Wysocki</a><sup>4</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/paulspannaus/" target="_blank">Paul Spannaus</a><sup>1,†</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=cXQciMEAAAAJ&hl=en" target="_blank">Daniel Cremers</a><sup>2,3</sup>
+              </span>
+              <span class="eql-cntrb"><small><br><sup>*</sup>Equal contribution&nbsp;&nbsp;&nbsp;<sup>†</sup>Corresponding author</small></span>
+            </div>
+                  <div class="is-size-5 publication-authors">
+                    <!-- TODO: Replace with your institution and conference/journal info -->
+                    <span class="author-block">
+                      <!-- Institution columns with names and logos -->
+                      <div class="institution-grid">
+                        <!-- Column 1: Fraunhofer -->
+                        <div class="institution-item">
+                          <a href="https://www.ivi.fraunhofer.de/en/research-fields/advanced-air-mobility/autonomous-flying.html" target="_blank" class="institution-link">
+                            <div class="institution-name"><sup>1 </sup>Fraunhofer <br>Institute IVI</div>
+                            <div class="group-name">Autonomous Aerial Systems</div>
+                            <img src="static/images/fraunhofer_logo_2.png" alt="Fraunhofer Institute" style="height: 26px; width: auto; margin-top: 8px; max-width: 100%; object-fit: contain; flex-shrink: 0;">
+                          </a>
+                        </div>
+                        <!-- Column 2: TUM -->
+                        <div class="institution-item">
+                          <a href="https://cvg.cit.tum.de/" target="_blank" class="institution-link">
+                            <div class="institution-name"><sup>2 </sup>Technical University <br>of Munich</div>
+                            <div class="group-name">Computer Vision Group</div>
+                            <img src="static/images/tum_cvg_logo_3.png" alt="Technical University of Munich" style="height: 30px; width: auto; margin-top: 8px; max-width: 100%; object-fit: contain; flex-shrink: 0;">
+                          </a>
+                        </div>
+                        <!-- Column 3: MCML -->
+                        <div class="institution-item">
+                          <a href="https://mcml.ai/research/groups/cremers/" target="_blank" class="institution-link">
+                            <div class="institution-name"><sup>3 </sup>Munich Center for Machine Learning</div>
+                            <div class="group-name">Research Group Daniel Cremers</div>
+                            <img src="static/images/mcml_logo.jpg" alt="Munich Center for Machine Learning" style="height: 24px; width: auto; margin-top: 8px; max-width: 100%; object-fit: contain; flex-shrink: 0;">
+                          </a>
+                        </div>
+                        <!-- Column 4: Cambridge -->
+                        <div class="institution-item">
+                          <a href="https://cv4dt.github.io/" target="_blank" class="institution-link">
+                            <div class="institution-name"><sup>4 </sup>University of <br>Cambridge</div>
+                            <div class="group-name">Computer Vision for Digital Twins</div>
+                            <img src="static/images/cambridge_logo.png" alt="University of Cambridge" style="height: 30px; width: auto; margin-top: 8px; max-width: 100%; object-fit: contain; flex-shrink: 0;">
+                          </a>
+                        </div>
+                        <!-- Column 5: THI -->
+                        <div class="institution-item">
+                          <a href="https://www.thi.de/en/research/institute-of-innovative-mobility-iimo/" target="_blank" class="institution-link">
+                            <div class="institution-name"><sup>5 </sup>University of Applied <br>Sciences Ingolstadt</div>
+                            <div class="group-name">Institute of Innovative Mobility</div>
+                            <img src="static/images/thi_logo.png" alt="University of Applied Sciences Ingolstadt" style="height: 38px; width: auto; margin-top: 8px; max-width: 100%; object-fit: contain; flex-shrink: 0;">
+                          </a>
+                        </div>
+                      </div>
+                    </span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+
+                    <!-- PDF -->
+                    <span class="link-block">
+                      <a href="static/pdfs/MultiFly_2610.10359v2.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Paper</span>
+                    </a>
+                  </span>
+
+                         <!-- ArXiv -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/abs/2610.10359" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="ai ai-arxiv"></i>
+                        </span>
+                        <span>ArXiv</span>
+                      </a>
+                    </span>
+
+                  <!-- GitHub -->
+                  <span class="link-block">
+                    <a href="https://github.com/markus-42/MultiFly" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                    <span>Code &amp; Data</span>
+                  </a>
+                </span>
+
+                <!-- MultiFly Dataset: enable once the data is on Hugging Face -->
+<!--                 <span class="link-block">
+                  <a href="https://huggingface.co/datasets/markus-42/MultiFly" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon" aria-hidden="true">🤗</span>
+                  <span>MultiFly Dataset</span>
+                </a>
+              </span> -->
+
+                <!-- Video -->
+<!--                 <span class="link-block">
+                  <a href="YOUR_LINK_URL_HERE" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Intro video and core summary -->
+<section class="section hero" style="margin-top: clamp(-6rem, -8vw, -3rem);">
+  <div class="hero-body" style="padding-top: clamp(-3rem, -4vw, -2rem);">
+    <div class="container is-max-desktop">
+      <div style="text-align: center;">
+        <!-- TODO: Replace the SafeLand placeholder video and its caption with the MultiFly video -->
+        <video poster="" id="tree" autoplay muted loop controls playsinline height="100%" preload="metadata" style="width: 100%; height: auto;">
+          <source src="static/videos/MultiFly_project_page_LQ.mp4" type="video/mp4">
+        </video>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #ff840f;">Unmute the video to listen to a 2-minute summary.</p>
+      </div>
+      <div class="columns is-variable is-6" style="margin-top: 1.5rem;">
+        <div class="column">
+          <div class="info-block">
+            <h3 class="title is-5 has-text-centered">🆘 Challenges</h3>
+            <ul>
+              <li><b>Underrepresented domain:</b> UAV data remains scarce in large-scale multimodal datasets, although aerial viewpoints, object scales, and scene statistics differ fundamentally from ground-level data.</li>
+              <li><b>Missing modalities:</b> Existing aerial datasets provide only one or two modalities. No public real-world low-altitude dataset offers synchronized frame-wise semantics across RGB, thermal, LiDAR, and radar, which substantially limits aerial scene understanding.</li>
+              <li><b>Costly, inconsistent annotation:</b> The modalities differ significantly in geometry and sampling, so annotating each sensor separately is expensive and can introduce conflicting labels.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="column">
+          <div class="info-block">
+            <h3 class="title is-5 has-text-centered">💡 Our Approach</h3>
+            <ul>
+              <li><b>Four-modal platform:</b> A synchronized and calibrated UAV sensor rig captures RGB, thermal, LiDAR, and radar together with GNSS-RTK/INS poses, yielding 17,272 multimodal samples.</li>
+              <li><b>Label transfer:</b> With 3D geometry as a shared semantic interface, labels from only 0.67% of manually annotated RGB images propagate to all four modalities, automatically annotating 17,157 RGB images, 17,272 thermal images, 840M LiDAR points, and 3.4M radar points.</li>
+              <li><b>Label quality:</b> 89.93% agreement with held-out manual ground truth and 90.94% cross-modal semantic consistency, without manual correction.</li>
+              <li><b>Benchmarks:</b> Semantic segmentation baselines for all four modalities.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End intro video and core summary -->
+
+
+<!-- Paper abstract - NORMAL FULL TEXT -->
+<!-- <section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            ADD YOUR PAPER ABSTRACT HERE
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- End paper abstract -->
+
+
+<!-- Paper abstract - TOGGL TO EXPAND FULL TEXT -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="abstract-container">
+          <input type="checkbox" id="abstract-toggle" class="abstract-toggle">
+          <div class="content has-text-justified abstract-content">
+            <p>
+              We introduce MultiFly, a real-world, low-altitude UAV dataset for semantic perception across RGB, thermal, LiDAR, and radar modalities. MultiFly provides 17,272 synchronized samples from four suburban scenes with frame-wise annotations for 15 semantic classes, together with calibration and GNSS-RTK/IMU measurements. To avoid costly and inconsistent modality-specific annotation, we propagate labels from only 115 manually annotated RGB images through shared geometric representations to all four modalities. This approach generates semantic labels for 17,157 additional RGB images, 17,272 thermal images, 840M LiDAR points, and 3.4M radar points. Transferred annotations achieve 89.93% average agreement with held-out manual annotations, and 90.94% average semantic consistency across all six modality pairs. We further establish semantic segmentation benchmarks for all four modalities, revealing distinct architectural behavior for dense LiDAR and sparse radar data. Taken together, MultiFly provides a scalable foundation for multimodal aerial perception and, to the best of our knowledge, the first public real-world low-altitude aerial benchmark that combines consistent frame-wise semantic annotations for RGB, thermal, LiDAR, and radar.
+            </p>
+          </div>
+          <label for="abstract-toggle" class="abstract-toggle-btn">
+            <span class="expand-text">Show more</span>
+            <span class="collapse-text">Show less</span>
+            <i class="fas fa-chevron-down arrow"></i>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- The MultiFly Platform -->
+<section class="section hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-3">MultiFly Platform</h2>
+      </div>
+      <div class="content has-text-justified">
+        <p>
+          The MultiFly sensor rig integrates an RGB camera, a thermal camera, a spinning LiDAR, two radars, and a GNSS-RTK-aided
+          inertial navigation system (INS). Mounted on an EmQopter Q6500 UAV and pitched 45° downward, it jointly observes the
+          flight direction and the ground below, recording all perception data at 10 Hz.
+        </p>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <img src="static/images/fig_2_horizontal_uav.jpg" alt="MultiFly sensor rig and its system architecture" style="width: 90%; height: auto;" loading="lazy"/>
+      </div>
+      <div class="columns is-centered has-text-centered" style="margin-top: 1.5rem;">
+        <img src="static/images/fig_3_horizontal.jpg" alt="LiDAR-on-RGB, radar-on-RGB, and RGB-thermal registration results" style="width: 100%; height: auto;" loading="lazy"/>
+      </div>
+      <div class="columns is-variable is-6" style="margin-top: 1.5rem;">
+        <div class="column">
+          <div class="info-block">
+            <h3 class="title is-5 has-text-centered">⏱️ Time Synchronization</h3>
+            <ul>
+              <li>All sensors share a GNSS-disciplined time base via the Precision Time Protocol (PTP), with the INS as grandmaster.</li>
+              <li>Acquisition is aligned with the LiDAR's 10 Hz scan cycle: the rotating LiDAR hardware-triggers the RGB camera so that exposure coincides with the LiDAR beam passing through the camera's field of view.</li>
+              <li>Radar epochs are phase-compensated to within ±3 ms of the LiDAR, while the thermal camera, which lacks hardware triggering, is controlled via timestamped GigE Vision Scheduled Action Commands.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="column">
+          <div class="info-block">
+            <h3 class="title is-5 has-text-centered">📐 Calibration &amp; Registration</h3>
+            <ul>
+              <li>All extrinsics form a calibration tree rooted at the LiDAR: RGB–LiDAR from natural landmarks, radar–LiDAR from corner reflectors, and RGB–thermal from stereo calibration.</li>
+              <li>A steel plate with plotter-cut vinyl squares makes checkerboard corners visible in the thermal band for intrinsic calibration.</li>
+              <li>RGB and thermal images are registered at pixel level via the shared 3D reconstruction and the fixed RGB–thermal extrinsic.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End MultiFly Platform -->
+
+
+<!-- Annotation-Efficient Label Transfer -->
+<section class="section hero is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-3">Annotation-Efficient Label Transfer</h2>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <img src="static/images/fig_1_col_crop.jpg" alt="MultiFly overview: multimodal sensing, label transfer in shared 3D geometry, and resulting labels" style="width: 90%; height: auto;" loading="lazy"/>
+      </div>
+      <div class="content has-text-justified" style="margin-top: 1.5rem;">
+        <p>
+          Annotating 4 modalities by hand is expensive and inconsistent, so we let 3D scene geometry do the work. Instead of labeling each sensor independently, <b>we manually annotate just 0.67% of RGB images
+          and automatically transfer their labels across all sensors</b>. To achieve this, the RGB labels are grounded in a common 3D reference frame, which acts as a shared semantic interface, effectively connecting all 
+          observations across viewpoints, time, and sensing modalities. This propagates the sparse manual labels to the remaining RGB images, all thermal images, and all LiDAR & radar points.
+          Crucially, this process is fully automatic: no thermal image or 3D point is manually annotated.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Annotation-Efficient Label Transfer -->
+
+
+<!-- The MultiFly Dataset -->
+<section class="section hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-3">The MultiFly Dataset</h2>
+      </div>
+      <div class="content has-text-justified">
+        <p>
+          MultiFly comprises four suburban scenes in the metropolitan area of Ingolstadt, Germany, recorded in summer under sunny and
+          cloudy conditions. Each scene is surveyed at 30m and 50m altitude along automated double-grid trajectories. In total, MultiFly
+          provides 17,272 synchronized samples covering 56,700 m<sup>2</sup>, each consisting of an RGB image, a thermal image, a LiDAR scan,
+          and measurements from both radars, with frame-wise annotations for 15 semantic classes. Calibration parameters, synchronization
+          metadata, and the complete 100 Hz navigation stream of the GNSS-RTK-aided INS are provided alongside the perception data.
+        </p>
+      </div>
+      <div class="columns is-centered has-text-centered" style="margin-top: 1.5rem;">
+        <img src="static/images/tab_3.png" alt="MultiFly dataset statistics per scene and altitude" class="mobile-full-width" style="width: 75%; height: auto;" loading="lazy"/>
+      </div>
+    </br>
+      <div class="columns is-centered has-text-centered">
+        <img src="static/images/fig_4.jpg" alt="MultiFly sample with RGB, thermal, LiDAR, and radar data and their semantic labels" style="width: 90%; height: auto;" loading="lazy"/>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End MultiFly Dataset -->
+
+
+<!-- MultiFly in Comparison -->
+<section class="section hero is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-3">MultiFly in Comparison</h2>
+      </div>
+      <div class="content has-text-justified">
+        <p>
+          Real-world UAV datasets with frame-wise semantic labels remain fragmented across sensing modalities. IndraEye, MVUAV, CART,
+          Kust4K, and SegFly pair RGB with thermal imagery,
+          while UAVScenes combines RGB with LiDAR. MultiFly is the only dataset that unites RGB, thermal, LiDAR, and radar with IMU and
+          GNSS measurements, while providing cross-modally consistent semantic labels that require no manual correction.
+        </p>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <img src="static/images/tab_1_col.jpg" alt="Comparison of real-world multimodal UAV datasets with frame-wise semantic labels" style="width: 100%; height: auto;" loading="lazy"/>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End MultiFly in Comparison -->
+
+
+<!-- Label Quality & Cross-Modal Consistency -->
+<section class="section hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-3">Label Quality &amp; Cross-Modal Consistency</h2>
+      </div>
+      <div class="paired-blocks">
+        <div class="info-block">
+          <h3 class="title is-5 has-text-centered">🎯 Label Transfer Accuracy</h3>
+          <ul>
+            <li>Transferred labels are compared against frames that were manually annotated solely for evaluation and held out from data generation.</li>
+            <li><b>89.93%</b> on average, with RGB and thermal on par with SegFly.</li>
+          </ul>
+        </div>
+        <img src="static/images/tab_4.png" alt="Modality-wise label transfer accuracy" loading="lazy"/>
+        <div class="info-block">
+          <h3 class="title is-5 has-text-centered">🔗 Cross-Modal Semantic Consistency</h3>
+          <ul>
+            <li>Labels are compared across all six modality pairs, without intermediate 3D representations or additional manual ground truth.</li>
+            <li><b>90.94%</b> on average, with LiDAR–radar agreement robust to the association radius.</li>
+          </ul>
+        </div>
+        <img src="static/images/tab_5.png" alt="Cross-modal semantic consistency across all modality pairs and scenes" loading="lazy"/>
+      </div>
+      <div class="columns is-centered has-text-centered" style="margin-top: 2rem;">
+        <img src="static/images/fig_5.jpg" alt="LiDAR and radar labels projected onto RGB and thermal images" style="width: 100%; height: auto;" loading="lazy"/>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Label Quality & Cross-Modal Consistency -->
+
+
+<!-- RGB & Thermal Semantic Segmentation -->
+<section class="section hero is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-3">Benchmarking RGB &amp; Thermal Semantic Segmentation</h2>
+      </div>
+      <div class="content has-text-justified">
+        <p>
+          We benchmark UPerNet, SegFormer, and Firefly under a strict held-out-scene protocol, training on scenes 1–3 and evaluating
+          on scene 4. Following <a href="/publications/2026/segfly/" style="text-decoration: underline;">SegFly</a>, training comprises
+          RGB training, RGB-to-thermal adaptation on registered MultiFly RGB–thermal pairs, and thermal fine-tuning. Firefly achieves the
+          strongest performance on both modalities, with 44.05% mIoU for RGB and 40.24% mIoU for thermal, and the qualitative predictions
+          confirm that MultiFly supports effective semantic segmentation across both modalities.
+        </p>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <img src="static/images/tab_6_col.jpg" alt="RGB and thermal semantic segmentation results" class="mobile-full-width" style="width: 60%; height: auto;" loading="lazy"/>
+      </div>
+      <div class="columns is-centered has-text-centered" style="margin-top: 1.5rem;">
+        <img src="static/images/fig_6_col.jpg" alt="Qualitative RGB and thermal semantic segmentation predictions" style="width: 90%; height: auto;" loading="lazy"/>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End RGB & Thermal Semantic Segmentation -->
+
+
+<!-- LiDAR & Radar Semantic Segmentation -->
+<section class="section hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-3">Benchmarking LiDAR &amp; Radar Semantic Segmentation</h2>
+      </div>
+      <div class="content has-text-justified">
+        <p>
+          We benchmark SparseUNet (SpUNet), LitePointTransformer (LitePT), and PointTransformerV3 (PTv3) independently on LiDAR and radar, using intensity as an
+          additional LiDAR feature, and radar cross section & Doppler velocity for radar. PTv3 performs best on LiDAR with 37.09% mIoU,
+          whereas SpUNet achieves the strongest radar performance with 14.50% mIoU. Established sparse convolutions can thus outperform recent
+          attention-based models on sparse radar point clouds, providing a promising initial benchmark for radar semantic segmentation.
+        </p>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <img src="static/images/tab_7.png" alt="LiDAR and radar semantic segmentation results" class="mobile-full-width" style="width: 60%; height: auto;" loading="lazy"/>
+      </div>
+      <div class="columns is-centered has-text-centered" style="margin-top: 1.5rem;">
+        <img src="static/images/fig_7.jpg" alt="Qualitative LiDAR and radar semantic segmentation predictions" style="width: 100%; height: auto;" loading="lazy"/>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End LiDAR & Radar Semantic Segmentation -->
+
+
+<!-- Youtube video -->
+<!-- <section class="section hero is-light">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-3">IPFormer Full Explanation with Audio</h2>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          
+          <div class="publication-video">
+            <iframe src="https://www.youtube.com/embed/KlXAvp-mIU4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- End youtube video -->
+
+
+<!-- Poster -->
+<!-- <section class="section hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title is-3">Poster</h2>
+        </div>
+        <div class="columns is-centered has-text-centered">
+          <img src="static/images/poster_ipformer_4-3.png" alt="Poster" style="width: 100%; height: auto;" loading="lazy"/>
+        </div>
+    </div>
+</section> -->
+<!-- End image-->
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header">
+        <h2 class="title">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+      <pre id="bibtex-code"><code>
+@misc{gross2026multiflyrealworldmultimodalaerial,
+  title={MultiFly: A Real-World Multimodal Aerial Dataset with Annotation-Efficient Label Transfer and Cross-Modal Semantic Consistency}, 
+  author={Markus Gross and Andreas Greiner and Taehyoung Kim and Sivasubiramaniam Subbiah and Tomaž Cotič and Conrad Christoph and Oussema Dhaouadi and Simon Zieher and Surya Vijaya Kumar and Gordon Elger and Henri Meeß and Olaf Wysocki and Paul Spannaus and Daniel Cremers},
+  year={2026},
+  eprint={2610.10359},
+  archivePrefix={arXiv},
+  primaryClass={cs.RO},
+  url={https://arxiv.org/abs/2610.10359}, 
+}
+      </code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+  </main>
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+<!-- ------------------------------------------------------------------------------------- -->
+<!-- Image carousel -->
+<!-- <section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+          First image description.
+        </h2>
+      </div>
+      <div class="item">
+        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+          Second image description.
+        </h2>
+      </div>
+      <div class="item">
+        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+         Third image description.
+       </h2>
+     </div>
+     <div class="item">
+      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
+      <h2 class="subtitle has-text-centered">
+        Fourth image description.
+      </h2>
+    </div>
+  </div>
+</div>
+</div>
+</section> -->
+<!-- End image carousel -->
+<!-- ------------------------------------------------------------------------------------- -->
+<!-- Video carousel -->
+<!-- <section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Another Carousel</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-video1">
+          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/carousel1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video2">
+          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/carousel2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video3">
+          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
+            <source src="static/videos/carousel3.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- End video carousel -->
+<!-- ------------------------------------------------------------------------------------- -->
+
+
+
+
+<!-- Default Statcounter code for MultiFly
+https://markus-42.github.io/multifly/ -->
+<script type="text/javascript">
+var sc_project=13360268; 
+var sc_invisible=1; 
+var sc_security="4d5ffb57"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="https://c.statcounter.com/13360268/0/4d5ffb57/1/"
+alt="Web Analytics"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+<!-- End of Statcounter Code -->
+
+  <!-- KaTeX JavaScript for math rendering -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false}
+        ],
+        throwOnError : false
+      });
+    });
+  </script>
+
+  </body>
+  </html>

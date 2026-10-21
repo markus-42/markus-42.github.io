@@ -7,6 +7,10 @@ positions:
   logo: /assets/images/badges/tum_logo_2.png
   logo_width: 32px
   top_margin: 0rem
+- name: Visiting Researcher @ University of Cambridge
+  logo: /assets/images/badges/cambridge.png
+  logo_width: 22px
+  top_margin: 0.8rem
 - name: Research Associate @ Fraunhofer Institute IVI
   logo: /assets/images/badges/fhg.png
   logo_width: 26px
@@ -31,10 +35,12 @@ github: markus-42
 short_bio_text_justify: True
 short_bio: |
   <p>
-    Hi! I'm Markus, a second-year Ph.D. student at the <a href="https://cvg.cit.tum.de/" target="_blank">Computer Vision Group</a> of the Technical University of Munich (TUM),  
-    advised by <a href="https://cvg.cit.tum.de/members/cremers" target="_blank">Prof. Dr. Daniel Cremers</a>; a research associate at the
+    Hi! I'm a third-year Ph.D. student at the <a href="https://cvg.cit.tum.de/" target="_blank">Computer Vision Group</a> of the Technical University of Munich (TUM),  
+    advised by <a href="https://cvg.cit.tum.de/members/cremers" target="_blank">Prof. Dr. Daniel Cremers</a>. I'm also a visiting researcher at the 
+    <a href="https://cv4dt.github.io/" target="_blank">University of Cambridge</a>, hosted by <a href="https://scholar.google.com/citations?user=9xQhtFcAAAAJ&hl=en" target="_blank">Dr. Olaf Wysocki</a>. 
+    In addition, I am a research associate at the
     <a href="https://www.ivi.fraunhofer.de/en/research-fields/advanced-air-mobility/autonomous-flying.html" target="_blank">Autonomous Aerial Systems Group</a>
-    of the Fraunhofer Institute; and an affiliated researcher 
+    of the Fraunhofer Institute, and an affiliated researcher 
     at the <a href="https://mcml.ai/research/groups/cremers/" target="_blank">Munich Center for Machine Learning</a> (MCML). Prior to that, I obtained the 
     Master of Science in Computer Science with highest distinction from the 
     <a href="https://hm.edu/en/index.en.html" target="_blank">Munich University of Applied Sciences</a>.
@@ -58,15 +64,25 @@ education:
     Ph.D. Student<br/>
     Advisor: <a href="https://cvg.cit.tum.de/members/cremers" target="_blank">Prof. Daniel Cremers</a> <br/>
     <a href="https://cvg.cit.tum.de/" target="_blank">Computer Vision Group</a><br/>
-    TUM School of CIT
-  date: 10/2024 - present
+- name: University of Cambridge
+  logo: /assets/images/badges/cambridge.png
+  logo_height: 34px
+  logo_vertical_margin: 3px
+  position: >- 
+    Visiting Researcher<br/>
+    Host: <a href="https://scholar.google.com/citations?user=9xQhtFcAAAAJ&hl=en" target="_blank">Dr. Olaf Wysocki</a><br/>
+    <a href="https://cv4dt.github.io/" target="_blank">CV4DT Group</a>
 - name: Munich University of Applied Sciences
   logo: /assets/images/badges/hm_noMargin.png
   logo_vertical_margin: 7px
   position: >- 
     M. Sc. in Computer Science<br/>
     Graduated with highest distinction 
-  date: 03/2020 - 07/2022
+- name: Hamburg University of Applied Sciences
+  logo: /assets/images/badges/haw_hamburg.jpg
+  logo_vertical_margin: 0px
+  position: >- 
+    B. Sc. in Media Informatics
 
 experience:
 - name: Munich Center for Machine Learning

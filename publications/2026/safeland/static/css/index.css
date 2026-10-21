@@ -468,6 +468,16 @@ code {
   font-family: 'SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace !important;
 }
 
+#BibTeX {
+  background: var(--background-secondary);
+  border-top: 1px solid var(--border-color);
+}
+
+#BibTeX pre,
+#BibTeX code {
+  background: var(--background-primary) !important;
+}
+
 /* BibTeX Section Improvements */
 .bibtex-header {
   display: flex;

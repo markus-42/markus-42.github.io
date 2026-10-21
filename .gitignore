@@ -41,3 +41,4 @@ node_modules/
 
 # Zone Identifier files (Windows)
 *.Zone.Identifier
+*:Zone.Identifier

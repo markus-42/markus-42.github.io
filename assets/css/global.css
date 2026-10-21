@@ -247,7 +247,7 @@ h1, h2, h3, h4, h5, h6,
     margin-bottom: 0 !important;
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 575.98px) {
     .education-grid {
         grid-template-columns: minmax(0, 1fr);
     }

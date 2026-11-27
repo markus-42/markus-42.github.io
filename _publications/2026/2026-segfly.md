@@ -1,5 +1,5 @@
 ---
-title:          "SegFly: A 2D-3D-2D Paradigm for Aerial RGB-Thermal Semantic Segmentation at Scale"
+title:          "SegFly: A Dataset and 2D-3D-2D Paradigm for Aerial RGB-Thermal Semantic Segmentation at Scale"
 date:           2026-03-06 00:01:00 +0800
 selected:       true
 pub:            "<span style='color: #00DA00;'>ECCV 2026</span>"
@@ -16,5 +16,5 @@ authors:
 links:
   Project Page: /publications/2026/segfly/
   Paper: https://arxiv.org/abs/2603.17920
-  Code: https://github.com/markus-42/SegFly
+  Data+Code: https://github.com/markus-42/SegFly
 ---

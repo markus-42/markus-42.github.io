@@ -23,5 +23,5 @@ authors:
 links:
   Project Page: /multifly/
   Paper: https://arxiv.org/abs/2610.10359
-  Code: https://github.com/markus-42/MultiFly
+  Data+Code: https://github.com/markus-42/MultiFly
 ---
